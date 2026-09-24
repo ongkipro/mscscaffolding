@@ -271,30 +271,59 @@ export default async function ProductDetailPage({
                 .map((s) => ({ label: s.label, value: s.value }));
 
               const allSpecs: DisplaySpecItem[] = [...primarySpecs, ...extraSpecs];
+              const half = Math.ceil(allSpecs.length / 2);
+              const col1 = allSpecs.slice(0, half);
+              const col2 = allSpecs.slice(half);
 
               return (
-                <div className="max-w-4xl divide-y divide-slate-100 border-y border-slate-100">
-                  {allSpecs.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-6 hover:bg-slate-50/50 transition-colors px-2"
-                    >
-                      <span className="text-xs sm:text-sm text-slate-500 font-medium">
-                        {item.label}
-                      </span>
-                      <span
-                        className={`text-xs sm:text-sm font-semibold font-mono ${
-                          item.highlight === 'orange'
-                            ? 'text-orange-600 font-bold'
-                            : item.highlight === 'emerald'
-                            ? 'text-emerald-700 font-bold'
-                            : 'text-slate-900'
-                        }`}
+                <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-x-12">
+                  <div className="divide-y divide-slate-100 border-y border-slate-100">
+                    {col1.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="py-3 sm:py-3.5 flex items-center justify-between gap-4 hover:bg-slate-50/50 transition-colors px-1"
                       >
-                        {item.value}
-                      </span>
-                    </div>
-                  ))}
+                        <span className="text-xs sm:text-sm text-slate-500 font-medium">
+                          {item.label}
+                        </span>
+                        <span
+                          className={`text-xs sm:text-sm font-semibold font-mono text-right ${
+                            item.highlight === 'orange'
+                              ? 'text-orange-600 font-bold'
+                              : item.highlight === 'emerald'
+                              ? 'text-emerald-700 font-bold'
+                              : 'text-slate-900'
+                          }`}
+                        >
+                          {item.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="divide-y divide-slate-100 border-y border-slate-100">
+                    {col2.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="py-3 sm:py-3.5 flex items-center justify-between gap-4 hover:bg-slate-50/50 transition-colors px-1"
+                      >
+                        <span className="text-xs sm:text-sm text-slate-500 font-medium">
+                          {item.label}
+                        </span>
+                        <span
+                          className={`text-xs sm:text-sm font-semibold font-mono text-right ${
+                            item.highlight === 'orange'
+                              ? 'text-orange-600 font-bold'
+                              : item.highlight === 'emerald'
+                              ? 'text-emerald-700 font-bold'
+                              : 'text-slate-900'
+                          }`}
+                        >
+                          {item.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               );
             })()}

@@ -74,7 +74,7 @@ export default async function AreaLayananPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded inline-block mb-3">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
               Wilayah Layanan
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
@@ -85,74 +85,56 @@ export default async function AreaLayananPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {locations.map((loc) => (
               <Link
                 key={loc.slug}
                 href={`/area-layanan/${loc.slug}`}
-                className="bg-slate-50/70 hover:bg-slate-50 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group block border border-slate-100 hover:border-slate-200 hover:shadow-md"
+                className="bg-slate-50/70 hover:bg-slate-50/90 p-6 sm:p-7 rounded-2xl transition-all duration-300 flex flex-col justify-between group block border border-slate-100 hover:border-slate-200"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-slate-800 text-[11px] font-mono font-bold uppercase tracking-wider shadow-xs">
-                      <MapPin className="w-3 h-3 text-orange-600" />
-                      <span>{loc.city}</span>
-                    </div>
-                    <div className="text-xs font-mono font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <h3 className="font-bold text-xl sm:text-2xl text-slate-950 group-hover:text-orange-600 transition-colors tracking-tight">
+                      {loc.city}
+                    </h3>
+                    <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                      <span>{loc.leadTimeHours}</span>
-                    </div>
+                      <span>{loc.leadTimeHours.split('(')[0].trim()}</span>
+                    </span>
                   </div>
 
-                  <h3 className="font-bold text-xl text-slate-950 mb-2 group-hover:text-orange-600 transition-colors">
-                    Sewa Scaffolding {loc.city}
-                  </h3>
-
-                  <p className="text-xs text-slate-500 leading-relaxed mb-5">
+                  <p className="text-xs text-slate-500 leading-relaxed mb-4 line-clamp-2">
                     {loc.description}
                   </p>
 
-                  <div className="space-y-2 mb-6 py-2 text-xs">
+                  <div className="space-y-1.5 py-3 border-y border-slate-200/60 my-4 text-xs">
                     <div className="flex items-center justify-between text-slate-600">
-                      <span className="text-slate-400 font-mono text-[11px]">JARAK</span>
-                      <span className="font-mono font-bold text-slate-900">{loc.distanceKm}</span>
+                      <span className="text-slate-400">Jarak Logistik</span>
+                      <span className="font-semibold text-slate-900">{loc.distanceKm}</span>
                     </div>
                     <div className="flex items-center justify-between text-slate-600">
-                      <span className="text-slate-400 font-mono text-[11px]">HUB GUDANG</span>
-                      <span className="font-medium text-slate-800">{loc.warehouseHub}</span>
+                      <span className="text-slate-400">Hub Gudang</span>
+                      <span className="font-medium text-slate-800 text-right">
+                        {loc.warehouseHub.includes('Surabaya') ? 'Hub Surabaya' : 'Hub Sidoarjo'}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Industrial Estates */}
-                  <div className="mb-6">
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2.5">
-                      Kawasan Industri
+                  {/* Kawasan Industri Utama */}
+                  <div className="mb-4">
+                    <div className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1.5">
+                      Cakupan Area Proyek
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {loc.industrialEstates.slice(0, 3).map((estate, eIdx) => (
-                        <span
-                          key={eIdx}
-                          className="px-2.5 py-1 bg-white text-slate-700 rounded-full text-[11px] shadow-xs"
-                        >
-                          {estate.split('(')[0].trim()}
-                        </span>
-                      ))}
-                      {loc.industrialEstates.length > 3 && (
-                        <span className="px-2 py-1 text-slate-400 text-[10px] font-mono">
-                          +{loc.industrialEstates.length - 3}
-                        </span>
-                      )}
-                    </div>
+                    <p className="text-xs text-slate-700 leading-relaxed line-clamp-2">
+                      {loc.industrialEstates.slice(0, 3).map((e) => e.split('(')[0].trim()).join(' • ')}
+                      {loc.industrialEstates.length > 3 && ` • +${loc.industrialEstates.length - 3} lainnya`}
+                    </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors">
-                    Lihat Layanan {loc.city}
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-white group-hover:bg-orange-600 flex items-center justify-center text-slate-700 group-hover:text-white transition-all shadow-2xs">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors">
+                  <span>Lihat Layanan {loc.city}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-orange-600" />
                 </div>
               </Link>
             ))}
@@ -165,10 +147,10 @@ export default async function AreaLayananPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded inline-block">
+              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
                 Kapasitas Armada Logistik
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
                 Pengiriman Tepat Waktu Langsung ke Titik Titik Proyek
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
