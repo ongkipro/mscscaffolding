@@ -132,16 +132,12 @@ export default function K3PanduanPage() {
             <span className="text-slate-900 font-bold">Panduan K3 Scaffolding</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-xs font-mono font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Standar K3 Kemenaker & EN 12811</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
+          <div className="max-w-3xl space-y-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
               Panduan Keselamatan Scaffolding (K3)
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Komitmen tanpa kompromi terhadap keselamatan kerja konstruksi. Panduan teknis kapasitas beban aman (Safe Working Load), Standard Operating Procedure (SOP) ereksi, dan manajemen Scafftag harian.
+              Panduan teknis kapasitas beban aman (Safe Working Load), SOP ereksi, dan standar Scafftag keselamatan kerja di ketinggian.
             </p>
 
             <div className="pt-2">
@@ -161,10 +157,10 @@ export default function K3PanduanPage() {
       <section className="py-16 bg-slate-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded inline-block mb-3">
+            <span className="text-xs uppercase tracking-widest text-emerald-600 font-semibold mb-2 block">
               Regulasi & Acuan
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
               Landasan Hukum & Standar Internasional
             </h2>
           </div>

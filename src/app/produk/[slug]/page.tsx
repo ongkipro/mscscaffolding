@@ -121,11 +121,11 @@ export default async function ProductDetailPage({
             <span className="text-slate-900 font-bold">{product.name}</span>
           </div>
 
-          <div className="max-w-3xl space-y-2">
-            <span className="inline-block px-2.5 py-0.5 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono uppercase tracking-wider font-medium">
+          <div className="max-w-3xl space-y-1">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1 block">
               {product.categoryName}
             </span>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
               {product.name}
             </h1>
           </div>

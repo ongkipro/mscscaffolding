@@ -17,10 +17,9 @@ export default function K3Banner() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Text Narrative - Minimalist & Punchy */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs text-emerald-400 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>STANDAR K3 PERMENAKER</span>
-            </div>
+            <span className="text-xs uppercase tracking-widest text-emerald-400 font-semibold block">
+              Standar K3 Permenaker
+            </span>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
               Standar Keselamatan Kerja Konstruksi

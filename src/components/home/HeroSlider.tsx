@@ -100,9 +100,9 @@ export default function HeroSlider() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-24 sm:pt-36 lg:pt-40 pb-20 sm:pb-8">
         {/* Upper Hero Content: Pill Badge, High-Contrast Typography, Copy, Pill CTAs */}
         <div className="max-w-3xl space-y-3 sm:space-y-4 lg:space-y-5">
-          {/* Clean Pill Badge */}
+          {/* Clean Eyebrow */}
           <div>
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-900/80 border border-white/15 text-orange-400 text-xs font-medium tracking-wide backdrop-blur-md">
+            <span className="text-xs uppercase tracking-widest text-orange-400 font-semibold block">
               {HERO_SLIDES[currentSlide].badge}
             </span>
           </div>

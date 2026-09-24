@@ -86,16 +86,12 @@ export default function TentangKamiPage() {
             <span className="text-slate-900 font-bold">Tentang Kami</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-              <Building2 className="w-3.5 h-3.5 text-orange-600" />
-              <span>Profil Perusahaan & Dedikasi K3</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-              Sistem Perancah Aman di Jawa Timur
+          <div className="max-w-3xl space-y-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+              Tentang MSC Scaffolding
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              PT MITRA SOLUSI CAHAYA (MSC Scaffolding) adalah mitra terpercaya kontraktor nasional, developer properti, dan aplikator fasad dalam penyediaan sistem perancah steger pipa 1.8mm SNI dan shoring tower heavy-duty.
+              PT MITRA SOLUSI CAHAYA menyediakan sistem perancah steger pipa 1.8mm SNI dan shoring tower aman di Jawa Timur.
             </p>
           </div>
         </div>
@@ -105,8 +101,8 @@ export default function TentangKamiPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded inline-block">
+            <div className="lg:col-span-6 space-y-4">
+              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
                 Kualitas & Integritas
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">

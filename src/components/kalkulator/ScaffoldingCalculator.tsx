@@ -138,15 +138,11 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
       {/* Top Header - Clean White */}
       <div className="bg-white border-b border-slate-100 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium mb-2">
-            <Calculator className="w-3.5 h-3.5 text-orange-600" />
-            <span>Kalkulator Kebutuhan Steger Modular Real-Time</span>
-          </div>
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-950">
             Simulasi Kebutuhan Komponen Scaffolding
           </h2>
           <p className="text-slate-500 text-xs sm:text-sm mt-1">
-            Hitung akurat jumlah set, komponen struktural, dan perkiraan biaya sewa atau beli.
+            Hitung perkiraan jumlah set, komponen struktural, dan biaya sewa atau beli.
           </p>
         </div>
 

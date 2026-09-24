@@ -167,13 +167,9 @@ export default function SewaScaffoldingPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-                <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
-                <span>Sewa Scaffolding Pipa 1.8mm</span>
-              </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-                Sewa Scaffolding Pipa 1.8mm SNI di Surabaya & Sidoarjo
+            <div className="lg:col-span-7 space-y-3">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+                Sewa Scaffolding Surabaya & Sidoarjo
               </h1>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Stok puluhan ribu set steger pipa 1.8mm SNI siap kirim same-day dari 2 hub gudang Surabaya & Sidoarjo.

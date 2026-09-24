@@ -30,8 +30,8 @@ export default function ConsultantCTA() {
           {/* Content & Actions - Inspirasi SolusiBangunan */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-orange-50 text-orange-600 text-xs font-semibold uppercase tracking-wider mb-3">
-                Konsultasi Gratis
+              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+                Konsultasi Teknis
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-950 tracking-tight leading-tight">
                 Konsultasi Steger Proyek

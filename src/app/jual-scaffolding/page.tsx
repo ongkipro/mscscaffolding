@@ -170,16 +170,12 @@ export default function JualScaffoldingPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-                <Award className="w-3.5 h-3.5 text-orange-600" />
-                <span>Unit Baru & Rekondisi Grade A</span>
-              </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-                Jual Scaffolding Pipa 1.8mm SNI Baru & Rekondisi
+            <div className="lg:col-span-7 space-y-3">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+                Jual Scaffolding Baru & Rekondisi
               </h1>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Pengadaan unit baru fabrikasi SNI & rekondisi Grade A dengan legalitas resmi PKP PPN 11%.
+                Pengadaan pipa 1.8mm SNI fabrikasi presisi dan rekondisi Grade A siap pakai langsung dari gudang.
               </p>
 
               <div className="pt-2">

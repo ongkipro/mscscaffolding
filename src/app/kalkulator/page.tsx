@@ -89,16 +89,12 @@ export default function KalkulatorPage() {
             <span className="text-slate-900 font-bold">Kalkulator Scaffolding</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-              <span>Kalkulator Kebutuhan Scaffolding</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-              Kalkulator Scaffolding Online
+          <div className="max-w-3xl space-y-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+              Kalkulator Kebutuhan Scaffolding
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Masukkan dimensi panjang dan tinggi area kerja Anda untuk mendapatkan estimasi jumlah set modular, komponen pendukung K3, serta estimasi rincian anggaran sewa dan beli dalam hitungan detik.
+              Masukkan panjang dan tinggi area kerja untuk estimasi jumlah set modular, komponen pendukung K3, serta estimasi rincian biaya.
             </p>
           </div>
         </div>
@@ -115,10 +111,10 @@ export default function KalkulatorPage() {
       <section className="py-16 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded inline-block mb-3">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
               Dasar Perhitungan Teknis
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
               Bagaimana Cara Menghitung Kebutuhan Scaffolding?
             </h2>
             <p className="text-slate-600 text-sm mt-2">

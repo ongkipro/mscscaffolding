@@ -36,16 +36,12 @@ export default function KontakPage() {
             <span className="text-slate-900 font-bold">Kontak & Lokasi</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-              <Phone className="w-3.5 h-3.5 text-orange-600" />
-              <span>Konsultasi & Pengadaan Cepat</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-              Hubungi Tim MSC Scaffolding
+          <div className="max-w-3xl space-y-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+              Kontak & Lokasi Gudang
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Konsultasikan kebutuhan sewa perancah, pembelian unit baru pipa 1.8mm SNI, atau permintaan Surat Penawaran Harga (SPH) resmi bersama tim spesialis kami.
+            <p className="text-slate-600 text-sm sm:text-base">
+              Hubungi tim kami untuk konsultasi sewa, pembelian unit baru pipa 1.8mm SNI, atau penawaran resmi (SPH).
             </p>
           </div>
         </div>
@@ -59,9 +55,9 @@ export default function KontakPage() {
             {/* Bu Hanifa Card */}
             <div className="bg-slate-50/80 p-8 sm:p-10 rounded-3xl flex flex-col justify-between">
               <div>
-                <div className="inline-block px-3 py-1 bg-white text-orange-800 text-xs font-mono font-bold rounded-full mb-3 shadow-xs">
+                <span className="text-xs uppercase tracking-wider font-semibold text-orange-600 mb-2 block">
                   Sewa & Retail
-                </div>
+                </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-950 mb-1">
                   {COMPANY_INFO.whatsappHanifa.label}
                 </h2>
@@ -78,7 +74,7 @@ export default function KontakPage() {
                   </div>
                   <div className="flex items-center gap-3 text-slate-600 text-xs">
                     <Clock className="w-4 h-4 text-slate-400" />
-                    <span>Layanan Konsultasi Cepat (07.30 - 21.00 WIB)</span>
+                    <span>Layanan Konsultasi (07.30 - 21.00 WIB)</span>
                   </div>
                 </div>
               </div>
@@ -89,7 +85,7 @@ export default function KontakPage() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-700 active:scale-[0.99] text-white font-semibold text-xs uppercase tracking-wider rounded-md shadow-xs transition"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-700 active:scale-[0.99] text-white font-semibold text-xs uppercase tracking-wider rounded-full shadow-xs transition"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Chat Bu Hanifa</span>
@@ -99,9 +95,9 @@ export default function KontakPage() {
             {/* Tender Card */}
             <div className="bg-slate-950 p-8 sm:p-10 rounded-3xl flex flex-col justify-between text-white">
               <div>
-                <div className="inline-block px-3 py-1 bg-white/[0.08] text-emerald-400 text-xs font-mono font-bold rounded-full mb-3">
+                <span className="text-xs uppercase tracking-wider font-semibold text-emerald-400 mb-2 block">
                   Tender & B2B
-                </div>
+                </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
                   {COMPANY_INFO.whatsappTender.label}
                 </h2>
@@ -129,7 +125,7 @@ export default function KontakPage() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-white/[0.1] hover:bg-white/[0.15] active:scale-[0.99] text-white font-semibold text-xs uppercase tracking-wider rounded-md transition"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-white/[0.1] hover:bg-white/[0.15] active:scale-[0.99] text-white font-semibold text-xs uppercase tracking-wider rounded-full transition"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Chat CS Tender</span>
@@ -145,14 +141,14 @@ export default function KontakPage() {
           {/* Warehouses Map Section */}
           <div className="mb-16">
             <div className="max-w-2xl mb-10">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
-                Kunjungan & Inspeksi Unit
+              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+                Gudang & Workshop
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
-                Alamat Fisik 2 Hub Gudang Kami
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
+                Lokasi Gudang Surabaya & Sidoarjo
               </h2>
               <p className="text-slate-600 text-sm mt-1">
-                Anda dipersilakan melakukan inspeksi fisik ketebalan pipa dan kelaikan unit langsung di gudang kami sebelum memutuskan menyewa atau membeli.
+                Silakan kunjungi gudang kami untuk inspeksi fisik ketebalan pipa dan kelaikan unit secara langsung.
               </p>
             </div>
 

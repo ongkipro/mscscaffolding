@@ -39,16 +39,12 @@ export default async function AreaLayananPage() {
             <span className="text-slate-900 font-bold">Area Layanan</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-mono font-medium">
-              <Truck className="w-3.5 h-3.5 text-orange-600" />
-              <span>Distribusi Jawa Timur</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-950 leading-tight">
-              Area Layanan Scaffolding
+          <div className="max-w-3xl space-y-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
+              Area Layanan & Distribusi
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Didukung 2 hub gudang fisik di Rungkut Surabaya dan Buduran Sidoarjo, armada logistik MSC Scaffolding siap melayani pengiriman same-day ke seluruh koridor kawasan industri dan proyek konstruksi Jawa Timur.
+              Pengiriman same-day dari 2 gudang Rungkut Surabaya dan Buduran Sidoarjo ke seluruh kawasan industri & proyek Jawa Timur.
             </p>
           </div>
         </div>
