@@ -18,12 +18,13 @@ export const COMPANY_INFO: CompanyInfo = {
   },
   officePhone: '0822-5766-4755',
   email: 'sales@mscscaffolding.com',
-  operatingHours: 'Senin - Sabtu: 07.30 - 17.00 WIB (Layanan Pengiriman Proyek 24/7 By Request)',
+  operatingHours: 'Senin – Sabtu: 07.30 – 17.00 WIB (Kirim 24/7 By Request)',
   warehouses: [
     {
       name: 'Gudang Utama Surabaya (Rungkut)',
       city: 'Surabaya',
       address: 'Kawasan Industri Rungkut Industri Raya No. 45, Rungkut Kidul, Surabaya, Jawa Timur 60293',
+      shortAddress: 'Kawasan Industri SIER, Rungkut, Surabaya',
       phone: '0822-5766-4755',
       whatsapp: '6282257664755',
       mapUrl: 'https://maps.google.com/?q=-7.3197,112.7661',
@@ -33,9 +34,10 @@ export const COMPANY_INFO: CompanyInfo = {
       },
     },
     {
-      name: 'Gudang Logistik Sidoarjo (Buduran)',
+      name: 'Depot Logistik Sidoarjo (Buduran)',
       city: 'Sidoarjo',
       address: 'Kawasan Pergudangan Lingkar Timur Km 5.5, Buduran, Kab. Sidoarjo, Jawa Timur 61252',
+      shortAddress: 'Pergudangan Lingkar Timur Km 5.5, Buduran, Sidoarjo',
       phone: '0813-2562-024',
       whatsapp: '628132562024',
       mapUrl: 'https://maps.google.com/?q=-7.4288,112.7389',

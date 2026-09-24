@@ -57,6 +57,7 @@ export interface WarehouseLocation {
   name: string;
   city: string;
   address: string;
+  shortAddress?: string;
   phone: string;
   whatsapp: string;
   mapUrl: string;

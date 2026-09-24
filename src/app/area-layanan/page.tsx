@@ -42,7 +42,7 @@ export default async function AreaLayananPage() {
               Area Layanan & Distribusi
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Pengiriman same-day dari 2 gudang Rungkut Surabaya dan Buduran Sidoarjo ke seluruh kawasan industri & proyek Jawa Timur.
+              Pengiriman same-day dari 2 gudang Rungkut & Buduran ke seluruh kawasan industri Jawa Timur.
             </p>
           </div>
         </div>
@@ -59,10 +59,10 @@ export default async function AreaLayananPage() {
                 </div>
                 <div>
                   <h2 className="text-base sm:text-lg font-bold text-slate-950">
-                    Distribusi Logistik dari 2 Hub Gudang Fisik
+                    Distribusi dari 2 Hub Gudang Fisik
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500">
-                    Memastikan efisiensi jarak tempuh dan kecepatan mobilisasi armada ke lokasi proyek Anda.
+                    Mobilisasi armada cepat langsung dari Rungkut & Buduran ke lokasi proyek.
                   </p>
                 </div>
               </div>
@@ -85,10 +85,10 @@ export default async function AreaLayananPage() {
                     </span>
                   </div>
                   <h3 className="font-bold text-slate-950 text-base mb-1">
-                    Hub Gudang Surabaya (Rungkut)
+                    Hub Surabaya (Rungkut)
                   </h3>
                   <p className="text-xs text-slate-600 mb-3 leading-relaxed">
-                    Kawasan Industri Rungkut Industri Raya No. 45, Surabaya. Melayani Surabaya (Timur, Pusat, Utara, Barat) dan Koridor Industri Gresik.
+                    Kawasan Industri SIER, Rungkut. Melayani Surabaya Raya dan koridor industri Gresik.
                   </p>
                 </div>
                 <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
@@ -116,10 +116,10 @@ export default async function AreaLayananPage() {
                     </span>
                   </div>
                   <h3 className="font-bold text-slate-950 text-base mb-1">
-                    Depot Logistik Sidoarjo (Buduran)
+                    Depot Sidoarjo (Buduran)
                   </h3>
                   <p className="text-xs text-slate-600 mb-3 leading-relaxed">
-                    Pergudangan Lingkar Timur Km 5.5, Buduran, Sidoarjo. Akses langsung Tol Gempol–Pasuruan dan Tol Krian–Mojokerto.
+                    Pergudangan Lingkar Timur Km 5.5. Akses cepat Tol Gempol–Pasuruan & Tol Sumo.
                   </p>
                 </div>
                 <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
@@ -150,7 +150,7 @@ export default async function AreaLayananPage() {
               Wilayah Prioritas Layanan Proyek
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Pilih kota lokasi proyek Anda untuk melihat estimasi waktu tempuh, jalur tol armada, dan daftar kawasan industri yang kami layani.
+              Estimasi waktu tempuh, rute armada, dan kawasan industri yang terlayani.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default async function AreaLayananPage() {
                       <span className="font-semibold text-slate-900">{loc.distanceKm}</span>
                     </div>
                     <div className="flex items-baseline justify-between gap-2 text-slate-600">
-                      <span className="text-slate-400 shrink-0">Hub Keberangkatan</span>
+                      <span className="text-slate-400 shrink-0">Hub & Rute</span>
                       <span className="font-medium text-slate-800 text-right">{loc.warehouseHub}</span>
                     </div>
                     <div className="pt-2">
@@ -224,7 +224,7 @@ export default async function AreaLayananPage() {
                     <span className="font-semibold text-slate-900">Radius s/d 150 km</span>
                   </div>
                   <div className="flex items-baseline justify-between gap-2 text-slate-600">
-                    <span className="text-slate-400 shrink-0">Hub Keberangkatan</span>
+                    <span className="text-slate-400 shrink-0">Hub & Rute</span>
                     <span className="font-medium text-slate-800 text-right">Surabaya & Sidoarjo</span>
                   </div>
                   <div className="pt-2">
@@ -255,16 +255,13 @@ export default async function AreaLayananPage() {
       {/* Fleet & Guarantee */}
       <section className="py-16 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
-              Kapasitas Armada Logistik
+              Armada Logistik
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
-              Pengiriman Tepat Waktu Langsung ke Titik Proyek
+              Kapasitas Armada Pengiriman
             </h2>
-            <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-              Armada mandiri siap kirim langsung ke site proyek Anda tanpa risiko keterlambatan pekerjaan.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -274,7 +271,7 @@ export default async function AreaLayananPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-sm mb-1">Pickup Express (L300)</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Order darurat same-day tiba dalam 1–2 jam di lokasi proyek.
+                Tiba 1–2 jam untuk kebutuhan darurat atau tambahan komponen.
               </p>
             </div>
 
@@ -302,7 +299,7 @@ export default async function AreaLayananPage() {
               <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-slate-950 text-sm mb-1">SOP Bongkar Muat K3</h3>
+              <h3 className="font-bold text-slate-950 text-sm mb-1">Standar Bongkar Muat K3</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Helper terlatih, Surat Jalan resmi, dan Berita Acara (BAST).
               </p>
@@ -320,7 +317,7 @@ export default async function AreaLayananPage() {
                   Butuh Pengiriman Scaffolding Hari Ini?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Hubungi hotline Bu Hanifa untuk cek slot armada terdekat dan estimasi jam tiba di lokasi Anda.
+                  Hubungi Bu Hanifa untuk cek slot armada terdekat dan estimasi jam tiba di lokasi Anda.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-300">
                   <div className="flex items-center gap-2">
@@ -333,7 +330,7 @@ export default async function AreaLayananPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Helper bongkar muat aman</span>
+                    <span>Helper bongkar muat</span>
                   </div>
                 </div>
               </div>
@@ -371,7 +368,7 @@ export default async function AreaLayananPage() {
               FAQ Distribusi
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
-              Pertanyaan Umum Seputar Pengiriman
+              Pertanyaan Umum Pengiriman
             </h2>
           </div>
 
@@ -399,7 +396,7 @@ export default async function AreaLayananPage() {
                 Apakah sudah termasuk bongkar muat?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                <strong className="text-slate-900 font-semibold">Sudah termasuk.</strong> Setiap armada didampingi <strong className="text-slate-900 font-semibold">helper logistik</strong> untuk bongkar dan penataan aman di titik drop proyek.
+                <strong className="text-slate-900 font-semibold">Sudah termasuk.</strong> Setiap armada didampingi <strong className="text-slate-900 font-semibold">helper logistik</strong> untuk bongkar dan penataan di titik drop proyek.
               </p>
             </div>
 
@@ -408,7 +405,7 @@ export default async function AreaLayananPage() {
                 Bisa kirim malam hari (bebas jam truk)?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                <strong className="text-slate-900 font-semibold">Bisa.</strong> Melayani pengiriman malam hari (<strong className="text-slate-900 font-semibold">20.00 – 05.00 WIB</strong>) mengikuti jadwal izin masuk truk proyek tanpa biaya tambahan.
+                <strong className="text-slate-900 font-semibold">Bisa.</strong> Melayani pengiriman malam hari (<strong className="text-slate-900 font-semibold">20.00 – 05.00 WIB</strong>) mengikuti jam izin masuk truk proyek tanpa biaya tambahan.
               </p>
             </div>
           </div>

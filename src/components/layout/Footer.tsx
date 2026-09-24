@@ -6,23 +6,23 @@ import { COMPANY_INFO } from '@/data/company';
 
 export default function Footer() {
   const catalogLinks = [
-    { name: '1 Set Scaffolding Fasad T170', href: '/produk/set-scaffolding-170' },
-    { name: '1 Set Scaffolding Headroom T190', href: '/produk/set-scaffolding-190' },
-    { name: 'Main Frame T170 Pipa 1.8mm', href: '/produk/main-frame-170' },
-    { name: 'Catwalk Metal Plank 50x183cm', href: '/produk/catwalk-metal-plank' },
-    { name: 'Tangga Bordes Baja Fasad 170', href: '/produk/tangga-bordes-170' },
-    { name: 'Jack Base T60cm Solid Ulir', href: '/produk/jack-base-60' },
-    { name: 'U-Head Jack T60cm Penyangga', href: '/produk/u-head-60' },
-    { name: 'Pipe Support Teleskopik TS-90', href: '/produk/pipe-support-ts90' },
-    { name: 'Roda Scaffolding 6 & 8 Inch', href: '/produk/caster-wheel-6-inch' },
+    { name: 'Set Scaffolding T170', href: '/produk/set-scaffolding-170' },
+    { name: 'Set Scaffolding T190', href: '/produk/set-scaffolding-190' },
+    { name: 'Main Frame T170 (1.8mm)', href: '/produk/main-frame-170' },
+    { name: 'Catwalk Metal Plank', href: '/produk/catwalk-metal-plank' },
+    { name: 'Tangga Bordes Baja 170', href: '/produk/tangga-bordes-170' },
+    { name: 'Jack Base T60cm', href: '/produk/jack-base-60' },
+    { name: 'U-Head Jack T60cm', href: '/produk/u-head-60' },
+    { name: 'Pipe Support TS-90', href: '/produk/pipe-support-ts90' },
+    { name: 'Roda Scaffolding 6" & 8"', href: '/produk/caster-wheel-6-inch' },
   ];
 
   const regionalLinks = [
-    { city: 'Surabaya', leadTime: '2-4 Jam (Gudang Rungkut)', href: '/area-layanan/surabaya' },
-    { city: 'Sidoarjo', leadTime: '2-4 Jam (Gudang Buduran)', href: '/area-layanan/sidoarjo' },
-    { city: 'Gresik (JIIPE/Manyar)', leadTime: '4-6 Jam', href: '/area-layanan/gresik' },
-    { city: 'Pasuruan (PIER/Beji)', leadTime: '4-8 Jam', href: '/area-layanan/pasuruan' },
-    { city: 'Mojokerto (NIP/Ngoro)', leadTime: '4-8 Jam', href: '/area-layanan/mojokerto' },
+    { city: 'Surabaya', leadTime: '2–4 Jam (Hub Rungkut)', href: '/area-layanan/surabaya' },
+    { city: 'Sidoarjo', leadTime: '2–4 Jam (Hub Buduran)', href: '/area-layanan/sidoarjo' },
+    { city: 'Gresik', leadTime: '4–6 Jam (JIIPE & Manyar)', href: '/area-layanan/gresik' },
+    { city: 'Pasuruan', leadTime: '4–8 Jam (PIER & Beji)', href: '/area-layanan/pasuruan' },
+    { city: 'Mojokerto', leadTime: '4–8 Jam (NIP & Ngoro)', href: '/area-layanan/mojokerto' },
   ];
 
   return (
@@ -141,7 +141,7 @@ export default function Footer() {
                     <span>{wh.name}</span>
                   </div>
                   <div className="text-[11px] text-slate-400 pl-5 leading-relaxed">
-                    {wh.address}
+                    {wh.shortAddress || wh.address}
                   </div>
                   <div className="pl-5 pt-0.5 flex items-center gap-3 text-[11px]">
                     <a
@@ -153,7 +153,7 @@ export default function Footer() {
                       <span>Google Maps</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
-                    <span>•</span>
+                    <span className="text-slate-600">•</span>
                     <a
                       href={`https://wa.me/${wh.whatsapp}`}
                       target="_blank"
@@ -172,7 +172,7 @@ export default function Footer() {
         {/* Bottom Copyright & Compliance Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
           <div>
-            © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Hak Cipta Dilindungi Undang-Undang.
+            © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Hak Cipta Dilindungi.
           </div>
           <div className="flex items-center gap-4 text-[11px]">
             <Link href="/k3-panduan" className="hover:text-slate-300 transition-colors">
