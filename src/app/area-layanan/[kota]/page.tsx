@@ -168,7 +168,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded inline-block">
+              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
                 Cakupan Zona Konstruksi
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
@@ -189,8 +189,8 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
             </div>
 
             <div className="lg:col-span-6 bg-slate-50/70 p-8 sm:p-10 rounded-3xl">
-              <div className="text-xs font-mono text-orange-600 font-bold mb-2 uppercase">
-                KEUNGGULAN MSC DI {location.city.toUpperCase()}
+              <div className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2">
+                Keunggulan Layanan di {location.city}
               </div>
               <h3 className="text-xl font-bold text-slate-950 mb-4">
                 Mengapa Kontraktor di {location.city} Memilih Kami?
@@ -244,7 +244,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full inline-block mb-3">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
               Tarif Sewa Wilayah {location.city}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
@@ -256,28 +256,28 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white/80 hover:bg-white p-6 rounded-2xl transition-all">
-              <div className="text-xs text-slate-400 font-mono">1 Set Fasad T170</div>
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+              <div className="text-xs text-slate-500 font-medium">1 Set Fasad T170</div>
               <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 45.000</div>
-              <div className="text-[11px] text-slate-500">/ set / bulan (2 Frame + 2 Cross + 4 Pin)</div>
+              <div className="text-xs text-slate-500">/ set / bulan (2 Frame + 2 Cross + 4 Pin)</div>
             </div>
 
-            <div className="bg-white/80 hover:bg-white p-6 rounded-2xl transition-all">
-              <div className="text-xs text-slate-400 font-mono">1 Set Headroom T190</div>
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+              <div className="text-xs text-slate-500 font-medium">1 Set Headroom T190</div>
               <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 50.000</div>
-              <div className="text-[11px] text-slate-500">/ set / bulan (Gawang Lebih Tinggi)</div>
+              <div className="text-xs text-slate-500">/ set / bulan (Gawang Lebih Tinggi)</div>
             </div>
 
-            <div className="bg-white/80 hover:bg-white p-6 rounded-2xl transition-all">
-              <div className="text-xs text-slate-400 font-mono">Catwalk Metal Plank</div>
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+              <div className="text-xs text-slate-500 font-medium">Catwalk Metal Plank</div>
               <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 30.000</div>
-              <div className="text-[11px] text-slate-500">/ unit / bulan (Lantai Kerja K3 Anti-Slip)</div>
+              <div className="text-xs text-slate-500">/ unit / bulan (Lantai Kerja K3 Anti-Slip)</div>
             </div>
 
-            <div className="bg-white/80 hover:bg-white p-6 rounded-2xl transition-all">
-              <div className="text-xs text-slate-400 font-mono">Tangga Bordes Baja</div>
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+              <div className="text-xs text-slate-500 font-medium">Tangga Bordes Baja</div>
               <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 35.000</div>
-              <div className="text-[11px] text-slate-500">/ unit / bulan (Akses 7 Trap Kokoh)</div>
+              <div className="text-xs text-slate-500">/ unit / bulan (Akses 7 Trap Kokoh)</div>
             </div>
           </div>
         </div>
