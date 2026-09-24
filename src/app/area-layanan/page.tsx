@@ -263,7 +263,7 @@ export default async function AreaLayananPage() {
               Pengiriman Tepat Waktu Langsung ke Titik Proyek
             </h2>
             <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-              Kami mengoperasikan armada mandiri dari pickup ringan hingga fuso tronton untuk menjamin ketersediaan material di site proyek Anda tanpa risiko keterlambatan pekerjaan.
+              Armada mandiri siap kirim langsung ke site proyek Anda tanpa risiko keterlambatan pekerjaan.
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export default async function AreaLayananPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-sm mb-1">Pickup Express (L300)</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Pengiriman darurat same-day untuk penambahan komponen mendadak (1-2 jam tiba di lokasi proyek).
+                Order darurat same-day tiba dalam 1–2 jam di lokasi proyek.
               </p>
             </div>
 
@@ -284,7 +284,7 @@ export default async function AreaLayananPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-sm mb-1">Colt Diesel Double (CDD)</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Kapasitas angkut 100 s/d 300 set scaffolding lengkap untuk kebutuhan proyek skala menengah.
+                Kapasitas 100–300 set scaffolding untuk proyek menengah.
               </p>
             </div>
 
@@ -294,7 +294,7 @@ export default async function AreaLayananPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-sm mb-1">Fuso & Tronton Drop</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Mobilisasi massal hingga ribuan set perancah untuk konstruksi pabrik, smelter, dan gedung tinggi.
+                Suplai massal ratusan hingga ribuan set untuk industri & gedung tinggi.
               </p>
             </div>
 
@@ -304,7 +304,7 @@ export default async function AreaLayananPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-sm mb-1">SOP Bongkar Muat K3</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Disertai helper logistik terlatih, Surat Jalan resmi, dan Berita Acara Serah Terima (BAST).
+                Helper terlatih, Surat Jalan resmi, dan Berita Acara (BAST).
               </p>
             </div>
           </div>
@@ -320,7 +320,7 @@ export default async function AreaLayananPage() {
                   Butuh Pengiriman Scaffolding Hari Ini?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Hubungi hotline Bu Hanifa untuk mengecek ketersediaan slot armada terdekat dan estimasi jam tiba di lokasi proyek Anda.
+                  Hubungi hotline Bu Hanifa untuk cek slot armada terdekat dan estimasi jam tiba di lokasi Anda.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-300">
                   <div className="flex items-center gap-2">
@@ -329,7 +329,7 @@ export default async function AreaLayananPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Pengiriman malam hari ready</span>
+                    <span>Siap kirim malam hari</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -366,52 +366,49 @@ export default async function AreaLayananPage() {
       {/* Logistics FAQ */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
               FAQ Distribusi
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
               Pertanyaan Umum Seputar Pengiriman
             </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Informasi teknis seputar waktu pemesanan, ongkir, dan ketentuan bongkar muat di lokasi site proyek.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
-              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-2">
-                Bagaimana cara menghitung ongkos kirim ke proyek saya?
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
+              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-1.5">
+                Bagaimana perhitungan ongkos kirim?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Ongkir dihitung berdasarkan jarak tempuh dari hub gudang terdekat (Rungkut Surabaya atau Buduran Sidoarjo) dan jenis armada yang dibutuhkan. Untuk sewa volume besar atau durasi proyek di atas 3 bulan, kami sediakan skema subsidi ongkir.
+                Dihitung dari jarak gudang terdekat (Rungkut/Buduran) dan jenis armada. Tersedia <strong className="text-slate-900 font-semibold">subsidi / gratis ongkir</strong> untuk volume besar atau durasi proyek panjang.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
-              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-2">
-                Apakah bisa pengiriman di hari yang sama (Same-Day)?
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
+              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-1.5">
+                Apakah bisa kirim hari ini (Same-Day)?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Bisa. Untuk area Surabaya dan Sidoarjo, pemesanan yang terkonfirmasi administrasi sebelum pukul 13.00 WIB dapat dikirimkan di hari yang sama menggunakan armada pickup atau truk ready stock.
+                <strong className="text-slate-900 font-semibold">Bisa.</strong> Area Surabaya dan Sidoarjo dilayani same-day untuk konfirmasi order sebelum <strong className="text-slate-900 font-semibold">pukul 13.00 WIB</strong>.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
-              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-2">
-                Apakah pengiriman sudah termasuk helper bongkar muat?
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
+              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-1.5">
+                Apakah sudah termasuk bongkar muat?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Ya, setiap pengiriman armada MSC didampingi helper logistik terlatih untuk menurunkan dan menata komponen perancah secara aman di area drop site proyek Anda.
+                <strong className="text-slate-900 font-semibold">Sudah termasuk.</strong> Setiap armada didampingi <strong className="text-slate-900 font-semibold">helper logistik</strong> untuk bongkar dan penataan aman di titik drop proyek.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
-              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-2">
-                Bagaimana jika proyek memiliki jam larangan truk siang hari?
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80">
+              <h3 className="font-bold text-slate-950 text-sm sm:text-base mb-1.5">
+                Bisa kirim malam hari (bebas jam truk)?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Kami melayani pengiriman malam hari atau dini hari (20.00 – 05.00 WIB) sesuai jadwal izin masuk kendaraan berat di lokasi proyek Anda, tanpa biaya lembur tambahan.
+                <strong className="text-slate-900 font-semibold">Bisa.</strong> Melayani pengiriman malam hari (<strong className="text-slate-900 font-semibold">20.00 – 05.00 WIB</strong>) mengikuti jadwal izin masuk truk proyek tanpa biaya tambahan.
               </p>
             </div>
           </div>
