@@ -116,9 +116,9 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-orange-600 hover:bg-orange-500 active:scale-95 text-white font-semibold text-xs sm:text-sm tracking-wide transition shadow-lg shadow-orange-950/20"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full bg-orange-600 hover:bg-orange-500 active:scale-95 text-white font-semibold text-xs sm:text-sm tracking-wide transition shadow-lg shadow-orange-950/20 text-center"
               >
-                <MessageSquare className="w-4 h-4" />
+                <MessageSquare className="w-4 h-4 shrink-0" />
                 <span>Konsultasi Sewa di {location.city} via WhatsApp</span>
               </a>
             </div>
@@ -164,9 +164,9 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Industrial Estates Covered */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
                 Cakupan Zona Konstruksi
@@ -188,7 +188,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="lg:col-span-6 bg-slate-50/70 p-8 sm:p-10 rounded-3xl">
+            <div className="lg:col-span-6 bg-slate-50/70 p-6 sm:p-10 rounded-2xl sm:rounded-3xl">
               <div className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2">
                 Keunggulan Layanan di {location.city}
               </div>
@@ -229,10 +229,10 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3.5 bg-slate-950 hover:bg-orange-600 active:scale-[0.98] text-white text-xs font-semibold uppercase tracking-wider rounded-md transition shadow-xs"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3.5 bg-slate-950 hover:bg-orange-600 active:scale-[0.98] text-white text-xs font-semibold uppercase tracking-wider rounded-md transition shadow-xs text-center"
                 >
-                  <FileSpreadsheet className="w-4 h-4 text-orange-400" />
-                  <span>Minta Surat Penawaran Harga Proyek {location.city}</span>
+                  <FileSpreadsheet className="w-4 h-4 text-orange-400 shrink-0" />
+                  <span>Minta Surat Penawaran (SPH) {location.city}</span>
                 </a>
               </div>
             </div>
@@ -241,9 +241,9 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Localized Rates Snapshot */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-12 sm:py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-8 sm:mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
               Tarif Sewa Wilayah {location.city}
             </span>
@@ -256,25 +256,25 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">1 Set Fasad T170</div>
               <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 45.000</div>
               <div className="text-xs text-slate-500">/ set / bulan (2 Frame + 2 Cross + 4 Pin)</div>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">1 Set Headroom T190</div>
               <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 50.000</div>
               <div className="text-xs text-slate-500">/ set / bulan (Gawang Lebih Tinggi)</div>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">Catwalk Metal Plank</div>
               <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 30.000</div>
               <div className="text-xs text-slate-500">/ unit / bulan (Lantai Kerja K3 Anti-Slip)</div>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">Tangga Bordes Baja</div>
               <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 35.000</div>
               <div className="text-xs text-slate-500">/ unit / bulan (Akses 7 Trap Kokoh)</div>
@@ -284,7 +284,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Cross Links to Other Cities */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
             <h3 className="text-lg font-bold text-slate-950">

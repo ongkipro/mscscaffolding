@@ -49,9 +49,9 @@ export default async function AreaLayananPage() {
       </section>
 
       {/* 2 Hub Advantage Section */}
-      <section className="py-10 bg-slate-50/70 border-b border-slate-100">
+      <section className="py-8 sm:py-10 bg-slate-50/70 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-2xs">
+          <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-2xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
@@ -66,18 +66,18 @@ export default async function AreaLayananPage() {
                   </p>
                 </div>
               </div>
-              <div className="inline-flex items-center gap-2 self-start sm:self-auto px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 self-start sm:self-auto px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] sm:text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                 <span>Armada Siap Kirim Hari Ini (Same-Day)</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-5 sm:pt-6">
               {/* Hub 1: Surabaya */}
-              <div className="flex flex-col justify-between p-5 rounded-xl bg-slate-50/70 border border-slate-100">
+              <div className="flex flex-col justify-between p-4 sm:p-5 rounded-xl bg-slate-50/70 border border-slate-100">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs uppercase tracking-wider text-orange-600 font-bold">
+                    <span className="text-[11px] sm:text-xs uppercase tracking-wider text-orange-600 font-bold">
                       Gudang Utama 01
                     </span>
                     <span className="text-[11px] font-mono font-semibold text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200/60">
@@ -97,7 +97,7 @@ export default async function AreaLayananPage() {
                     href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+                    className="font-semibold text-orange-600 hover:text-orange-700 transition-colors font-mono"
                   >
                     {COMPANY_INFO.whatsappHanifa.formatted}
                   </a>
@@ -105,10 +105,10 @@ export default async function AreaLayananPage() {
               </div>
 
               {/* Hub 2: Sidoarjo */}
-              <div className="flex flex-col justify-between p-5 rounded-xl bg-slate-50/70 border border-slate-100">
+              <div className="flex flex-col justify-between p-4 sm:p-5 rounded-xl bg-slate-50/70 border border-slate-100">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs uppercase tracking-wider text-orange-600 font-bold">
+                    <span className="text-[11px] sm:text-xs uppercase tracking-wider text-orange-600 font-bold">
                       Depot Logistik 02
                     </span>
                     <span className="text-[11px] font-mono font-semibold text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200/60">
@@ -128,7 +128,7 @@ export default async function AreaLayananPage() {
                     href={`https://wa.me/${COMPANY_INFO.whatsappTender.number}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+                    className="font-semibold text-orange-600 hover:text-orange-700 transition-colors font-mono"
                   >
                     {COMPANY_INFO.whatsappTender.formatted}
                   </a>
@@ -140,99 +140,74 @@ export default async function AreaLayananPage() {
       </section>
 
       {/* Regional Locations Grid (6 balanced cards: 3x2 on desktop) */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+          <div className="max-w-2xl mb-8 sm:mb-10">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1 block">
               Wilayah Layanan
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
               Wilayah Prioritas Layanan Proyek
             </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Estimasi waktu tempuh, rute armada, dan kawasan industri yang terlayani.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {locations.map((loc) => (
               <Link
                 key={loc.slug}
                 href={`/area-layanan/${loc.slug}`}
-                className="bg-white hover:bg-slate-50/40 p-6 sm:p-7 rounded-2xl transition-all duration-200 flex flex-col justify-between group block border border-slate-200/80 hover:border-orange-500 hover:shadow-sm"
+                className="bg-white hover:bg-slate-50/50 p-5 sm:p-6 rounded-2xl transition-all duration-200 flex flex-col justify-between group border border-slate-200/80 hover:border-orange-500 hover:shadow-sm"
               >
                 <div>
-                  <div className="flex items-baseline justify-between gap-3 mb-2.5">
+                  <div className="flex items-center justify-between gap-3 mb-3">
                     <h3 className="font-bold text-xl sm:text-2xl text-slate-950 group-hover:text-orange-600 transition-colors tracking-tight">
                       {loc.city}
                     </h3>
-                    <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 shrink-0 bg-emerald-50 px-2.5 py-0.5 rounded-full font-mono">
+                    <span className="text-[11px] sm:text-xs font-semibold text-emerald-700 flex items-center gap-1.5 shrink-0 bg-emerald-50 px-2.5 py-1 rounded-full font-mono">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                      <span>{loc.leadTimeHours.split('(')[0].trim()}</span>
+                      <span>{loc.leadTimeHours}</span>
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-4">
-                    {loc.description}
-                  </p>
-
-                  <div className="pt-3.5 border-t border-slate-100 space-y-2 text-xs mb-4">
-                    <div className="flex items-center justify-between text-slate-600">
-                      <span className="text-slate-400">Jarak Tempuh</span>
-                      <span className="font-semibold text-slate-900">{loc.distanceKm}</span>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center gap-2 text-slate-500">
+                      <Warehouse className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                      <span className="font-medium text-slate-800">{loc.warehouseHub}</span>
                     </div>
-                    <div className="flex items-baseline justify-between gap-2 text-slate-600">
-                      <span className="text-slate-400 shrink-0">Hub & Rute</span>
-                      <span className="font-medium text-slate-800 text-right">{loc.warehouseHub}</span>
-                    </div>
-                    <div className="pt-2">
-                      <span className="text-slate-400 block mb-1">Cakupan Kawasan</span>
-                      <p className="text-slate-700 font-medium leading-relaxed">
-                        {loc.industrialEstates.join(' • ')}
-                      </p>
-                    </div>
+                    <p className="text-slate-600 leading-relaxed pl-5">
+                      {loc.industrialEstates.join(' • ')}
+                    </p>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
-                  <span>Lihat Layanan {loc.city}</span>
+                <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
+                  <span>Detail Layanan {loc.city}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-orange-600" />
                 </div>
               </Link>
             ))}
 
             {/* 6th Card: Charter Luar Kota untuk melengkapi grid 3x2 secara simetris */}
-            <div className="bg-slate-50/60 hover:bg-slate-50 p-6 sm:p-7 rounded-2xl transition-all duration-200 flex flex-col justify-between border border-dashed border-slate-300 hover:border-orange-500 hover:shadow-sm group">
+            <div className="bg-slate-50/60 hover:bg-slate-50 p-5 sm:p-6 rounded-2xl transition-all duration-200 flex flex-col justify-between border border-dashed border-slate-300 hover:border-orange-500 hover:shadow-sm group">
               <div>
-                <div className="flex items-baseline justify-between gap-3 mb-2.5">
-                  <h3 className="font-bold text-xl sm:text-2xl text-slate-950 tracking-tight">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <h3 className="font-bold text-lg sm:text-2xl text-slate-950 tracking-tight">
                     Kota Lain di Jatim
                   </h3>
-                  <span className="text-xs font-semibold text-orange-700 flex items-center gap-1.5 shrink-0 bg-orange-50 px-2.5 py-0.5 rounded-full font-mono">
-                    <Truck className="w-3.5 h-3.5 text-orange-600" />
+                  <span className="text-[11px] sm:text-xs font-semibold text-orange-700 flex items-center gap-1.5 shrink-0 bg-orange-50 px-2 sm:px-2.5 py-1 rounded-full font-mono">
+                    <Truck className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                     <span>Sistem Charter</span>
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-4">
-                  Layanan charter armada khusus untuk suplai scaffolding proyek volume menengah hingga besar di seluruh Jawa Timur.
-                </p>
-
-                <div className="pt-3.5 border-t border-slate-200/80 space-y-2 text-xs mb-4">
-                  <div className="flex items-center justify-between text-slate-600">
-                    <span className="text-slate-400">Jarak Tempuh</span>
-                    <span className="font-semibold text-slate-900">Radius s/d 150 km</span>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center gap-2 text-slate-500">
+                    <Warehouse className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                    <span className="font-medium text-slate-800">Hub Surabaya & Sidoarjo</span>
                   </div>
-                  <div className="flex items-baseline justify-between gap-2 text-slate-600">
-                    <span className="text-slate-400 shrink-0">Hub & Rute</span>
-                    <span className="font-medium text-slate-800 text-right">Surabaya & Sidoarjo</span>
-                  </div>
-                  <div className="pt-2">
-                    <span className="text-slate-400 block mb-1">Cakupan Kawasan</span>
-                    <p className="text-slate-700 font-medium leading-relaxed">
-                      Malang Raya • Tuban • Lamongan • Bojonegoro • Jombang • Probolinggo
-                    </p>
-                  </div>
+                  <p className="text-slate-600 leading-relaxed pl-5">
+                    Malang Raya • Tuban • Lamongan • Bojonegoro • Jombang • Probolinggo
+                  </p>
                 </div>
               </div>
 
@@ -242,7 +217,7 @@ export default async function AreaLayananPage() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+                className="pt-4 mt-5 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-orange-600 hover:text-orange-700 transition-colors"
               >
                 <span>Konsultasi Proyek Luar Kota</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -253,10 +228,10 @@ export default async function AreaLayananPage() {
       </section>
 
       {/* Fleet & Guarantee */}
-      <section className="py-16 bg-slate-50 border-t border-slate-100">
+      <section className="py-12 sm:py-16 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+          <div className="max-w-2xl mb-8 sm:mb-10">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1.5 block">
               Armada Logistik
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
@@ -264,8 +239,8 @@ export default async function AreaLayananPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
               <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
                 <Truck className="w-5 h-5" />
               </div>
@@ -275,7 +250,7 @@ export default async function AreaLayananPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
               <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
                 <Truck className="w-5 h-5" />
               </div>
@@ -285,7 +260,7 @@ export default async function AreaLayananPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
               <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
                 <Truck className="w-5 h-5" />
               </div>
@@ -295,7 +270,7 @@ export default async function AreaLayananPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
               <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
                 <ShieldCheck className="w-5 h-5" />
               </div>
@@ -307,7 +282,7 @@ export default async function AreaLayananPage() {
           </div>
 
           {/* Hotline Dispatch CTA Card */}
-          <div className="bg-slate-950 text-white p-8 sm:p-10 rounded-2xl border border-slate-800">
+          <div className="bg-slate-950 text-white p-6 sm:p-10 rounded-2xl border border-slate-800">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-3">
                 <span className="text-xs uppercase tracking-widest text-orange-400 font-semibold block">
@@ -342,14 +317,14 @@ export default async function AreaLayananPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-500 active:scale-95 text-white text-xs sm:text-sm font-semibold tracking-wide rounded-full transition shadow-md shadow-orange-950/40 text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 bg-orange-600 hover:bg-orange-500 active:scale-95 text-white text-xs sm:text-sm font-semibold tracking-wide rounded-full transition shadow-md shadow-orange-950/40 text-center"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>Cek Jadwal Armada ({COMPANY_INFO.whatsappHanifa.formatted})</span>
+                  <Phone className="w-4 h-4 shrink-0" />
+                  <span>Cek Jadwal Armada <span className="font-mono whitespace-nowrap">({COMPANY_INFO.whatsappHanifa.formatted})</span></span>
                 </a>
                 <Link
                   href="/kalkulator"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs sm:text-sm font-semibold tracking-wide rounded-full transition text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs sm:text-sm font-semibold tracking-wide rounded-full transition text-center"
                 >
                   <span>Hitung di Kalkulator Sewa</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -361,7 +336,7 @@ export default async function AreaLayananPage() {
       </section>
 
       {/* Logistics FAQ */}
-      <section className="py-16 bg-white border-t border-slate-100">
+      <section className="py-12 sm:py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
