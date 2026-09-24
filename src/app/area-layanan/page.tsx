@@ -159,49 +159,42 @@ export default async function AreaLayananPage() {
               <Link
                 key={loc.slug}
                 href={`/area-layanan/${loc.slug}`}
-                className="bg-white hover:bg-slate-50/60 p-6 sm:p-7 rounded-2xl transition-all duration-300 flex flex-col justify-between group block border border-slate-200/80 hover:border-orange-500 hover:shadow-md"
+                className="bg-white hover:bg-slate-50/40 p-6 sm:p-7 rounded-2xl transition-all duration-200 flex flex-col justify-between group block border border-slate-200/80 hover:border-orange-500 hover:shadow-sm"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-baseline justify-between gap-3 mb-2.5">
                     <h3 className="font-bold text-xl sm:text-2xl text-slate-950 group-hover:text-orange-600 transition-colors tracking-tight">
                       {loc.city}
                     </h3>
-                    <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 shrink-0 bg-emerald-50 px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 shrink-0 bg-emerald-50 px-2.5 py-0.5 rounded-full font-mono">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
                       <span>{loc.leadTimeHours.split('(')[0].trim()}</span>
                     </span>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-4">
                     {loc.description}
                   </p>
 
-                  <div className="space-y-1.5 py-3 border-y border-slate-100 my-4 text-xs">
+                  <div className="pt-3.5 border-t border-slate-100 space-y-2 text-xs mb-4">
                     <div className="flex items-center justify-between text-slate-600">
                       <span className="text-slate-400">Jarak Tempuh</span>
                       <span className="font-semibold text-slate-900">{loc.distanceKm}</span>
                     </div>
-                    <div className="flex items-center justify-between text-slate-600">
-                      <span className="text-slate-400">Hub Keberangkatan</span>
-                      <span className="font-medium text-slate-800 text-right">
-                        {loc.warehouseHub.includes('Surabaya') ? 'Hub Surabaya (Rungkut)' : 'Hub Sidoarjo (Buduran)'}
-                      </span>
+                    <div className="flex items-baseline justify-between gap-2 text-slate-600">
+                      <span className="text-slate-400 shrink-0">Hub Keberangkatan</span>
+                      <span className="font-medium text-slate-800 text-right">{loc.warehouseHub}</span>
                     </div>
-                  </div>
-
-                  {/* Kawasan Industri Utama */}
-                  <div className="mb-4">
-                    <div className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1.5">
-                      Cakupan Area Proyek
+                    <div className="pt-2">
+                      <span className="text-slate-400 block mb-1">Cakupan Kawasan</span>
+                      <p className="text-slate-700 font-medium leading-relaxed">
+                        {loc.industrialEstates.join(' • ')}
+                      </p>
                     </div>
-                    <p className="text-xs text-slate-700 leading-relaxed line-clamp-2">
-                      {loc.industrialEstates.slice(0, 3).map((e) => e.split('(')[0].trim()).join(' • ')}
-                      {loc.industrialEstates.length > 3 && ` • +${loc.industrialEstates.length - 3} lainnya`}
-                    </p>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors">
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                   <span>Lihat Layanan {loc.city}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-orange-600" />
                 </div>
@@ -209,55 +202,50 @@ export default async function AreaLayananPage() {
             ))}
 
             {/* 6th Card: Charter Luar Kota untuk melengkapi grid 3x2 secara simetris */}
-            <div className="bg-slate-50/70 hover:bg-slate-50 p-6 sm:p-7 rounded-2xl transition-all duration-300 flex flex-col justify-between border border-dashed border-slate-300 hover:border-orange-500 hover:shadow-md">
+            <div className="bg-slate-50/60 hover:bg-slate-50 p-6 sm:p-7 rounded-2xl transition-all duration-200 flex flex-col justify-between border border-dashed border-slate-300 hover:border-orange-500 hover:shadow-sm group">
               <div>
-                <div className="flex items-center justify-between gap-3 mb-3">
+                <div className="flex items-baseline justify-between gap-3 mb-2.5">
                   <h3 className="font-bold text-xl sm:text-2xl text-slate-950 tracking-tight">
-                    Jawa Timur Lainnya
+                    Kota Lain di Jatim
                   </h3>
-                  <span className="text-xs font-semibold text-orange-700 flex items-center gap-1.5 shrink-0 bg-orange-50 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-orange-700 flex items-center gap-1.5 shrink-0 bg-orange-50 px-2.5 py-0.5 rounded-full font-mono">
                     <Truck className="w-3.5 h-3.5 text-orange-600" />
                     <span>Sistem Charter</span>
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-2">
-                  Melayani suplai scaffolding proyek skala besar ke kota-kota lain di Jawa Timur via armada charter khusus.
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-4">
+                  Layanan charter armada khusus untuk suplai scaffolding proyek volume menengah hingga besar di seluruh Jawa Timur.
                 </p>
 
-                <div className="space-y-1.5 py-3 border-y border-slate-200/60 my-4 text-xs">
+                <div className="pt-3.5 border-t border-slate-200/80 space-y-2 text-xs mb-4">
                   <div className="flex items-center justify-between text-slate-600">
-                    <span className="text-slate-400">Radius Jangkauan</span>
-                    <span className="font-semibold text-slate-900">Hingga 150 km</span>
+                    <span className="text-slate-400">Jarak Tempuh</span>
+                    <span className="font-semibold text-slate-900">Radius s/d 150 km</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-600">
-                    <span className="text-slate-400">Hub Keberangkatan</span>
-                    <span className="font-medium text-slate-800 text-right">
-                      Surabaya & Sidoarjo
-                    </span>
+                  <div className="flex items-baseline justify-between gap-2 text-slate-600">
+                    <span className="text-slate-400 shrink-0">Hub Keberangkatan</span>
+                    <span className="font-medium text-slate-800 text-right">Surabaya & Sidoarjo</span>
                   </div>
-                </div>
-
-                <div className="mb-4">
-                  <div className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1.5">
-                    Kota yang Dilayani
+                  <div className="pt-2">
+                    <span className="text-slate-400 block mb-1">Cakupan Kawasan</span>
+                    <p className="text-slate-700 font-medium leading-relaxed">
+                      Malang Raya • Tuban • Lamongan • Bojonegoro • Jombang • Probolinggo
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    Malang • Tuban • Lamongan • Bojonegoro • Jombang • Probolinggo
-                  </p>
                 </div>
               </div>
 
               <a
                 href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                  'Halo Bu Hanifa, saya ingin tanya info pengiriman scaffolding untuk proyek di luar 5 kota utama Jawa Timur.'
+                  'Halo Bu Hanifa, saya ingin tanya info pengiriman charter scaffolding untuk proyek di luar 5 kota utama Jawa Timur.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+                className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-orange-600 hover:text-orange-700 transition-colors"
               >
                 <span>Konsultasi Proyek Luar Kota</span>
-                <ArrowRight className="w-4 h-4 transition-transform hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
