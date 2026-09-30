@@ -216,7 +216,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                     const val = Number(e.target.value);
                     if (!isNaN(val)) setLength(Math.min(100, Math.max(1, val)));
                   }}
-                  className="w-20 text-right font-mono text-base font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition"
+                  className="w-20 text-right font-mono text-[16px] font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition touch-manipulation"
                   aria-label="Panjang bidang kerja dalam meter"
                 />
                 <span className="text-xs font-mono text-slate-500 font-bold">m</span>
@@ -229,7 +229,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               step={1}
               value={Math.min(60, Math.max(2, length))}
               onChange={(e) => setLength(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition touch-manipulation"
               aria-label="Slider panjang bidang kerja"
             />
             <div className="flex justify-between text-xs text-slate-500 font-mono mt-1">
@@ -258,7 +258,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                     const val = Number(e.target.value);
                     if (!isNaN(val)) setHeight(Math.min(50, Math.max(1, val)));
                   }}
-                  className="w-20 text-right font-mono text-base font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition"
+                  className="w-20 text-right font-mono text-[16px] font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition touch-manipulation"
                   aria-label="Tinggi bidang kerja dalam meter"
                 />
                 <span className="text-xs font-mono text-slate-500 font-bold">m</span>
@@ -271,7 +271,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               step={1.7}
               value={Math.min(25, Math.max(1.7, height))}
               onChange={(e) => setHeight(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition touch-manipulation"
               aria-label="Slider tinggi bidang kerja"
             />
             <div className="flex justify-between text-xs text-slate-500 font-mono mt-1">
@@ -290,7 +290,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               <select
                 value={durationMonths}
                 onChange={(e) => setDurationMonths(Number(e.target.value))}
-                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-base font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-[16px] font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
               >
                 <option value={1}>1 Bulan</option>
                 <option value={2}>2 Bulan</option>
@@ -307,7 +307,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-base font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-[16px] font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
               >
                 <option value="Surabaya">Surabaya</option>
                 <option value="Sidoarjo">Sidoarjo</option>

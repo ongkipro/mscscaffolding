@@ -139,9 +139,9 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
   };
 
   return (
-    <div className="bg-slate-50/70 p-8 sm:p-12 rounded-2xl">
+    <div className="bg-slate-50/70 p-4 sm:p-8 md:p-12 rounded-2xl border border-slate-200/60">
       {/* Form Header */}
-      <div className="pb-4 mb-8">
+      <div className="pb-4 mb-6 sm:mb-8">
         <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
           Formulir Penawaran Cepat
         </span>
@@ -175,7 +175,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-semibold text-xs rounded-md shadow-sm transition"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow-sm transition touch-manipulation"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Buka Chat WhatsApp Sekarang</span>
@@ -184,7 +184,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
             <button
               type="button"
               onClick={handleReset}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-md transition"
+              className="inline-flex items-center gap-1.5 px-4 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-xs rounded-xl transition touch-manipulation"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Kirim Permintaan Lain</span>
@@ -192,7 +192,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
           {/* Row 1: Nama & Perusahaan */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -207,10 +207,11 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                   type="text"
                   id="nama"
                   name="nama"
+                  autoComplete="name"
                   value={formData.nama}
                   onChange={handleChange}
                   placeholder="Contoh: Bpk. Bambang Sutrisno"
-                  className={`w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
+                  className={`w-full px-3.5 py-3 rounded-xl text-[16px] border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 touch-manipulation ${
                     errors.nama
                       ? 'border-red-400 focus:ring-red-200 focus:border-red-500'
                       : 'border-slate-200 hover:border-slate-300 focus:ring-orange-500/20 focus:border-orange-500'
@@ -236,10 +237,11 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 type="text"
                 id="perusahaan"
                 name="perusahaan"
+                autoComplete="organization"
                 value={formData.perusahaan}
                 onChange={handleChange}
                 placeholder="Contoh: PT Bangun Cipta / Mandor Ruko"
-                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+                className="w-full px-3.5 py-3 rounded-xl text-[16px] border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 touch-manipulation"
               />
             </div>
           </div>
@@ -257,10 +259,12 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 type="tel"
                 id="whatsapp"
                 name="whatsapp"
+                inputMode="tel"
+                autoComplete="tel"
                 value={formData.whatsapp}
                 onChange={handleChange}
                 placeholder="Contoh: 081234567890"
-                className={`w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
+                className={`w-full px-3.5 py-3 rounded-xl text-[16px] border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 touch-manipulation ${
                   errors.whatsapp
                     ? 'border-red-400 focus:ring-red-200 focus:border-red-500'
                     : 'border-slate-200 hover:border-slate-300 focus:ring-orange-500/20 focus:border-orange-500'
@@ -286,7 +290,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 name="kota"
                 value={formData.kota}
                 onChange={handleChange}
-                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full px-3.5 py-3 rounded-xl text-[16px] border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
               >
                 <option value="Surabaya">Surabaya</option>
                 <option value="Sidoarjo">Sidoarjo</option>
@@ -312,7 +316,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 name="layanan"
                 value={formData.layanan}
                 onChange={handleChange}
-                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full px-3.5 py-3 rounded-xl text-[16px] border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
               >
                 <option value="Sewa Scaffolding Bulanan">Sewa Scaffolding Bulanan</option>
                 <option value="Beli Scaffolding Baru SNI 1.8mm">Beli Scaffolding Baru SNI 1.8mm</option>
@@ -336,7 +340,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 value={formData.estimasiJumlah}
                 onChange={handleChange}
                 placeholder="Contoh: 20 set selama 2 bulan"
-                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+                className="w-full px-3.5 py-3 rounded-xl text-[16px] border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 touch-manipulation"
               />
             </div>
           </div>
@@ -356,16 +360,16 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
               value={formData.catatan}
               onChange={handleChange}
               placeholder="Contoh: Butuh catwalk metal plank 10 pcs dan jack base, rencana kirim hari Kamis pagi ke area Rungkut Industri."
-              className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 resize-none"
+              className="w-full px-3.5 py-3 rounded-xl text-[16px] border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 resize-none touch-manipulation"
             />
           </div>
 
           {/* Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 active:scale-[0.98] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 active:scale-[0.99] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shadow-sm touch-manipulation"
             >
               <Send className="w-3.5 h-3.5" />
               <span>{isSubmitting ? 'Memproses...' : 'Kirim Permintaan Penawaran'}</span>
@@ -374,9 +378,9 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
             <button
               type="button"
               onClick={handleDirectWhatsApp}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-orange-600 hover:bg-orange-700 active:scale-[0.98] text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm touch-manipulation"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
+              <MessageSquare className="w-4 h-4" />
               <span>Kirim Cepat via WhatsApp</span>
             </button>
           </div>

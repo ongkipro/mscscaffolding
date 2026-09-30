@@ -46,7 +46,7 @@ export default function ProductCatalogClient({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari komponen scaffolding..."
-            className="w-full pl-12 pr-12 py-3 rounded-full bg-slate-100 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all shadow-2xs"
+            className="w-full pl-12 pr-12 py-3 rounded-full bg-slate-100 text-[16px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all shadow-2xs touch-manipulation"
             aria-label="Cari komponen scaffolding"
           />
           {searchQuery && (
