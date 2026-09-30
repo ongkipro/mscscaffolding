@@ -30,8 +30,8 @@ export default async function CatalogPreview() {
           </Link>
         </div>
 
-        {/* 6-Grid Products - Ultra Clean Minimalist (Inspirasi SolusiBangunan) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* 6-Grid Products - Ultra Clean Minimalist (2-Cols Mobile, 3-Cols Desktop) */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {featured.map((prod) => (
             <Link
               key={prod.id}
@@ -39,22 +39,22 @@ export default async function CatalogPreview() {
               className="group block"
             >
               {/* Seamless Product Image - Zero Box / Border / Frame */}
-              <div className="relative w-full aspect-square overflow-hidden mb-3 flex items-center justify-center">
+              <div className="relative w-full aspect-square overflow-hidden mb-2.5 sm:mb-3 flex items-center justify-center">
                 <Image
                   src={prod.image}
                   alt={prod.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Title & Price - Pure and Sleek */}
               <div className="space-y-1 text-center">
-                <h3 className="text-sm sm:text-base font-semibold text-slate-900 group-hover:text-orange-600 transition-colors line-clamp-1">
+                <h3 className="text-xs sm:text-base font-semibold text-slate-900 group-hover:text-orange-600 transition-colors line-clamp-2 min-h-[2rem] sm:min-h-[2.5rem] flex items-center justify-center">
                   {prod.name}
                 </h3>
-                <div className="text-sm font-bold text-slate-950">
+                <div className="text-xs sm:text-sm font-bold text-slate-950">
                   Rp {prod.rentalPriceMonthly.toLocaleString('id-ID')}
                   <span className="text-xs font-normal text-slate-500"> / bulan</span>
                 </div>

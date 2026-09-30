@@ -1,11 +1,28 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { X, Phone, MessageSquare, Calculator, MapPin, ChevronRight, FileText } from 'lucide-react';
+import {
+  X,
+  Phone,
+  MessageSquare,
+  Calculator,
+  MapPin,
+  ChevronRight,
+  FileText,
+  ShieldCheck,
+  Package,
+  Building2,
+  ShoppingBag,
+  Truck,
+  Building,
+  Home,
+  Clock,
+} from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
+import { trackWhatsAppConversion, trackPhoneConversion } from '@/utils/analytics';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -14,132 +31,250 @@ interface MobileDrawerProps {
 
 export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
-  if (!isOpen) return null;
+  // Smooth mount and scroll lock
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  const links = [
-    { name: 'Beranda', href: '/' },
-    { name: 'Produk', href: '/produk' },
-    { name: 'Sewa', href: '/sewa-scaffolding' },
-    { name: 'Jual', href: '/jual-scaffolding' },
-    { name: 'Kalkulator', href: '/kalkulator' },
-    { name: 'Panduan K3', href: '/k3-panduan' },
-    { name: 'Area Layanan', href: '/area-layanan' },
-    { name: 'Tentang Kami', href: '/tentang-kami' },
-    { name: 'Kontak', href: '/kontak' },
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!mounted) return null;
+
+  const menuSections = [
+    {
+      label: 'Layanan & Produk',
+      items: [
+        { name: 'Beranda', href: '/', icon: Home },
+        { name: 'Katalog Produk', href: '/produk', icon: Package, badge: 'SNI 1.8mm' },
+        { name: 'Sewa Scaffolding', href: '/sewa-scaffolding', icon: Building2, badge: 'Mulai 27rb' },
+        { name: 'Jual Scaffolding', href: '/jual-scaffolding', icon: ShoppingBag },
+        { name: 'Kalkulator Kebutuhan', href: '/kalkulator', icon: Calculator },
+      ],
+    },
+    {
+      label: 'Standar & Area',
+      items: [
+        { name: 'Standar Mutu K3', href: '/k3-panduan', icon: ShieldCheck, badge: 'Permenaker' },
+        { name: 'Area Layanan', href: '/area-layanan', icon: Truck, badge: '5 Kota' },
+      ],
+    },
+    {
+      label: 'Tentang Perusahaan',
+      items: [
+        { name: 'Tentang Kami', href: '/tentang-kami', icon: Building },
+        { name: 'Kontak & Gudang', href: '/kontak', icon: MapPin },
+      ],
+    },
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end">
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
+    <aside
+      aria-label="Menu Navigasi Mobile"
+      className={`fixed inset-0 z-50 flex justify-end transition-opacity duration-300 ease-out ${
+        isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}
+    >
+      {/* Dark Blur Backdrop */}
+      <div
+        className={`fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0'
+        }`}
         onClick={onClose}
+        aria-hidden="true"
       />
 
-      {/* Drawer Panel */}
-      <div className="relative w-full max-w-xs sm:max-w-sm bg-white h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
+      {/* Drawer Main Panel - Cohesive Dark Slate Theme */}
+      <div
+        className={`relative w-full max-w-[330px] sm:max-w-sm bg-slate-950/98 text-slate-100 h-full shadow-[-10px_0_40px_rgba(0,0,0,0.8)] border-l border-slate-800/80 flex flex-col z-10 overflow-y-auto transition-transform duration-300 ease-out backdrop-blur-2xl ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
         {/* Drawer Header */}
-        <div className="p-5 flex items-center justify-between border-b border-slate-100">
+        <div className="p-4 sm:p-5 flex items-center justify-between border-b border-slate-900 bg-slate-950/95 sticky top-0 z-10 backdrop-blur-md">
           <div className="flex items-center gap-2.5">
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image
                 src="/images/branding/logo-msc-circle.png"
                 alt="MSC Logo"
                 fill
+                sizes="32px"
                 className="object-contain"
               />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-950">
-                MSC <span className="text-orange-600">SCAFFOLDING</span>
+              <div className="text-sm font-extrabold text-white tracking-tight leading-none">
+                MSC <span className="text-orange-500">SCAFFOLDING</span>
               </div>
-              <div className="text-[10px] font-mono text-slate-500 uppercase">
+              <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
                 PT Mitra Solusi Cahaya
               </div>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-md text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition"
-            aria-label="Tutup Menu"
+            className="w-8 h-8 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-colors active:scale-95"
+            aria-label="Tutup Menu Navigasi"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Action Shortcuts */}
-        <div className="p-4 bg-slate-50/70 grid grid-cols-2 gap-2">
+        {/* Quick Action Tiles */}
+        <div className="p-3 bg-slate-900/60 border-b border-slate-900 grid grid-cols-2 gap-2">
+          {/* Direct WhatsApp */}
           <a
-            href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}`}
+            href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+              'Halo Tim MSC Scaffolding, saya butuh informasi sewa/jual scaffolding.'
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 p-3 bg-white rounded-md border border-slate-100 text-xs font-semibold text-slate-900 shadow-xs hover:text-orange-600 transition"
+            onClick={() => trackWhatsAppConversion('drawer_quick_action')}
+            className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 text-white active:scale-95 transition-all group"
           >
-            <MessageSquare className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-            <span className="truncate">WhatsApp</span>
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <MessageSquare className="w-4 h-4" />
+            </div>
+            <div className="flex flex-col text-left overflow-hidden">
+              <span className="text-[10px] text-slate-400 font-medium leading-none">Hotline WA</span>
+              <span className="text-xs font-bold text-white group-hover:text-emerald-400 truncate leading-tight mt-0.5">
+                Konsultasi
+              </span>
+            </div>
           </a>
+
+          {/* Calculator Shortcut */}
           <Link
             href="/kalkulator"
             onClick={onClose}
-            className="flex items-center gap-2 p-3 bg-white rounded-md border border-slate-100 text-xs font-semibold text-slate-900 shadow-xs hover:text-orange-600 transition"
+            className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 text-white active:scale-95 transition-all group"
           >
-            <Calculator className="w-4 h-4 text-orange-600 flex-shrink-0" />
-            <span className="truncate">Kalkulator</span>
+            <div className="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-400 border border-orange-500/20 group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <Calculator className="w-4 h-4" />
+            </div>
+            <div className="flex flex-col text-left overflow-hidden">
+              <span className="text-[10px] text-slate-400 font-medium leading-none">Estimasi</span>
+              <span className="text-xs font-bold text-white group-hover:text-orange-400 truncate leading-tight mt-0.5">
+                Kalkulator
+              </span>
+            </div>
           </Link>
         </div>
 
-        {/* Navigation List with Active State */}
-        <nav className="p-3 flex-1 space-y-1">
-          {links.map((link) => {
-            const isActive =
-              link.href === '/'
-                ? pathname === '/'
-                : pathname === link.href || pathname.startsWith(`${link.href}/`);
+        {/* Categorized Navigation List */}
+        <nav className="p-3.5 flex-1 space-y-4">
+          {menuSections.map((section, sIdx) => (
+            <div key={sIdx} className="space-y-1">
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 py-1">
+                {section.label}
+              </div>
+              <div className="space-y-0.5">
+                {section.items.map((item) => {
+                  const Icon = item.icon;
+                  const isActive =
+                    item.href === '/'
+                      ? pathname === '/'
+                      : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={onClose}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-md text-sm transition-all ${
-                  isActive
-                    ? 'text-orange-600 bg-orange-50 font-semibold border-l-2 border-orange-500'
-                    : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950 font-medium'
-                }`}
-              >
-                <span>{link.name}</span>
-                <ChevronRight className={`w-4 h-4 ${isActive ? 'text-orange-500' : 'text-slate-400'}`} />
-              </Link>
-            );
-          })}
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={onClose}
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-all ${
+                        isActive
+                          ? 'bg-orange-500/15 text-orange-400 font-bold border-l-2 border-orange-500'
+                          : 'text-slate-300 hover:bg-slate-900/80 hover:text-white font-medium'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <Icon
+                          className={`w-4 h-4 shrink-0 ${
+                            isActive ? 'text-orange-400' : 'text-slate-400'
+                          }`}
+                        />
+                        <span className="truncate">{item.name}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 shrink-0 ml-2">
+                        {item.badge && (
+                          <span
+                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                              isActive
+                                ? 'bg-orange-950/80 text-orange-300 border border-orange-600/40'
+                                : 'bg-slate-900 text-slate-400 border border-slate-800'
+                            }`}
+                          >
+                            {item.badge}
+                          </span>
+                        )}
+                        <ChevronRight
+                          className={`w-3.5 h-3.5 ${
+                            isActive ? 'text-orange-400' : 'text-slate-400'
+                          }`}
+                        />
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </nav>
 
-        {/* Footer Contact */}
-        <div className="p-5 bg-slate-950 text-slate-300 text-xs space-y-3">
-          <div className="text-white font-semibold text-xs flex items-center gap-2 font-mono">
-            <MapPin className="w-3.5 h-3.5 text-orange-500" />
-            <span>2 Hub Gudang Jawa Timur</span>
+        {/* Drawer Footer Information */}
+        <div className="p-4 bg-slate-950 border-t border-slate-900 text-slate-300 text-xs space-y-3.5 mt-auto">
+          {/* Warehouses Info Card */}
+          <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-1.5">
+            <div className="text-white font-bold text-xs flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+              <span>2 Hub Gudang Fisik Jawa Timur</span>
+            </div>
+            <div className="text-[11px] text-slate-400 pl-5 space-y-0.5">
+              <div>Surabaya: Medokan Asri Utara, Rungkut</div>
+              <div>Sidoarjo: Tritan Hub, Gedangan</div>
+            </div>
+            <div className="flex items-center gap-2 text-[11px] text-slate-400 pl-5 pt-1 border-t border-slate-800/60 mt-1.5">
+              <Clock className="w-3 h-3 text-slate-500 shrink-0" />
+              <span>07.30 – 17.00 WIB (Kirim 24/7 By Request)</span>
+            </div>
           </div>
-          <div className="text-[11px] text-slate-400 space-y-1">
-            <div>Surabaya: Medokan Asri Utara, Rungkut</div>
-            <div>Sidoarjo: Tritan Hub, Gedangan</div>
-          </div>
-          <div className="pt-2">
+
+          {/* Request SPH Action Button */}
+          <div className="pt-0.5">
             <a
               href={`https://wa.me/${COMPANY_INFO.whatsappTender.number}?text=${encodeURIComponent(
-                'Halo Kantor Tender MSC, mohon informasi Surat Penawaran Harga (SPH).'
+                'Halo Kantor Tender MSC, mohon informasi Surat Penawaran Harga (SPH) resmi.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 active:scale-[0.98] text-white font-semibold py-2.5 rounded-md text-xs transition"
+              onClick={() => trackWhatsAppConversion('drawer_sph_button')}
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 active:scale-[0.98] text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-orange-950/40"
             >
-              <FileText className="w-4 h-4" />
-              <span>Minta SPH</span>
+              <FileText className="w-4 h-4 text-orange-200" />
+              <span>Minta Surat Penawaran (SPH)</span>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

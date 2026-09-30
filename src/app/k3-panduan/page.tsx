@@ -18,14 +18,14 @@ import { K3_STANDARDS, INSPECTION_CHECKLIST } from '@/data/k3Data';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Panduan K3 Scaffolding & Standar Safety — Permenakertrans 01/1980 & EN 12811-1',
-  description: 'Pedoman keselamatan kerja perancah steger besi: kapasitas beban SWL 1.500 kg, SOP perakitan dan pembongkaran, protokol Scafftag inspection, dan checklist harian HSE.',
+  title: 'Panduan K3 Scaffolding & Standar Safety',
+  description: 'Panduan keselamatan kerja perancah steger: standar SWL 1.500 kg, SOP perakitan, protokol Scafftag & checklist harian HSE sesuai Permenakertrans 01/1980.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/k3-panduan',
   },
   openGraph: {
-    title: 'Panduan Teknis K3 Scaffolding Standar Kemenaker & Internasional - MSC Scaffolding',
-    description: 'Panduan keselamatan kerja perancah steger besi, kapasitas SWL, checklist inspeksi, dan sistem Scafftag hijau-merah.',
+    title: 'Panduan K3 Scaffolding & Standar Safety - MSC Scaffolding',
+    description: 'Panduan keselamatan kerja perancah steger, kapasitas SWL 1.500 kg, checklist inspeksi, dan sistem Scafftag hijau-merah.',
     url: 'https://www.mscscaffolding.com/k3-panduan',
   },
 };

@@ -42,7 +42,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
       >
         Menuju konten utama
       </a>
-      <Navbar onOpenDrawer={() => setDrawerOpen(true)} />
+      <Navbar onOpenDrawer={() => setDrawerOpen((prev) => !prev)} isDrawerOpen={drawerOpen} />
       <MobileDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
       <main id="main-content" className="flex-1">{children}</main>
       <DesktopFloatingWhatsApp />

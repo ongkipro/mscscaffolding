@@ -5,7 +5,6 @@ import {
   Calculator,
   ShieldCheck,
   Ruler,
-  HelpCircle,
   ChevronRight,
   Truck,
   FileCheck2,
@@ -15,14 +14,14 @@ import { ScaffoldingCalculator } from '@/components/kalkulator/ScaffoldingCalcul
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Kalkulator Kebutuhan Scaffolding — Hitung Jumlah Set & Biaya Sewa Online',
-  description: 'Simulasi gratis kebutuhan scaffolding steger modular, catwalk, jack base, dan tangga berdasarkan panjang dan tinggi bidang kerja. Dapatkan estimasi BOQ dan biaya dalam 10 detik.',
+  title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya',
+  description: 'Hitung kebutuhan scaffolding modular, catwalk, jack base & tangga online. Estimasi jumlah set dan rincian biaya sewa proyek akurat dalam hitungan detik.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/kalkulator',
   },
   openGraph: {
-    title: 'Kalkulator Scaffolding Online — Hitung Kebutuhan & Biaya Proyek - MSC Scaffolding',
-    description: 'Hitung kebutuhan set steger, catwalk, jack base, dan estimasi biaya sewa / beli real-time.',
+    title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya - MSC Scaffolding',
+    description: 'Simulasi gratis kebutuhan scaffolding modular, catwalk, jack base, dan tangga. Estimasi jumlah set dan biaya sewa proyek akurat.',
     url: 'https://www.mscscaffolding.com/kalkulator',
   },
 };
@@ -47,41 +46,8 @@ export default function KalkulatorPage() {
     },
   ];
 
-  const faqs = [
-    {
-      q: 'Apakah hasil kalkulator ini sudah akurat untuk acuan pemesanan?',
-      a: 'Hasil simulasi kalkulator memberikan estimasi Bill of Quantity (BOQ) teknis sekitar 95% presisi untuk geometri dinding reguler. Untuk bentuk arsitektur tidak beraturan, melingkar, atau kebutuhan shoring beban berat, konsultan teknis kami siap menghitungkan gambar teknis CAD gratis.',
-    },
-    {
-      q: 'Bagaimana jika proyek saya membutuhkan masa sewa kurang dari 1 bulan?',
-      a: 'Periode minimum sewa standar kami adalah 1 bulan (30 hari kalender). Jika proyek selesai lebih awal (misal 2 minggu), unit tetap dapat ditarik kembali ke gudang sesuai kebutuhan Anda.',
-    },
-    {
-      q: 'Apakah ongkos kirim armada tronton atau pickup sudah termasuk di kalkulator?',
-      a: 'Estimasi di atas merupakan harga sewa/beli komponen. Biaya mob-demob (transportasi armada) dihitung terpisah berdasarkan jarak lokasi proyek dari gudang terdekat kami (Rungkut Surabaya atau Gedangan Sidoarjo).',
-    },
-  ];
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a,
-      },
-    })),
-  };
-
   return (
     <div className="bg-white min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -137,31 +103,7 @@ export default function KalkulatorPage() {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full mb-2">
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>Pertanyaan Teknis Kalkulator</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">FAQ Perhitungan Steger</h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50/70 hover:bg-slate-50 p-6 rounded-2xl transition-colors">
-                <h3 className="text-base font-bold text-slate-950 mb-2 flex items-start gap-2.5">
-                  <span className="text-orange-600 font-mono text-sm">Q:</span>
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed pl-6">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
+

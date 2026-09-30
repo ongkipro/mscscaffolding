@@ -216,7 +216,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                     const val = Number(e.target.value);
                     if (!isNaN(val)) setLength(Math.min(100, Math.max(1, val)));
                   }}
-                  className="w-16 text-right font-mono text-xs font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2 py-1 rounded transition"
+                  className="w-20 text-right font-mono text-base font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition"
                   aria-label="Panjang bidang kerja dalam meter"
                 />
                 <span className="text-xs font-mono text-slate-500 font-bold">m</span>
@@ -232,7 +232,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition"
               aria-label="Slider panjang bidang kerja"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+            <div className="flex justify-between text-xs text-slate-500 font-mono mt-1">
               <span>2m</span>
               <span>Konversi: ~{calc.bays} Bay (kolom horizontal)</span>
               <span>60m</span>
@@ -258,7 +258,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                     const val = Number(e.target.value);
                     if (!isNaN(val)) setHeight(Math.min(50, Math.max(1, val)));
                   }}
-                  className="w-16 text-right font-mono text-xs font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2 py-1 rounded transition"
+                  className="w-20 text-right font-mono text-base font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition"
                   aria-label="Tinggi bidang kerja dalam meter"
                 />
                 <span className="text-xs font-mono text-slate-500 font-bold">m</span>
@@ -274,7 +274,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition"
               aria-label="Slider tinggi bidang kerja"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+            <div className="flex justify-between text-xs text-slate-500 font-mono mt-1">
               <span>1.7m (1 Tingkat)</span>
               <span>Konversi: {calc.tiers} Tingkat Elevasi</span>
               <span>25m</span>
@@ -282,7 +282,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
           </div>
 
           {/* Duration & City */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-1.5">
                 4. Durasi Sewa
@@ -290,7 +290,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               <select
                 value={durationMonths}
                 onChange={(e) => setDurationMonths(Number(e.target.value))}
-                className="w-full bg-white border border-slate-200 rounded-md p-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-1 focus:ring-orange-600"
+                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-base font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
               >
                 <option value={1}>1 Bulan</option>
                 <option value={2}>2 Bulan</option>
@@ -307,7 +307,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-md p-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-1 focus:ring-orange-600"
+                className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-base font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
               >
                 <option value="Surabaya">Surabaya</option>
                 <option value="Sidoarjo">Sidoarjo</option>
@@ -320,7 +320,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
 
           {/* K3 Safety Anchor Notice */}
           {calc.tiers >= 3 && (
-            <div className="p-3.5 bg-amber-50 rounded-lg border border-amber-200 flex items-start gap-2.5 text-amber-900 text-xs">
+            <div className="p-3.5 bg-amber-50 rounded-lg border border-amber-200 flex items-start gap-2.5 text-amber-900 text-xs leading-relaxed">
               <ShieldAlert className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold">Ketentuan K3 Ketinggian &gt; 3 Tingkat:</span> Sesuai
@@ -332,14 +332,14 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
         </div>
 
         {/* Right Output Column (7 Cols) */}
-        <div className="lg:col-span-7 bg-slate-50/70 p-8 rounded-2xl flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-slate-50/70 p-5 sm:p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between pb-3 mb-4">
               <div>
-                <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">
+                <div className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
                   Hasil Estimasi Bill of Quantity (BOQ)
                 </div>
-                <div className="text-xl font-bold text-slate-950 mt-0.5">
+                <div className="text-lg sm:text-xl font-bold text-slate-950 mt-0.5">
                   {calc.totalSets} Set Scaffolding Modular
                 </div>
               </div>
@@ -352,66 +352,66 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
 
             {/* Component Breakdown List (Clean, No Dividing Border Lines) */}
             <div className="space-y-1 mb-6">
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Main Frame T170 (Pipa 1.8mm Real SNI)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.mainFrames} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.mainFrames} Pcs</span>
               </div>
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Cross Brace 220cm (Pengaku Silang Galvanis)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.crossBraces} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.crossBraces} Pcs</span>
               </div>
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Joint Pin (Sambungan Antar Tingkat)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.jointPins} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.jointPins} Pcs</span>
               </div>
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Catwalk Metal Plank (Lantai Kerja K3 Anti-Slip)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.catwalks} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.catwalks} Pcs</span>
               </div>
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Jack Base T60cm (Tapak Bawah Ulir Solid)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.jackBases} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.jackBases} Pcs</span>
               </div>
               {calc.uHeads > 0 && (
-                <div className="flex justify-between items-center text-xs py-1.5">
+                <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                   <span className="text-slate-600">U-Head Adjuster T60cm (Penyangga Balok Cor)</span>
-                  <span className="font-mono font-bold text-slate-950">{calc.uHeads} Pcs</span>
+                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.uHeads} Pcs</span>
                 </div>
               )}
               {calc.pipeSupports > 0 && (
-                <div className="flex justify-between items-center text-xs py-1.5">
+                <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                   <span className="text-slate-600">Pipe Support Teleskopik TS-90</span>
-                  <span className="font-mono font-bold text-slate-950">{calc.pipeSupports} Pcs</span>
+                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.pipeSupports} Pcs</span>
                 </div>
               )}
-              <div className="flex justify-between items-center text-xs py-1.5">
+              <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Tangga Bordes Baja 170 (Akses Aman)</span>
-                <span className="font-mono font-bold text-slate-950">{calc.tangga} Unit</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.tangga} Unit</span>
               </div>
             </div>
 
             {/* Price Preview Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              <div className="bg-white p-5 rounded-2xl shadow-xs">
-                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+              <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-xs">
+                <div className="text-xs font-mono text-slate-500 uppercase tracking-wider">
                   Estimasi Sewa ({durationMonths} Bulan)
                 </div>
                 <div className="text-xl font-extrabold text-orange-600 mt-1">
                   {formatIDR(calc.estimatedRentalMonthly)}
                 </div>
-                <div className="text-[10px] text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-500 mt-0.5">
                   Tarif mulai Rp 27.000/set/bulan
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl shadow-xs">
-                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+              <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-xs">
+                <div className="text-xs font-mono text-slate-500 uppercase tracking-wider">
                   Estimasi Beli Unit Baru
                 </div>
                 <div className="text-xl font-extrabold text-slate-950 mt-1">
                   {formatIDR(calc.estimatedPurchaseNew)}
                 </div>
-                <div className="text-[10px] text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-500 mt-0.5">
                   Fabrikasi SNI baru 100%
                 </div>
               </div>

@@ -6,7 +6,7 @@ export const COMPANY_INFO: CompanyInfo = {
   tagline: 'Build Safer Together',
   slogan: 'Solusi akses kerja di ketinggian untuk proyek Anda',
   quote: 'Material tepat, proyek lancar, hasil maksimal.',
-  ctaText: 'Konsultasi Sekarang, Dapatkan Penawaran Terbaik!',
+  ctaText: 'Konsultasi Sewa & Estimasi Proyek',
   serviceCoverage: 'Surabaya • Sidoarjo • Pasuruan • Gresik dan sekitarnya',
   primaryPhone: {
     number: '6282257664755',

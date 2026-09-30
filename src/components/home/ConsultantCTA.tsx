@@ -37,7 +37,7 @@ export default function ConsultantCTA() {
                 Konsultasi Steger &amp; Estimasi Proyek
               </h2>
               <p className="text-slate-600 text-sm mt-2">
-                Siap memberikan konsultasi dan solusi terbaik untuk kelancaran pekerjaan di ketinggian.
+                Konsultasi teknis langsung untuk menghitung jumlah set modul, kapasitas beban kerja, dan efisiensi sewa proyek Anda.
               </p>
             </div>
 

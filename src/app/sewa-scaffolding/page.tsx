@@ -16,14 +16,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Sewa Scaffolding Surabaya & Sidoarjo — Tarif Mulai Rp 27.000 / Set / Bulan',
-  description: 'Layanan sewa perancah steger galvanis SNI pipa 1.8mm di Jawa Timur. Ready stock ribuan set, kirim same-day dari gudang Rungkut & Gedangan, bebas biaya ganti unit rusak.',
+  title: 'Sewa Scaffolding Surabaya & Sidoarjo Mulai 27rb',
+  description: 'Sewa scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Tarif mulai Rp 27.000/set/bln, stok ribuan unit, kirim same-day dari gudang Rungkut & Gedangan.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/sewa-scaffolding',
   },
   openGraph: {
-    title: 'Sewa Scaffolding Pipa 1.8mm SNI Murah di Surabaya & Sidoarjo - MSC Scaffolding',
-    description: 'Tarif sewa mulai Rp 27.000/set/bulan. Ready stock ribuan set di Surabaya & Sidoarjo.',
+    title: 'Sewa Scaffolding Surabaya & Sidoarjo Mulai Rp 27.000 - MSC Scaffolding',
+    description: 'Tarif sewa steger mulai Rp 27.000/set/bulan pipa 1.8mm SNI. Ready stock ribuan set di Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/sewa-scaffolding',
   },
 };
@@ -142,43 +142,30 @@ export default function SewaScaffoldingPage() {
     },
   ];
 
-  const faqs = [
-    {
-      q: 'Berapa tarif sewa scaffolding di MSC?',
-      a: 'Tarif sewa 1 set Scaffolding T170 mulai dari Rp 27.000/bulan dan Scaffolding T190 Rp 29.000/bulan. Komponen eceran seperti Main Frame mulai Rp 7.000/bulan dan Catwalk Rp 30.000/bulan.',
-    },
-    {
-      q: 'Apakah harga sewa sudah termasuk ongkos kirim ke proyek?',
-      a: 'Belum. Biaya kirim dihitung berdasarkan jarak gudang terdekat (Surabaya Rungkut / Sidoarjo Gedangan) ke lokasi proyek. Untuk volume besar, kami memberikan subsidi ongkir khusus kontraktor.',
-    },
-    {
-      q: 'Bagaimana jika unit scaffolding rusak atau bengkok di lapangan?',
-      a: 'Kami memberikan garansi penukaran unit tanpa biaya tambahan jika kerusakan terjadi karena keausan wajar atau cacat material awal.',
-    },
-    {
-      q: 'Apakah MSC melayani penerbitan faktur pajak untuk tender BUMN?',
-      a: 'Ya, PT MITRA SOLUSI CAHAYA adalah entitas PKP resmi yang siap menerbitkan e-Faktur PPN 11%, SPH resmi berkop PT, dan sertifikat material K3.',
-    },
-  ];
-
-  const faqSchema = {
+  const sewaPageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a,
-      },
-    })),
+    '@type': 'Service',
+    name: 'Sewa Scaffolding Surabaya & Sidoarjo',
+    serviceType: 'Rental Scaffolding Steger',
+    provider: {
+      '@id': 'https://www.mscscaffolding.com/#organization',
+    },
+    areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'IDR',
+      lowPrice: 27000,
+      highPrice: 50000,
+      offerCount: 8,
+      priceValidUntil: '2027-12-31',
+    },
   };
 
   return (
     <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sewaPageSchema) }}
       />
 
       {/* Clean Unified Page Header with Visual Photo */}
@@ -321,30 +308,6 @@ export default function SewaScaffoldingPage() {
                 <div className="text-xl font-bold font-mono text-orange-600 mb-2">{step.num}</div>
                 <h3 className="font-bold text-slate-950 text-base mb-1.5">{step.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section - Clean Borderless Questions */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
-              Tanya Jawab
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">FAQ Sewa Scaffolding</h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50/70 hover:bg-slate-50 p-6 rounded-2xl transition-colors">
-                <h3 className="text-base font-bold text-slate-950 mb-2 flex items-start gap-2.5">
-                  <span className="text-orange-600 font-mono text-sm">Q:</span>
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed pl-6">{faq.a}</p>
               </div>
             ))}
           </div>

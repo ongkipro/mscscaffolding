@@ -11,14 +11,14 @@ import { getAllLocations } from '@/services/locationService';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Area Layanan Scaffolding Jawa Timur — Surabaya, Sidoarjo, Gresik, Pasuruan, Mojokerto',
+  title: 'Area Layanan Scaffolding Jawa Timur',
   description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day dari gudang Rungkut Surabaya & Gedangan Sidoarjo ke seluruh kawasan industri Jawa Timur.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/area-layanan',
   },
   openGraph: {
-    title: 'Area Layanan Pengiriman Scaffolding Jawa Timur - MSC Scaffolding',
-    description: 'Armada siap melayani Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
+    title: 'Area Layanan Scaffolding Jawa Timur - MSC Scaffolding',
+    description: 'Armada siap kirim scaffolding ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
     url: 'https://www.mscscaffolding.com/area-layanan',
   },
 };

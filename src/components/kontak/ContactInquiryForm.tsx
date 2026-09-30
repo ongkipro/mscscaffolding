@@ -210,7 +210,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                   value={formData.nama}
                   onChange={handleChange}
                   placeholder="Contoh: Bpk. Bambang Sutrisno"
-                  className={`w-full px-3.5 py-2.5 rounded-md text-sm border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
+                  className={`w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
                     errors.nama
                       ? 'border-red-400 focus:ring-red-200 focus:border-red-500'
                       : 'border-slate-200 hover:border-slate-300 focus:ring-orange-500/20 focus:border-orange-500'
@@ -218,8 +218,8 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 />
               </div>
               {errors.nama && (
-                <div className="flex items-center gap-1 text-[11px] text-red-600 mt-1">
-                  <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                <div className="flex items-center gap-1 text-xs text-red-600 mt-1">
+                  <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{errors.nama}</span>
                 </div>
               )}
@@ -239,7 +239,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 value={formData.perusahaan}
                 onChange={handleChange}
                 placeholder="Contoh: PT Bangun Cipta / Mandor Ruko"
-                className="w-full px-3.5 py-2.5 rounded-md text-sm border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
               />
             </div>
           </div>
@@ -260,15 +260,15 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 value={formData.whatsapp}
                 onChange={handleChange}
                 placeholder="Contoh: 081234567890"
-                className={`w-full px-3.5 py-2.5 rounded-md text-sm border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
+                className={`w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
                   errors.whatsapp
                     ? 'border-red-400 focus:ring-red-200 focus:border-red-500'
                     : 'border-slate-200 hover:border-slate-300 focus:ring-orange-500/20 focus:border-orange-500'
                 }`}
               />
               {errors.whatsapp && (
-                <div className="flex items-center gap-1 text-[11px] text-red-600 mt-1">
-                  <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                <div className="flex items-center gap-1 text-xs text-red-600 mt-1">
+                  <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{errors.whatsapp}</span>
                 </div>
               )}
@@ -286,7 +286,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 name="kota"
                 value={formData.kota}
                 onChange={handleChange}
-                className="w-full px-3.5 py-2.5 rounded-md text-sm border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
               >
                 <option value="Surabaya">Surabaya</option>
                 <option value="Sidoarjo">Sidoarjo</option>
@@ -312,7 +312,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 name="layanan"
                 value={formData.layanan}
                 onChange={handleChange}
-                className="w-full px-3.5 py-2.5 rounded-md text-sm border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
+                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer"
               >
                 <option value="Sewa Scaffolding Bulanan">Sewa Scaffolding Bulanan</option>
                 <option value="Beli Scaffolding Baru SNI 1.8mm">Beli Scaffolding Baru SNI 1.8mm</option>
@@ -336,7 +336,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
                 value={formData.estimasiJumlah}
                 onChange={handleChange}
                 placeholder="Contoh: 20 set selama 2 bulan"
-                className="w-full px-3.5 py-2.5 rounded-md text-sm border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+                className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
               />
             </div>
           </div>
@@ -356,7 +356,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
               value={formData.catatan}
               onChange={handleChange}
               placeholder="Contoh: Butuh catwalk metal plank 10 pcs dan jack base, rencana kirim hari Kamis pagi ke area Rungkut Industri."
-              className="w-full px-3.5 py-2.5 rounded-md text-sm border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 resize-none"
+              className="w-full px-3.5 py-3 sm:py-2.5 rounded-lg text-base border border-slate-200 hover:border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 resize-none"
             />
           </div>
 
@@ -365,7 +365,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-slate-950 hover:bg-slate-800 active:scale-[0.98] text-white font-semibold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 active:scale-[0.98] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shadow-sm"
             >
               <Send className="w-3.5 h-3.5" />
               <span>{isSubmitting ? 'Memproses...' : 'Kirim Permintaan Penawaran'}</span>

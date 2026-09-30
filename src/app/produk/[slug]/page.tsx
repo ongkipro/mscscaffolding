@@ -45,13 +45,13 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${product.name} — Spesifikasi Pipa 1.8mm SNI & Harga Sewa`,
-    description: `${product.shortDesc} Tebal pipa ${product.pipeThickness}, SWL ${product.swlKg} kg, berat ${product.weightKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bulan. Siap kirim same-day.`,
+    title: `${product.name} Pipa 1.8mm SNI`,
+    description: `${product.name} pipa galvanis ${product.pipeThickness} SNI, SWL ${product.swlKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bln. Ready stock Surabaya & Sidoarjo.`,
     alternates: {
       canonical: `https://www.mscscaffolding.com/produk/${product.slug}`,
     },
     openGraph: {
-      title: `${product.name} - MSC Scaffolding PT Mitra Solusi Cahaya`,
+      title: `${product.name} - MSC Scaffolding`,
       description: product.shortDesc,
       url: `https://www.mscscaffolding.com/produk/${product.slug}`,
       images: [

@@ -35,7 +35,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-16 pb-24 md:pb-14">
+    <footer className="bg-slate-950 text-slate-300 pt-16 pb-28 md:pb-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-900">
           {/* Column 1: Corporate Profile & K3 Verified (Span 4) */}
@@ -54,7 +54,7 @@ export default function Footer() {
                 <div className="text-lg font-extrabold tracking-tight text-white leading-tight">
                   MSC <span className="text-orange-500">SCAFFOLDING</span>
                 </div>
-                <div className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">
                   {COMPANY_INFO.legalName}
                 </div>
               </div>
@@ -65,10 +65,10 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-orange-400 text-[11px] font-semibold">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-orange-400 text-xs font-semibold">
                 {COMPANY_INFO.tagline}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-emerald-400 text-[11px] font-medium">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-emerald-400 text-xs font-medium">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>Standar K3</span>
               </span>
@@ -111,65 +111,68 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Component Catalog (Span 2) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Katalog Komponen
-            </h3>
-            <ul className="space-y-2 text-xs">
-              {catalogLinks.map((item) => (
-                <li key={item.name}>
+          {/* Columns 2 & 3: Component Catalog & Regional Coverage (2-Columns on Mobile) */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6">
+            {/* Column 2: Component Catalog */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                Katalog Komponen
+              </h3>
+              <ul className="space-y-2 text-xs">
+                {catalogLinks.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-slate-400 hover:text-orange-400 transition-colors block py-0.5 leading-snug"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+                <li className="pt-2">
                   <Link
-                    href={item.href}
-                    className="text-slate-400 hover:text-orange-400 transition-colors block py-0.5"
+                    href="/produk"
+                    className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
                   >
-                    {item.name}
+                    <span>Semua Produk</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </li>
-              ))}
-              <li className="pt-2">
-                <Link
-                  href="/produk"
-                  className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
-                >
-                  <span>Semua Produk</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </li>
-            </ul>
-          </div>
+              </ul>
+            </div>
 
-          {/* Column 3: Regional Coverage (Span 3) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Area Layanan
-            </h3>
-            <ul className="space-y-3 text-xs">
-              {regionalLinks.map((reg) => (
-                <li key={reg.city}>
+            {/* Column 3: Regional Coverage */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                Area Layanan
+              </h3>
+              <ul className="space-y-3 text-xs">
+                {regionalLinks.map((reg) => (
+                  <li key={reg.city}>
+                    <Link
+                      href={reg.href}
+                      className="group block space-y-0.5 text-slate-400 hover:text-orange-400 transition-colors"
+                    >
+                      <div className="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">
+                        {reg.city}
+                      </div>
+                      <div className="text-xs text-slate-400 leading-snug">
+                        {reg.leadTime}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+                <li className="pt-2">
                   <Link
-                    href={reg.href}
-                    className="group block space-y-0.5 text-slate-400 hover:text-orange-400 transition-colors"
+                    href="/area-layanan"
+                    className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
                   >
-                    <div className="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">
-                      {reg.city}
-                    </div>
-                    <div className="text-[11px] text-slate-400">
-                      {reg.leadTime}
-                    </div>
+                    <span>Cek Area Layanan</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </li>
-              ))}
-              <li className="pt-2">
-                <Link
-                  href="/area-layanan"
-                  className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
-                >
-                  <span>Cek Area Layanan</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </li>
-            </ul>
+              </ul>
+            </div>
           </div>
 
           {/* Column 4: 2 Physical Warehouses (Span 3) */}
@@ -187,10 +190,10 @@ export default function Footer() {
                     <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
                     <span>{wh.name}</span>
                   </div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed pl-5">
+                  <p className="text-xs text-slate-400 leading-relaxed pl-5">
                     {wh.shortAddress || wh.address}
                   </p>
-                  <div className="pl-5 pt-1 flex flex-wrap items-center gap-3 text-[11px]">
+                  <div className="pl-5 pt-1 flex flex-wrap items-center gap-3 text-xs">
                     <a
                       href={wh.mapUrl}
                       target="_blank"
@@ -224,7 +227,7 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Hak Cipta Dilindungi.
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
             <Link href="/k3-panduan" className="hover:text-slate-300 transition-colors">
               Standar Mutu K3
             </Link>

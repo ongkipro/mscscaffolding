@@ -15,21 +15,46 @@ import { COMPANY_INFO } from '@/data/company';
 import ContactInquiryForm from '@/components/kontak/ContactInquiryForm';
 
 export const metadata: Metadata = {
-  title: 'Hubungi Kami — Kontak & Lokasi Gudang MSC Scaffolding Jawa Timur',
-  description: 'Hotline sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, Pasuruan, Gresik. WhatsApp: 0822-5766-4755 / Telepon: 0813-2562-024. Konsultasi sekarang, dapatkan penawaran terbaik!',
+  title: 'Kontak & Gudang Scaffolding Surabaya Sidoarjo',
+  description: 'Kontak resmi MSC Scaffolding. Hotline WA: 0822-5766-4755. Lokasi gudang di Rungkut Surabaya & Gedangan Sidoarjo. Konsultasi sewa & beli siap respon cepat.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/kontak',
   },
   openGraph: {
-    title: 'Kontak & Alamat Gudang MSC Scaffolding Surabaya & Sidoarjo',
+    title: 'Kontak & Alamat Gudang MSC Scaffolding Surabaya Sidoarjo',
     description: 'Hotline resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA.',
     url: 'https://www.mscscaffolding.com/kontak',
   },
 };
 
 export default function KontakPage() {
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Kontak & Lokasi Gudang MSC Scaffolding',
+    url: 'https://www.mscscaffolding.com/kontak',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'PT MITRA SOLUSI CAHAYA',
+      telephone: '+6282257664755',
+      email: 'sales@mscscaffolding.com',
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+6282257664755',
+          contactType: 'customer service',
+          availableLanguage: ['Indonesian', 'Javanese', 'English'],
+        },
+      ],
+    },
+  };
+
   return (
     <div className="bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

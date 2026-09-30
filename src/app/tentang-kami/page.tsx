@@ -19,13 +19,13 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Tentang Kami — Profil PT MITRA SOLUSI CAHAYA (MSC Scaffolding)',
-  description: 'Profil perusahaan penyedia sewa dan jual scaffolding pipa 1.8mm SNI di Surabaya & Sidoarjo. Lebih dari satu dekade melayani kontraktor B2B dan proyek infrastruktur Jawa Timur.',
+  title: 'Tentang Kami: Profil PT Mitra Solusi Cahaya',
+  description: 'Profil PT Mitra Solusi Cahaya, penyedia sewa & jual scaffolding pipa 1.8mm SNI di Surabaya & Sidoarjo. Melayani kontraktor proyek konstruksi Jawa Timur.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/tentang-kami',
   },
   openGraph: {
-    title: 'Tentang PT MITRA SOLUSI CAHAYA - MSC Scaffolding Jawa Timur',
+    title: 'Tentang PT Mitra Solusi Cahaya - MSC Scaffolding Jawa Timur',
     description: 'Penyedia scaffolding steger profesional dengan 2 hub gudang di Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/tentang-kami',
   },
@@ -115,10 +115,10 @@ export default function TentangKamiPage() {
                 Mengapa Memilih MSC Scaffolding?
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Dalam dunia konstruksi, keselamatan pekerja di atas ketinggian bukanlah hal yang bisa ditawar. Kami menyadari bahwa banyak perancah sewaan di pasaran menggunakan pipa tipis (1.2mm - 1.4mm) yang mudah bengkok dan membahayakan nyawa.
+                Banyak perancah sewaan di pasaran menggunakan pipa tipis (1.2mm – 1.4mm) yang rentan melengkung saat menahan beban pekerja dan material cor. Di MSC Scaffolding, setiap set gawang menggunakan pipa baja galvanis real 1.8mm SNI dengan sertifikasi daya dukung SWL 1.500 kg per tiang.
               </p>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Di MSC Scaffolding, setiap batang pipa, main frame, dan catwalk kami fabrikasi dan seleksi dengan ketebalan riil 1.8mm standar SNI. Kami melayani pelanggan dengan sistem teratur, kepastian stok di 2 gudang fisik, dan respon konsultasi yang cepat.
+                Kami melayani kontraktor proyek dengan kepastian stok riil di 2 gudang fisik (Surabaya & Sidoarjo), respon konsultasi cepat, dan transparansi spesifikasi tanpa toleransi ketebalan palsu.
               </p>
 
               <div className="pt-2 flex items-center gap-6">

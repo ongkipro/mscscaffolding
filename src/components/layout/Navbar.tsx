@@ -9,9 +9,10 @@ import { COMPANY_INFO } from '@/data/company';
 
 interface NavbarProps {
   onOpenDrawer?: () => void;
+  isDrawerOpen?: boolean;
 }
 
-export default function Navbar({ onOpenDrawer }: NavbarProps) {
+export default function Navbar({ onOpenDrawer, isDrawerOpen }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -164,6 +165,7 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
           {/* Mobile Menu Toggle Button */}
           <div className="flex lg:hidden items-center gap-2">
             <button
+              type="button"
               onClick={() => {
                 if (onOpenDrawer) {
                   onOpenDrawer();
@@ -171,21 +173,24 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
                   setMobileOpen(!mobileOpen);
                 }
               }}
-              className={`p-2 rounded-md transition-colors ${
-                isHome
-                  ? 'text-white hover:bg-white/10'
-                  : 'text-slate-800 hover:bg-slate-100'
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 active:scale-95 border ${
+                isHome && !scrolled
+                  ? 'bg-white/10 hover:bg-white/20 text-white border-white/20 backdrop-blur-sm'
+                  : isHome && scrolled
+                  ? 'bg-slate-900/90 hover:bg-slate-800 text-white border-slate-700/80 backdrop-blur-sm'
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200/80'
               }`}
-              aria-label="Buka Menu"
+              aria-label={isDrawerOpen || mobileOpen ? 'Tutup Menu Navigasi' : 'Buka Menu Navigasi'}
+              aria-expanded={Boolean(isDrawerOpen || mobileOpen)}
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isDrawerOpen || mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Fallback Inline Mobile Dropdown */}
-      {mobileOpen && (
+      {/* Fallback Inline Mobile Dropdown (Only when custom drawer is not supplied) */}
+      {!onOpenDrawer && mobileOpen && (
         <div
           className={`lg:hidden border-t px-4 pt-3 pb-6 space-y-1 shadow-2xl ${
             isHome

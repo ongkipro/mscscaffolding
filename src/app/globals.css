@@ -23,6 +23,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -30,6 +32,16 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-body);
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Prevent mobile/Safari auto-zoom and double-tap zoom on inputs */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+  touch-action: manipulation;
 }
 
 /* Custom Scrollbar for sleek industrial feel */

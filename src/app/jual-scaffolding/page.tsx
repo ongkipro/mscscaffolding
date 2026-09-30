@@ -11,7 +11,6 @@ import {
   FileSpreadsheet,
   Building2,
   MessageSquare,
-  HelpCircle,
   ArrowRight,
   ChevronRight,
   Hammer,
@@ -19,14 +18,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Jual Scaffolding Surabaya & Sidoarjo — Harga Pabrik Mulai Rp 500.000 / Set - MSC Scaffolding',
-  description: 'Pricelist resmi jual scaffolding baru pipa 1.8mm SNI PT MITRA SOLUSI CAHAYA. 1 Set T170 Rp 500.000, Set T190 Rp 540.000, Catwalk Rp 310.000. Siap supply tender B2B & faktur pajak.',
+  title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik',
+  description: 'Jual scaffolding steger baru pipa 1.8mm SNI harga pabrik. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender & faktur pajak.',
   alternates: {
     canonical: 'https://www.mscscaffolding.com/jual-scaffolding',
   },
   openGraph: {
-    title: 'Pricelist Jual Scaffolding MSC Pipa 1.8mm SNI - PT Mitra Solusi Cahaya',
-    description: 'Harga distributor tangan pertama: 1 Set T170 Rp 500.000, Set T190 Rp 540.000, Catwalk Rp 310.000. Ready stock Surabaya & Sidoarjo.',
+    title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik - MSC Scaffolding',
+    description: 'Pricelist scaffolding baru pipa 1.8mm SNI. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender B2B.',
     url: 'https://www.mscscaffolding.com/jual-scaffolding',
   },
 };
@@ -166,43 +165,30 @@ export default function JualScaffoldingPage() {
     },
   ];
 
-  const faqs = [
-    {
-      q: 'Apa perbedaan unit Scaffolding Baru dan Rekondisi Grade A MSC?',
-      a: 'Unit Baru adalah fabrikasi 100% fresh dari pabrik dengan pipa baru tebal 1.8mm SNI dan finishing cat oven / galvanis mulus. Unit Rekondisi Grade A adalah pipa pilihan yang telah melewati quality control ketat: pipa dijamin lurus 100%, las-lasan telah diuji ulang, dicat anti-karat baru, dan memiliki daya dukung SWL setara unit baru dengan harga 20-30% lebih hemat.',
-    },
-    {
-      q: 'Apakah bisa menerbitkan Faktur Pajak PPN 11% untuk pengadaan PT/BUMN?',
-      a: 'Bisa. PT MITRA SOLUSI CAHAYA adalah Pengusaha Kena Pajak (PKP) resmi. Semua transaksi pembelian B2B dapat diterbitkan Faktur Pajak elektronik (e-Faktur PPN 11%) lengkap beserta kelengkapan legalitas perusahaan.',
-    },
-    {
-      q: 'Apakah ada minimal pembelian untuk unit scaffolding baru?',
-      a: 'Tidak ada batas minimum untuk retail atau mandor proyek, Anda bisa membeli mulai dari 1 set atau eceran aksesoris seperti clamp dan jack base. Untuk pembelian skala besar (di atas 100 set), kami memberikan diskon volume khusus kontraktor.',
-    },
-    {
-      q: 'Bagaimana prosedur survei unit sebelum pembayaran?',
-      a: 'Anda sangat dipersilakan mengunjungi Gudang Utama kami di Rungkut Surabaya atau Gudang Sidoarjo pada jam operasional (Senin-Sabtu: 07.30 - 17.00 WIB) untuk mengukur ketebalan pipa dengan micrometer caliper dan mengetes kelaikan unit secara langsung.',
-    },
-  ];
-
-  const faqSchema = {
+  const jualPageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a,
-      },
-    })),
+    '@type': 'Service',
+    name: 'Jual Scaffolding Baru & Rekondisi Surabaya Sidoarjo',
+    serviceType: 'Penjualan Scaffolding Steger Galvanis',
+    provider: {
+      '@id': 'https://www.mscscaffolding.com/#organization',
+    },
+    areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'IDR',
+      lowPrice: 42000,
+      highPrice: 540000,
+      offerCount: 12,
+      priceValidUntil: '2027-12-31',
+    },
   };
 
   return (
     <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jualPageSchema) }}
       />
 
       {/* Clean Unified Page Header with Visual Photo */}
@@ -402,31 +388,6 @@ export default function JualScaffoldingPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full mb-2">
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>Pertanyaan Seputar Pembelian</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">FAQ Jual Scaffolding</h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50/70 hover:bg-slate-50 p-6 rounded-2xl transition-colors">
-                <h3 className="text-base font-bold text-slate-950 mb-2 flex items-start gap-2.5">
-                  <span className="text-orange-600 font-mono text-sm">Q:</span>
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed pl-6">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Bottom CTA */}
       <section className="py-16 bg-slate-900 text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -435,7 +396,7 @@ export default function JualScaffoldingPage() {
             Siapkan Kebutuhan Steger Proyek Anda Bersama MSC
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
-            Hubungi tim procurement PT MITRA SOLUSI CAHAYA hari ini untuk mendapatkan penawaran harga terbaik dengan jaminan ketersediaan stock di gudang kami.
+            Hubungi tim procurement PT Mitra Solusi Cahaya untuk meminta Surat Penawaran Harga (SPH) resmi dan cek fisik stok di gudang Rungkut atau Gedangan.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

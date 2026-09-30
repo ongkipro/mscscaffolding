@@ -107,7 +107,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Foreground Content - Full Viewport Flex Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-20 sm:pb-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-8">
         {/* Upper Hero Content: Pill Badge, High-Contrast Typography, Copy, Pill CTAs - Perfectly Centered */}
         <div className="max-w-3xl space-y-3 sm:space-y-4 lg:space-y-5 my-auto py-4 sm:py-6">
           {/* Clean Eyebrow */}
@@ -128,7 +128,7 @@ export default function HeroSlider() {
           </div>
 
           {/* Slide Description - 1 Short Line */}
-          <p className="text-sm sm:text-base text-slate-200/90 font-light max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-100 font-normal max-w-xl leading-relaxed">
             {HERO_SLIDES[currentSlide].description}
           </p>
 
@@ -156,7 +156,7 @@ export default function HeroSlider() {
                   <span className="text-xl sm:text-3xl font-extrabold text-white">1.8</span>
                   <span className="text-xs font-bold text-orange-500">mm</span>
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5 font-normal">Pipa Real SNI</div>
+                <div className="text-xs text-slate-200 mt-0.5 font-medium">Pipa Real SNI</div>
               </div>
 
               <div>
@@ -164,22 +164,22 @@ export default function HeroSlider() {
                   <span className="text-xl sm:text-3xl font-extrabold text-white">1.5</span>
                   <span className="text-xs font-bold text-emerald-400">Ton</span>
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5 font-normal">SWL per Tiang</div>
+                <div className="text-xs text-slate-200 mt-0.5 font-medium">SWL per Tiang</div>
               </div>
 
               <div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-xl sm:text-3xl font-extrabold text-white">2</span>
-                  <span className="text-xs font-bold text-slate-400">Hub</span>
+                  <span className="text-xs font-bold text-slate-300">Hub</span>
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5 font-normal">Surabaya & Sidoarjo</div>
+                <div className="text-xs text-slate-200 mt-0.5 font-medium">Surabaya & Sidoarjo</div>
               </div>
 
               <div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-lg sm:text-2xl font-extrabold text-white">EN 12811</span>
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5 font-normal">Standar K3</div>
+                <div className="text-xs text-slate-200 mt-0.5 font-medium">Standar K3</div>
               </div>
             </div>
 

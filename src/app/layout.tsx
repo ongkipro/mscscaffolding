@@ -15,7 +15,8 @@ const poppins = Poppins({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
+  maximumScale: 1,
+  userScalable: false,
   themeColor: '#020617',
 };
 
@@ -25,18 +26,18 @@ export const metadata: Metadata = {
     canonical: 'https://www.mscscaffolding.com',
   },
   title: {
-    default: 'MSC Scaffolding - Solusi Akses Kerja di Ketinggian - Build Safer Together',
-    template: '%s - MSC Scaffolding PT Mitra Solusi Cahaya',
+    default: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
+    template: '%s - MSC Scaffolding',
   },
-  description: 'PT Mitra Solusi Cahaya — Solusi akses kerja di ketinggian untuk proyek Anda. Sewa scaffolding steger pipa 1.8mm SNI mulai Rp 27.000/set/bulan di Surabaya, Sidoarjo, Pasuruan, Gresik. 2 gudang fisik, kirim same-day.',
+  description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
   keywords: [
     'sewa scaffolding surabaya',
     'sewa scaffolding sidoarjo',
-    'sewa scaffolding pasuruan',
-    'sewa scaffolding gresik',
-    'jual scaffolding galvanis',
-    'harga sewa steger bulanan',
+    'jual scaffolding surabaya',
+    'jual scaffolding sidoarjo',
+    'harga sewa scaffolding bulanan',
     'scaffolding pipa 1.8mm sni',
+    'sewa steger surabaya',
     'pt mitra solusi cahaya',
     'msc scaffolding',
   ],
@@ -59,21 +60,21 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     url: 'https://www.mscscaffolding.com',
     siteName: 'MSC Scaffolding PT Mitra Solusi Cahaya',
-    title: 'MSC Scaffolding - Sewa & Jual Scaffolding Pipa 1.8mm SNI Standar K3',
-    description: 'Solusi akses kerja di ketinggian untuk proyek Anda. Sewa scaffolding mulai Rp 27.000/set/bulan. Siap kirim same-day dari 2 gudang di Surabaya & Sidoarjo.',
+    title: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
+    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
     images: [
       {
         url: '/images/hero/hero_slide_1_facade_engineer.webp',
         width: 1200,
         height: 675,
-        alt: 'MSC Scaffolding Proyek Konstruksi Fasad Jawa Timur',
+        alt: 'Sewa dan Jual Scaffolding Pipa 1.8mm SNI MSC Scaffolding',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MSC Scaffolding — Build Safer Together',
-    description: 'Pusat sewa & jual scaffolding steger tebal pipa 1.8mm SNI Jawa Timur.',
+    title: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
+    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Kirim same-day.',
     images: ['/images/hero/hero_slide_1_facade_engineer.webp'],
   },
   robots: {
@@ -96,39 +97,98 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'MSC Scaffolding (PT Mitra Solusi Cahaya)',
-    image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
-    logo: 'https://www.mscscaffolding.com/images/branding/logo-msc-circle.png',
-    '@id': 'https://www.mscscaffolding.com/#organization',
-    url: 'https://www.mscscaffolding.com',
-    telephone: '+628132562024',
-    priceRange: 'IDR 27.000 - 585.000',
-    areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Medokan Asri Utara, Rungkut',
-      addressLocality: 'Surabaya',
-      addressRegion: 'Jawa Timur',
-      postalCode: '60293',
-      addressCountry: 'ID',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: -7.3197,
-      longitude: 112.7661,
-    },
-    openingHoursSpecification: [
+    '@graph': [
       {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '07:30',
-        closes: '17:00',
+        '@type': 'Organization',
+        '@id': 'https://www.mscscaffolding.com/#organization',
+        name: 'PT MITRA SOLUSI CAHAYA',
+        alternateName: 'MSC Scaffolding',
+        url: 'https://www.mscscaffolding.com',
+        logo: 'https://www.mscscaffolding.com/images/branding/logo-msc-circle.png',
+        telephone: '+6282257664755',
+        email: 'sales@mscscaffolding.com',
+        sameAs: [
+          'https://www.facebook.com/mscscaffolding',
+          'https://www.instagram.com/mscscaffolding',
+        ],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: '+6282257664755',
+            contactType: 'customer service',
+            areaServed: ['ID-JI'],
+            availableLanguage: ['Indonesian', 'Javanese', 'English'],
+          },
+        ],
       },
-    ],
-    sameAs: [
-      'https://www.facebook.com/mscscaffolding',
-      'https://www.instagram.com/mscscaffolding',
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://www.mscscaffolding.com/#hub-surabaya',
+        name: 'MSC Scaffolding — Hub Surabaya',
+        parentOrganization: {
+          '@id': 'https://www.mscscaffolding.com/#organization',
+        },
+        image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
+        url: 'https://www.mscscaffolding.com',
+        telephone: '+6282257664755',
+        priceRange: 'IDR 27.000 - 585.000',
+        areaServed: ['Surabaya', 'Gresik', 'Bangkalan'],
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Medokan Asri Utara, Rungkut',
+          addressLocality: 'Surabaya',
+          addressRegion: 'Jawa Timur',
+          postalCode: '60293',
+          addressCountry: 'ID',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: -7.3235,
+          longitude: 112.7831,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '07:30',
+            closes: '17:00',
+          },
+        ],
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://www.mscscaffolding.com/#hub-sidoarjo',
+        name: 'MSC Scaffolding — Hub Sidoarjo',
+        parentOrganization: {
+          '@id': 'https://www.mscscaffolding.com/#organization',
+        },
+        image: 'https://www.mscscaffolding.com/images/proyek/msc_logistics_truck_clean.webp',
+        url: 'https://www.mscscaffolding.com',
+        telephone: '+6282257664755',
+        priceRange: 'IDR 27.000 - 585.000',
+        areaServed: ['Sidoarjo', 'Pasuruan', 'Mojokerto'],
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Tritan Hub, Gedangan',
+          addressLocality: 'Sidoarjo',
+          addressRegion: 'Jawa Timur',
+          postalCode: '61254',
+          addressCountry: 'ID',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: -7.3885,
+          longitude: 112.7291,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '07:30',
+            closes: '17:00',
+          },
+        ],
+      },
     ],
   };
 

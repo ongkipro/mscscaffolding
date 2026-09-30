@@ -106,27 +106,27 @@ export default function CoreServices() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {steps.map((st) => {
               const Icon = st.icon;
               return (
                 <div
                   key={st.step}
-                  className="p-6 rounded-2xl bg-slate-50 border border-slate-100/80 space-y-3 hover:border-slate-200 transition-colors"
+                  className="p-4 sm:p-6 rounded-2xl bg-slate-50 border border-slate-100/80 space-y-2 sm:space-y-3 hover:border-slate-200 transition-colors"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-orange-700">
+                    <span className="text-xl sm:text-2xl font-black text-orange-700">
                       {st.step}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-orange-700 shadow-2xs">
-                      <Icon className="w-4 h-4" />
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-orange-700 shadow-2xs">
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-950">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">
                       {st.title}
                     </h4>
-                    <p className="text-xs text-slate-600 mt-1">
+                    <p className="text-xs text-slate-600 mt-0.5 sm:mt-1 leading-relaxed">
                       {st.desc}
                     </p>
                   </div>
