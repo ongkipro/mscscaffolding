@@ -47,8 +47,11 @@ export async function generateMetadata({
   return {
     title: `${product.name} — Spesifikasi Pipa 1.8mm SNI & Harga Sewa`,
     description: `${product.shortDesc} Tebal pipa ${product.pipeThickness}, SWL ${product.swlKg} kg, berat ${product.weightKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bulan. Siap kirim same-day.`,
+    alternates: {
+      canonical: `https://www.mscscaffolding.com/produk/${product.slug}`,
+    },
     openGraph: {
-      title: `${product.name} | MSC Scaffolding PT Mitra Solusi Cahaya`,
+      title: `${product.name} - MSC Scaffolding PT Mitra Solusi Cahaya`,
       description: product.shortDesc,
       url: `https://www.mscscaffolding.com/produk/${product.slug}`,
       images: [
@@ -78,7 +81,7 @@ export default async function ProductDetailPage({
     .slice(0, 3);
 
   const waText = encodeURIComponent(
-    `Halo Bu Hanifa, saya ingin sewa/beli ${product.name} (SWL: ${product.swlKg} kg, Tebal: ${product.pipeThickness}). Mohon info penawaran harga & ketersediaan stok di gudang.`
+    `Halo Tim MSC Scaffolding, saya ingin sewa/beli ${product.name} (SWL: ${product.swlKg} kg, Tebal: ${product.pipeThickness}). Mohon info penawaran harga & ketersediaan stok di gudang.`
   );
 
   const jsonLd = {
@@ -111,7 +114,7 @@ export default async function ProductDetailPage({
       />
 
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-8 sm:py-10">
+      <section className="bg-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-3">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -207,7 +210,7 @@ export default async function ProductDetailPage({
                 {/* Single Conversion Action */}
                 <div className="pt-2">
                   <a
-                    href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${waText}`}
+                    href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${waText}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full bg-orange-600 hover:bg-orange-500 active:scale-[0.98] text-white text-sm font-semibold tracking-wide transition shadow-md shadow-orange-950/20"

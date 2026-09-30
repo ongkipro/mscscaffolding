@@ -7,7 +7,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     title: 'Sewa & Jual Scaffolding Surabaya — Hub Rungkut & Margomulyo',
     distanceKm: 'Radius 0 – 15 km',
     leadTimeHours: '2 – 4 Jam',
-    warehouseHub: 'Hub Rungkut (Gudang Utama)',
+    warehouseHub: 'Gudang Rungkut (Medokan Asri Utara)',
     industrialEstates: [
       'SIER (Rungkut)',
       'Margomulyo',
@@ -19,10 +19,10 @@ export const SERVICE_AREAS: ServiceArea[] = [
   {
     slug: 'sidoarjo',
     city: 'Sidoarjo',
-    title: 'Sewa & Jual Scaffolding Sidoarjo — Hub Lingkar Timur Buduran',
+    title: 'Sewa & Jual Scaffolding Sidoarjo — Hub Tritan Hub Gedangan',
     distanceKm: 'Radius 0 – 20 km',
     leadTimeHours: '2 – 4 Jam',
-    warehouseHub: 'Depot Buduran (Lingkar Timur)',
+    warehouseHub: 'Gudang Gedangan (Tritan Hub)',
     industrialEstates: [
       'Berbek & Waru',
       'Safe n Lock Lingkar Timur',
@@ -52,7 +52,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     title: 'Sewa & Jual Scaffolding Pasuruan — Siap Kirim PIER & Beji',
     distanceKm: '40 – 65 km',
     leadTimeHours: '4 – 8 Jam',
-    warehouseHub: 'Hub Sidoarjo via Tol Gempol–Pasuruan',
+    warehouseHub: 'Hub Sidoarjo (Gedangan) via Tol Gempol–Pasuruan',
     industrialEstates: [
       'PIER (Rembang)',
       'Beji & Gempol',
@@ -67,7 +67,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     title: 'Sewa & Jual Scaffolding Mojokerto — Suplai Cepat NIP Ngoro',
     distanceKm: '45 – 70 km',
     leadTimeHours: '4 – 8 Jam',
-    warehouseHub: 'Hub Sidoarjo via Tol Krian–Sumo',
+    warehouseHub: 'Hub Sidoarjo (Gedangan) via Tol Krian–Sumo',
     industrialEstates: [
       'Ngoro Industrial Park (NIP)',
       'Pungging & Mojosari',

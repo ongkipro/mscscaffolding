@@ -16,7 +16,7 @@ export default function ProductQuickSpecModal({ product, onClose }: ProductQuick
   if (!product) return null;
 
   const waText = encodeURIComponent(
-    `Halo Bu Hanifa, saya sedang melihat ${product.name} (SWL: ${product.swlKg} kg, Tebal: ${product.pipeThickness}). Mohon info penawaran sewa & beli.`
+    `Halo Tim MSC Scaffolding, saya sedang melihat ${product.name} (SWL: ${product.swlKg} kg, Tebal: ${product.pipeThickness}). Mohon info penawaran sewa & beli.`
   );
 
   return (
@@ -166,13 +166,13 @@ export default function ProductQuickSpecModal({ product, onClose }: ProductQuick
           </Link>
 
           <a
-            href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${waText}`}
+            href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${waText}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-orange-600 hover:bg-orange-700 active:scale-[0.98] text-white font-semibold text-xs transition-all shadow-sm"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>Pesan via Bu Hanifa</span>
+            <span>Pesan / Konsultasi WhatsApp</span>
           </a>
         </div>
       </div>

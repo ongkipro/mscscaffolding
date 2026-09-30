@@ -16,7 +16,10 @@ import ContactInquiryForm from '@/components/kontak/ContactInquiryForm';
 
 export const metadata: Metadata = {
   title: 'Hubungi Kami — Kontak & Lokasi Gudang MSC Scaffolding Jawa Timur',
-  description: 'Hotline sewa & beli scaffolding pipa 1.8mm SNI di Surabaya & Sidoarjo. Hubungi Bu Hanifa (0822-5766-4755) atau CS Kantor Tender (0813-2562-024). Respons cepat dalam 5 menit.',
+  description: 'Hotline sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, Pasuruan, Gresik. WhatsApp: 0822-5766-4755 / Telepon: 0813-2562-024. Konsultasi sekarang, dapatkan penawaran terbaik!',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/kontak',
+  },
   openGraph: {
     title: 'Kontak & Alamat Gudang MSC Scaffolding Surabaya & Sidoarjo',
     description: 'Hotline resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA.',
@@ -28,7 +31,7 @@ export default function KontakPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -37,11 +40,14 @@ export default function KontakPage() {
           </div>
 
           <div className="max-w-3xl space-y-2">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-bold block">
+              {COMPANY_INFO.tagline}
+            </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
-              Kontak & Lokasi Gudang
+              Kontak &amp; Lokasi Gudang MSC
             </h1>
             <p className="text-slate-600 text-sm sm:text-base">
-              Hubungi tim kami untuk konsultasi sewa, pembelian unit baru pipa 1.8mm SNI, atau penawaran resmi (SPH).
+              {COMPANY_INFO.slogan}. Wilayah layanan: {COMPANY_INFO.serviceCoverage}.
             </p>
           </div>
         </div>
@@ -53,7 +59,7 @@ export default function KontakPage() {
           {/* Direct Hotlines Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Bu Hanifa Card */}
-            <div className="bg-slate-50/80 p-8 sm:p-10 rounded-3xl flex flex-col justify-between">
+            <div className="bg-slate-50/80 p-8 sm:p-10 rounded-2xl flex flex-col justify-between">
               <div>
                 <span className="text-xs uppercase tracking-wider font-semibold text-orange-600 mb-2 block">
                   Sewa & Retail
@@ -80,20 +86,20 @@ export default function KontakPage() {
               </div>
 
               <a
-                href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                  'Halo Bu Hanifa, saya ingin konsultasi sewa scaffolding untuk proyek.'
+                href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                  'Halo Tim MSC Scaffolding, saya ingin konsultasi sewa scaffolding untuk proyek.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-700 active:scale-[0.99] text-white font-semibold text-xs uppercase tracking-wider rounded-full shadow-xs transition"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Chat Bu Hanifa</span>
+                <span>Konsultasi Sekarang</span>
               </a>
             </div>
 
             {/* Tender Card */}
-            <div className="bg-slate-950 p-8 sm:p-10 rounded-3xl flex flex-col justify-between text-white">
+            <div className="bg-slate-950 p-8 sm:p-10 rounded-2xl flex flex-col justify-between text-white">
               <div>
                 <span className="text-xs uppercase tracking-wider font-semibold text-emerald-400 mb-2 block">
                   Tender & B2B
@@ -156,7 +162,7 @@ export default function KontakPage() {
               {COMPANY_INFO.warehouses.map((wh, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50/80 hover:bg-slate-50 p-8 rounded-3xl transition-all"
+                  className="bg-slate-50/80 hover:bg-slate-50 p-8 rounded-2xl transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">

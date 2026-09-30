@@ -12,9 +12,12 @@ import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
   title: 'Area Layanan Scaffolding Jawa Timur — Surabaya, Sidoarjo, Gresik, Pasuruan, Mojokerto',
-  description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day dari gudang Rungkut Surabaya & Buduran Sidoarjo ke seluruh kawasan industri Jawa Timur.',
+  description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day dari gudang Rungkut Surabaya & Gedangan Sidoarjo ke seluruh kawasan industri Jawa Timur.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/area-layanan',
+  },
   openGraph: {
-    title: 'Area Layanan Pengiriman Scaffolding Jawa Timur | MSC Scaffolding',
+    title: 'Area Layanan Pengiriman Scaffolding Jawa Timur - MSC Scaffolding',
     description: 'Armada siap melayani Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
     url: 'https://www.mscscaffolding.com/area-layanan',
   },
@@ -34,7 +37,7 @@ export default async function AreaLayananPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Bersih */}
-      <section className="bg-white border-b border-slate-100 py-8 sm:py-10">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -46,7 +49,7 @@ export default async function AreaLayananPage() {
             Area Layanan & Distribusi
           </h1>
           <p className="text-slate-600 text-sm mt-1">
-            Pengiriman cepat scaffolding same-day dari gudang Surabaya (Rungkut) dan Sidoarjo (Buduran).
+            Pengiriman cepat scaffolding same-day dari gudang Surabaya (Rungkut) dan Sidoarjo (Gedangan).
           </p>
         </div>
       </section>
@@ -86,8 +89,8 @@ export default async function AreaLayananPage() {
 
             {/* 6th Card: Luar Kota (Charter) */}
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                'Halo Bu Hanifa, saya ingin info pengiriman scaffolding untuk proyek di luar 5 kota utama Jawa Timur.'
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                'Halo Tim MSC Scaffolding, saya ingin info pengiriman scaffolding untuk proyek di luar 5 kota utama Jawa Timur.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +113,7 @@ export default async function AreaLayananPage() {
       </section>
 
       {/* Pilihan Armada */}
-      <section className="py-10 sm:py-12 bg-slate-50 border-t border-slate-100">
+      <section className="py-12 sm:py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
@@ -156,22 +159,22 @@ export default async function AreaLayananPage() {
               <strong className="text-slate-900 font-semibold">Siap kirim same-day & malam hari.</strong> Sudah termasuk helper bongkar muat dan Surat Jalan resmi.
             </div>
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                'Halo Bu Hanifa, saya ingin cek jadwal kirim scaffolding untuk proyek hari ini.'
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                'Halo Tim MSC Scaffolding, saya ingin cek jadwal kirim scaffolding untuk proyek hari ini.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 font-semibold text-orange-600 hover:text-orange-700 font-mono shrink-0"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>Hubungi Logistik: {COMPANY_INFO.whatsappHanifa.formatted}</span>
+              <span>Hubungi Hotline: {COMPANY_INFO.primaryPhone.formatted}</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Ketentuan Pengiriman */}
-      <section className="py-10 sm:py-12 bg-white border-t border-slate-100">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
@@ -185,7 +188,7 @@ export default async function AreaLayananPage() {
                 Ongkir Terdekat
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Dihitung dari gudang Rungkut atau Buduran. Subsidi ongkir untuk sewa volume besar.
+                Dihitung dari gudang Rungkut atau Gedangan. Subsidi ongkir untuk sewa volume besar.
               </p>
             </div>
 

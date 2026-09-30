@@ -20,8 +20,11 @@ import { COMPANY_INFO } from '@/data/company';
 export const metadata: Metadata = {
   title: 'Panduan K3 Scaffolding & Standar Safety — Permenakertrans 01/1980 & EN 12811-1',
   description: 'Pedoman keselamatan kerja perancah steger besi: kapasitas beban SWL 1.500 kg, SOP perakitan dan pembongkaran, protokol Scafftag inspection, dan checklist harian HSE.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/k3-panduan',
+  },
   openGraph: {
-    title: 'Panduan Teknis K3 Scaffolding Standar Kemenaker & Internasional | MSC Scaffolding',
+    title: 'Panduan Teknis K3 Scaffolding Standar Kemenaker & Internasional - MSC Scaffolding',
     description: 'Panduan keselamatan kerja perancah steger besi, kapasitas SWL, checklist inspeksi, dan sistem Scafftag hijau-merah.',
     url: 'https://www.mscscaffolding.com/k3-panduan',
   },
@@ -124,7 +127,7 @@ export default function K3PanduanPage() {
       />
 
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -154,7 +157,7 @@ export default function K3PanduanPage() {
       </section>
 
       {/* Standards Overview */}
-      <section className="py-16 bg-slate-50 border-b border-slate-100">
+      <section className="py-16 sm:py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <span className="text-xs uppercase tracking-widest text-emerald-600 font-semibold mb-2 block">

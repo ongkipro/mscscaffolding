@@ -16,11 +16,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Sewa Scaffolding Surabaya & Sidoarjo — Tarif Mulai Rp 45.000 / Set / Bulan',
-  description: 'Layanan sewa perancah steger galvanis SNI pipa 1.8mm di Jawa Timur. Ready stock ribuan set, kirim same-day dari gudang Rungkut & Buduran, bebas biaya ganti unit rusak.',
+  title: 'Sewa Scaffolding Surabaya & Sidoarjo — Tarif Mulai Rp 27.000 / Set / Bulan',
+  description: 'Layanan sewa perancah steger galvanis SNI pipa 1.8mm di Jawa Timur. Ready stock ribuan set, kirim same-day dari gudang Rungkut & Gedangan, bebas biaya ganti unit rusak.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/sewa-scaffolding',
+  },
   openGraph: {
-    title: 'Sewa Scaffolding Pipa 1.8mm SNI Murah di Surabaya & Sidoarjo | MSC Scaffolding',
-    description: 'Tarif sewa mulai Rp 45.000/set/bulan. Ready stock ribuan set di Surabaya & Sidoarjo.',
+    title: 'Sewa Scaffolding Pipa 1.8mm SNI Murah di Surabaya & Sidoarjo - MSC Scaffolding',
+    description: 'Tarif sewa mulai Rp 27.000/set/bulan. Ready stock ribuan set di Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/sewa-scaffolding',
   },
 };
@@ -30,56 +33,77 @@ export default function SewaScaffoldingPage() {
     {
       item: '1 Set Scaffolding Fasad T170 (Lengkap)',
       components: '2 Main Frame 170 + 2 Cross Brace 220 + 4 Joint Pin',
-      rateMonthly: 'Rp 45.000',
+      rateMonthly: 'Rp 27.000',
       minRental: '1 Bulan',
       deposit: 'Fleksibel / SPH Kontraktor',
     },
     {
       item: '1 Set Scaffolding Headroom T190',
       components: '2 Main Frame 190 + 2 Cross Brace 220 + 4 Joint Pin',
-      rateMonthly: 'Rp 50.000',
+      rateMonthly: 'Rp 29.000',
+      minRental: '1 Bulan',
+      deposit: 'Fleksibel / SPH Kontraktor',
+    },
+    {
+      item: '1 Set Ladder Frame T90',
+      components: '2 Ladder Frame 90 + 2 Cross Brace + 4 Joint Pin',
+      rateMonthly: 'Rp 20.000',
       minRental: '1 Bulan',
       deposit: 'Fleksibel / SPH Kontraktor',
     },
     {
       item: 'Main Frame T170 Eceran',
       components: '1 Unit Gawang Utama Pipa 1.8mm SNI',
-      rateMonthly: 'Rp 18.000',
+      rateMonthly: 'Rp 7.000',
+      minRental: '1 Bulan',
+      deposit: 'Sesuai Jumlah',
+    },
+    {
+      item: 'Main Frame T190 Eceran',
+      components: '1 Unit Gawang Utama Headroom 190 Pipa 1.8mm SNI',
+      rateMonthly: 'Rp 8.000',
+      minRental: '1 Bulan',
+      deposit: 'Sesuai Jumlah',
+    },
+    {
+      item: 'Ladder Frame T90 Eceran',
+      components: '1 Unit Rangka Tangga T90 Pipa SNI',
+      rateMonthly: 'Rp 5.500',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
     },
     {
       item: 'Catwalk Metal Plank Anti-Slip',
-      components: 'Pelat Baja Galvanis Berlubang 50 x 183 cm',
+      components: 'Pelat Baja Galvanis Berlubang 50 x 183 cm K3',
       rateMonthly: 'Rp 30.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
     },
     {
-      item: 'Tangga Bordes Scaffolding 170',
-      components: 'Tangga Baja 7 Trap + Kaitan Pengunci',
-      rateMonthly: 'Rp 35.000',
-      minRental: '1 Bulan',
-      deposit: 'Sesuai Jumlah',
-    },
-    {
-      item: 'Jack Base T60cm / U-Head T60cm',
-      components: 'Batang Ulir Solid Tebal 3.8mm + Plat Tapak',
-      rateMonthly: 'Rp 10.000',
+      item: 'Tangga Bordes Scaffolding 170 / 190',
+      components: 'Tangga Baja Bordes + Kaitan Pengunci Aman',
+      rateMonthly: 'Rp 50.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
     },
     {
       item: 'Pipe Support Teleskopik TS-90',
       components: 'Rentang Ketinggian 2.0 - 3.8 Meter Adjustable',
-      rateMonthly: 'Rp 25.000',
+      rateMonthly: 'Rp 15.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
     },
     {
-      item: 'Roda Scaffolding Karet 6 Inch + Rem',
-      components: '4 Roda Polyurethane Heavy Duty Swivel Lock',
-      rateMonthly: 'Rp 60.000 / set (4 roda)',
+      item: 'Cross Brace 220 / 190 Galvanis',
+      components: 'Pipa Silang Diagonal Pengaku Gawang Scaffolding',
+      rateMonthly: 'Rp 4.500',
+      minRental: '1 Bulan',
+      deposit: 'Sesuai Jumlah',
+    },
+    {
+      item: 'Joint Pin SGM / SG',
+      components: 'Pin Sambungan Tiang Scaffolding Galvanis Presisi',
+      rateMonthly: 'Rp 1.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
     },
@@ -89,7 +113,7 @@ export default function SewaScaffoldingPage() {
     {
       num: '01',
       title: 'Konsultasi & Estimasi',
-      desc: 'Hitung modul steger via WhatsApp atau kalkulator online.',
+      desc: `Hitung modul steger via WhatsApp hotline ${COMPANY_INFO.primaryPhone.formatted} atau kalkulator online.`,
     },
     {
       num: '02',
@@ -114,30 +138,30 @@ export default function SewaScaffoldingPage() {
     {
       num: '06',
       title: 'Penjemputan Unit',
-      desc: 'Truk kami menjemput kembali perancah setelah sewa selesai.',
+      desc: 'Armada truk kami menjemput kembali scaffolding setelah masa sewa selesai.',
     },
   ];
 
   const faqs = [
     {
-      q: 'Berapa minimal sewa scaffolding di MSC?',
-      a: 'Minimal periode sewa reguler adalah 1 bulan (30 hari). Untuk sewa mingguan atau proyek khusus, silakan hubungi Bu Hanifa untuk penawaran tarif harian/mingguan khusus.',
+      q: 'Berapa tarif sewa scaffolding di MSC?',
+      a: 'Tarif sewa 1 set Scaffolding T170 mulai dari Rp 27.000/bulan dan Scaffolding T190 Rp 29.000/bulan. Komponen eceran seperti Main Frame mulai Rp 7.000/bulan dan Catwalk Rp 30.000/bulan.',
     },
     {
-      q: 'Apakah bisa kirim hari ini (same-day delivery)?',
-      a: 'Bisa! Untuk area Surabaya, Sidoarjo, dan Gresik dengan pemesanan sebelum jam 13.00 WIB, armada kami siap mengantar di hari yang sama langsung ke lokasi proyek.',
+      q: 'Apakah harga sewa sudah termasuk ongkos kirim ke proyek?',
+      a: 'Belum. Biaya kirim dihitung berdasarkan jarak gudang terdekat (Surabaya Rungkut / Sidoarjo Gedangan) ke lokasi proyek. Untuk volume besar, kami memberikan subsidi ongkir khusus kontraktor.',
     },
     {
-      q: 'Bagaimana jika ada komponen yang rusak atau macet saat pemakaian?',
-      a: 'MSC memberikan garansi tukar unit gratis. Jika ditemukan cacat fungsi atau las sambungan aus, kami akan segera mengirimkan unit pengganti baru tanpa biaya sewa tambahan.',
+      q: 'Bagaimana jika unit scaffolding rusak atau bengkok di lapangan?',
+      a: 'Kami memberikan garansi penukaran unit tanpa biaya tambahan jika kerusakan terjadi karena keausan wajar atau cacat material awal.',
     },
     {
-      q: 'Apakah MSC melayani penerbitan faktur pajak dan SPH resmi untuk tender?',
-      a: 'Ya, sebagai badan hukum resmi PT MITRA SOLUSI CAHAYA, kami menerbitkan Surat Penawaran Harga (SPH), BAST, dan Faktur Pajak PPN resmi untuk keperluan procurement tender BUMN dan swasta.',
+      q: 'Apakah MSC melayani penerbitan faktur pajak untuk tender BUMN?',
+      a: 'Ya, PT MITRA SOLUSI CAHAYA adalah entitas PKP resmi yang siap menerbitkan e-Faktur PPN 11%, SPH resmi berkop PT, dan sertifikat material K3.',
     },
   ];
 
-  const jsonLd = {
+  const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((f) => ({
@@ -154,11 +178,11 @@ export default function SewaScaffoldingPage() {
     <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Clean Unified Page Header with Visual Photo */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-14">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -177,8 +201,8 @@ export default function SewaScaffoldingPage() {
 
               <div className="pt-2">
                 <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                    'Halo Bu Hanifa, saya ingin konsultasi paket sewa scaffolding bulanan untuk proyek.'
+                  href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                    'Halo Tim MSC Scaffolding, saya ingin konsultasi paket sewa scaffolding bulanan untuk proyek.'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -205,7 +229,7 @@ export default function SewaScaffoldingPage() {
                   <span className="px-2.5 py-1 rounded bg-orange-600 font-semibold text-[11px]">
                     Stok Ready 2 Hub
                   </span>
-                  <span className="font-bold text-[11px]">Mulai Rp 45.000 / set / bln</span>
+                  <span className="font-bold text-[11px]">Mulai Rp 27.000 / set / bln</span>
                 </div>
               </div>
             </div>
@@ -257,8 +281,8 @@ export default function SewaScaffoldingPage() {
                     </td>
                     <td className="py-3.5 px-5 text-center">
                       <a
-                        href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                          `Halo Bu Hanifa, saya tertarik sewa unit: ${rate.item}. Mohon informasi ketersediaan stok.`
+                        href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                          `Halo Tim MSC Scaffolding, saya tertarik sewa unit: ${rate.item}. Mohon informasi ketersediaan stok.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"

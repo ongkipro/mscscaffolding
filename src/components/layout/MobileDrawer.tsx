@@ -42,12 +42,12 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         {/* Drawer Header */}
         <div className="p-5 flex items-center justify-between border-b border-slate-100">
           <div className="flex items-center gap-2.5">
-            <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+            <div className="relative w-8 h-8 flex-shrink-0">
               <Image
-                src="/images/branding/logo-msc.jpeg"
+                src="/images/branding/logo-msc-circle.png"
                 alt="MSC Logo"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div>
@@ -71,7 +71,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         {/* Action Shortcuts */}
         <div className="p-4 bg-slate-50/70 grid grid-cols-2 gap-2">
           <a
-            href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}`}
+            href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 p-3 bg-white rounded-md border border-slate-100 text-xs font-semibold text-slate-900 shadow-xs hover:text-orange-600 transition"
@@ -122,8 +122,8 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             <span>2 Hub Gudang Jawa Timur</span>
           </div>
           <div className="text-[11px] text-slate-400 space-y-1">
-            <div>Surabaya: Kawasan Rungkut Industri</div>
-            <div>Sidoarjo: Lingkar Timur Buduran</div>
+            <div>Surabaya: Medokan Asri Utara, Rungkut</div>
+            <div>Sidoarjo: Tritan Hub, Gedangan</div>
           </div>
           <div className="pt-2">
             <a

@@ -10,7 +10,6 @@ import {
   Truck,
   FileCheck2,
   Clock,
-  Sparkles,
 } from 'lucide-react';
 import { ScaffoldingCalculator } from '@/components/kalkulator/ScaffoldingCalculator';
 import { COMPANY_INFO } from '@/data/company';
@@ -18,8 +17,11 @@ import { COMPANY_INFO } from '@/data/company';
 export const metadata: Metadata = {
   title: 'Kalkulator Kebutuhan Scaffolding — Hitung Jumlah Set & Biaya Sewa Online',
   description: 'Simulasi gratis kebutuhan scaffolding steger modular, catwalk, jack base, dan tangga berdasarkan panjang dan tinggi bidang kerja. Dapatkan estimasi BOQ dan biaya dalam 10 detik.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/kalkulator',
+  },
   openGraph: {
-    title: 'Kalkulator Scaffolding Online — Hitung Kebutuhan & Biaya Proyek | MSC Scaffolding',
+    title: 'Kalkulator Scaffolding Online — Hitung Kebutuhan & Biaya Proyek - MSC Scaffolding',
     description: 'Hitung kebutuhan set steger, catwalk, jack base, dan estimasi biaya sewa / beli real-time.',
     url: 'https://www.mscscaffolding.com/kalkulator',
   },
@@ -56,7 +58,7 @@ export default function KalkulatorPage() {
     },
     {
       q: 'Apakah ongkos kirim armada tronton atau pickup sudah termasuk di kalkulator?',
-      a: 'Estimasi di atas merupakan harga sewa/beli komponen. Biaya mob-demob (transportasi armada) dihitung terpisah berdasarkan jarak lokasi proyek dari gudang terdekat kami (Rungkut Surabaya atau Buduran Sidoarjo).',
+      a: 'Estimasi di atas merupakan harga sewa/beli komponen. Biaya mob-demob (transportasi armada) dihitung terpisah berdasarkan jarak lokasi proyek dari gudang terdekat kami (Rungkut Surabaya atau Gedangan Sidoarjo).',
     },
   ];
 
@@ -81,7 +83,7 @@ export default function KalkulatorPage() {
       />
 
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -108,7 +110,7 @@ export default function KalkulatorPage() {
       </section>
 
       {/* Engineering Guidelines */}
-      <section className="py-16 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 sm:py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">

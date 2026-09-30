@@ -19,11 +19,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Jual Scaffolding Baru & Rekondisi SNI 1.8mm — Harga Pabrik Surabaya Sidoarjo',
-  description: 'Pusat penjualan steger scaffolding baru galvanis dan rekondisi Grade A bersertifikasi K3 di Jawa Timur. Siap supply proyek B2B, tender BUMN, faktur pajak resmi.',
+  title: 'Jual Scaffolding Surabaya & Sidoarjo — Harga Pabrik Mulai Rp 500.000 / Set - MSC Scaffolding',
+  description: 'Pricelist resmi jual scaffolding baru pipa 1.8mm SNI PT MITRA SOLUSI CAHAYA. 1 Set T170 Rp 500.000, Set T190 Rp 540.000, Catwalk Rp 310.000. Siap supply tender B2B & faktur pajak.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/jual-scaffolding',
+  },
   openGraph: {
-    title: 'Jual Scaffolding Pipa 1.8mm SNI Baru & Rekondisi Berkualitas | MSC Scaffolding',
-    description: 'Harga distributor tangan pertama mulai Rp 450.000/set. Ready stock ratusan set baru & rekondisi Grade A di Surabaya & Sidoarjo.',
+    title: 'Pricelist Jual Scaffolding MSC Pipa 1.8mm SNI - PT Mitra Solusi Cahaya',
+    description: 'Harga distributor tangan pertama: 1 Set T170 Rp 500.000, Set T190 Rp 540.000, Catwalk Rp 310.000. Ready stock Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/jual-scaffolding',
   },
 };
@@ -31,60 +34,102 @@ export const metadata: Metadata = {
 export default function JualScaffoldingPage() {
   const saleProducts = [
     {
-      item: '1 Set Scaffolding Fasad T170 (Baru)',
-      specs: '2 Main Frame 170 + 2 Cross Brace 220 + 4 Joint Pin (Pipa 1.8mm SNI)',
-      priceNew: 'Rp 580.000',
-      priceRecon: 'Rp 450.000',
-      warranty: 'Garansi Las & Uji Beban 1.500 kg',
+      no: '01',
+      item: 'MAIN FRAME T190',
+      unit: 'PCS',
+      specs: 'Gawang utama headroom 190cm pipa 1.8mm Real SNI',
+      priceSale: 'Rp 210.000',
     },
     {
-      item: '1 Set Scaffolding T190 (Baru)',
-      specs: '2 Main Frame 190 + 2 Cross Brace 220 + 4 Joint Pin (Headroom Luas)',
-      priceNew: 'Rp 620.000',
-      priceRecon: 'Rp 480.000',
-      warranty: 'Garansi Las & Ketebalan Pipa',
+      no: '02',
+      item: 'MAIN FRAME T170',
+      unit: 'PCS',
+      specs: 'Gawang utama fasad 170cm pipa 1.8mm Real SNI',
+      priceSale: 'Rp 190.000',
     },
     {
-      item: 'Catwalk Metal Plank Anti-Slip 50x183cm',
-      specs: 'Plat Baja Galvanis Berlubang K3 + Double Lock Hook',
-      priceNew: 'Rp 450.000',
-      priceRecon: 'Rp 340.000',
-      warranty: 'Bebas Karat & Anti-Bengkok',
+      no: '03',
+      item: 'LADDER FRAME T90',
+      unit: 'PCS',
+      specs: 'Rangka tangga tingkat setengah 90cm pipa SNI',
+      priceSale: 'Rp 130.000',
     },
     {
-      item: 'Tangga Bordes Scaffolding 170 (Baja)',
-      specs: 'Rangka Pipa 1.8mm + 7 Trap Pijakan Bordes + Hook',
-      priceNew: 'Rp 490.000',
-      priceRecon: 'Rp 380.000',
-      warranty: 'Kaitan Kokoh Standard EN 12811',
+      no: '04',
+      item: 'CROSS BRACE 220',
+      unit: 'PCS',
+      specs: 'Pipa silang diagonal pengaku bentang 220cm',
+      priceSale: 'Rp 50.000',
     },
     {
-      item: 'Pipe Support Teleskopik TS-90',
-      specs: 'Rentang 2.0 - 3.8 Meter, Drat Ulir Presisi, Base Plate 6mm',
-      priceNew: 'Rp 320.000',
-      priceRecon: 'Rp 240.000',
-      warranty: 'Drat Lancar & Anti Selip',
+      no: '05',
+      item: 'CROSS BRACE 190',
+      unit: 'PCS',
+      specs: 'Pipa silang diagonal pengaku bentang 190cm',
+      priceSale: 'Rp 45.000',
     },
     {
-      item: 'Jack Base T60cm / U-Head T60cm (Solid)',
-      specs: 'Batang Ulir Solid Ø 32mm / 34mm, Tebal Plat 5mm',
-      priceNew: 'Rp 145.000',
-      priceRecon: 'Rp 110.000',
-      warranty: 'Ulir Mulus Bebas Macet',
+      no: '06',
+      item: 'JOIN PIN SGM',
+      unit: 'PCS',
+      specs: 'Pin sambungan vertikal tiang perancah SGM',
+      priceSale: 'Rp 6.500',
     },
     {
-      item: 'Swivel Clamp & Fixed Clamp 1.5 - 2 Inch',
-      specs: 'Baja Tempaan Drop Forged K3 Heavy Duty',
-      priceNew: 'Rp 48.000',
-      priceRecon: 'Rp 35.000',
-      warranty: 'Baut T-Bolt Baja Grade 8.8',
+      no: '07',
+      item: 'JOIN PIN SG',
+      unit: 'PCS',
+      specs: 'Pin sambungan tiang perancah SG presisi K3',
+      priceSale: 'Rp 7.500',
     },
     {
-      item: 'Roda Scaffolding Heavy Duty 6 Inch + Rem',
-      specs: 'Karet Polyurethane PU Industrial, Kapasitas 250 kg/roda',
-      priceNew: 'Rp 180.000',
-      priceRecon: 'Rp 135.000',
-      warranty: 'Bearing Mulus & Rem Pakem',
+      no: '08',
+      item: 'SCAFFOLDING T190',
+      unit: 'SET',
+      specs: '1 Set lengkap (2 Main Frame 190 + 2 Cross Brace 220 + 4 Joint Pin)',
+      priceSale: 'Rp 540.000',
+    },
+    {
+      no: '09',
+      item: 'SCAFFOLDING T170',
+      unit: 'SET',
+      specs: '1 Set lengkap (2 Main Frame 170 + 2 Cross Brace 220 + 4 Joint Pin)',
+      priceSale: 'Rp 500.000',
+    },
+    {
+      no: '10',
+      item: 'LADDER FRAME T90',
+      unit: 'SET',
+      specs: '1 Set lengkap (2 Ladder Frame 90 + 2 Cross Brace + 4 Joint Pin)',
+      priceSale: 'Rp 350.000',
+    },
+    {
+      no: '11',
+      item: 'PIPE SUPPORT TS90',
+      unit: 'PCS',
+      specs: 'Tiang prop teleskopik 2.0 - 3.8 meter adjustable',
+      priceSale: 'Rp 285.000',
+    },
+    {
+      no: '12',
+      item: 'STAIR T170',
+      unit: 'PCS',
+      specs: 'Tangga bordes baja 7 trap anti-slip untuk Main Frame 170',
+      priceSale: 'Rp 440.000',
+    },
+    {
+      no: '13',
+      item: 'STAIR T190',
+      unit: 'PCS',
+      specs: 'Tangga bordes baja 8 trap anti-slip untuk Main Frame 190',
+      priceSale: 'Rp 460.000',
+    },
+    {
+      no: '14',
+      item: 'CATWALK',
+      unit: 'PCS',
+      specs: 'Papan pijakan pelat baja galvanis berlubang anti-slip 50x183cm',
+      priceSale: 'Rp 310.000',
     },
   ];
 
@@ -161,7 +206,7 @@ export default function JualScaffoldingPage() {
       />
 
       {/* Clean Unified Page Header with Visual Photo */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-14">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -256,54 +301,56 @@ export default function JualScaffoldingPage() {
       {/* Price Comparison Table */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center max-w-2xl mx-auto">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full inline-block mb-3">
-              Daftar Harga Beli
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
-              Harga Unit Baru vs Rekondisi
-            </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Harga distributor tangan pertama belum termasuk PPN 11% dan ongkos kirim armada tronton/truk drop.
-            </p>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
+                Pricelist Terbuka
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+                Daftar Harga Jual Scaffolding MSC
+              </h2>
+              <p className="text-xs text-slate-500 font-mono mt-1">
+                *Tarif harga jual resmi PT Mitra Solusi Cahaya (belum termasuk PPN 11% &amp; ongkir armada)
+              </p>
+            </div>
           </div>
 
           <div className="overflow-x-auto bg-white rounded-2xl border border-slate-100 shadow-xs">
             <table className="w-full text-left text-sm text-slate-700">
               <thead className="bg-slate-950 text-white font-mono text-xs uppercase tracking-wider">
                 <tr>
-                  <th className="py-4 px-6">Komponen / Set Scaffolding</th>
-                  <th className="py-4 px-6 hidden sm:table-cell">Spesifikasi Material</th>
-                  <th className="py-4 px-6 text-orange-400">Harga Unit Baru</th>
-                  <th className="py-4 px-6 text-emerald-400">Harga Rekondisi A</th>
-                  <th className="py-4 px-6 text-center">Aksi Cepat</th>
+                  <th className="py-3.5 px-5">No &amp; Nama Item</th>
+                  <th className="py-3.5 px-5 hidden sm:table-cell">Spesifikasi / Kelengkapan</th>
+                  <th className="py-3.5 px-5 text-center">Sat</th>
+                  <th className="py-3.5 px-5 text-orange-400">Harga Jual</th>
+                  <th className="py-3.5 px-5 text-center">Aksi Cepat</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
-                {saleProducts.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50 transition">
-                    <td className="py-4 px-6 font-semibold text-slate-950">
-                      <div>{row.item}</div>
+              <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+                {saleProducts.map((row) => (
+                  <tr key={row.no} className="hover:bg-slate-50 transition">
+                    <td className="py-3.5 px-5 font-semibold text-slate-950">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs text-slate-400 font-normal">{row.no}</span>
+                        <span>{row.item}</span>
+                      </div>
                       <div className="text-xs text-slate-500 font-normal sm:hidden mt-0.5">
                         {row.specs}
                       </div>
                     </td>
-                    <td className="py-4 px-6 text-xs text-slate-600 hidden sm:table-cell">
-                      <div>{row.specs}</div>
-                      <div className="text-[11px] text-emerald-600 font-medium mt-0.5">{row.warranty}</div>
+                    <td className="py-3.5 px-5 text-xs text-slate-600 hidden sm:table-cell">
+                      {row.specs}
                     </td>
-                    <td className="py-4 px-6 font-bold text-slate-950">
-                      {row.priceNew}
-                      <span className="text-[10px] text-slate-500 font-normal block">/ unit baru</span>
+                    <td className="py-3.5 px-5 text-center font-mono font-semibold text-slate-600">
+                      {row.unit}
                     </td>
-                    <td className="py-4 px-6 font-bold text-emerald-700">
-                      {row.priceRecon}
-                      <span className="text-[10px] text-slate-500 font-normal block">/ rekondisi</span>
+                    <td className="py-3.5 px-5 font-bold font-mono text-slate-950">
+                      {row.priceSale}
                     </td>
-                    <td className="py-4 px-6 text-center">
+                    <td className="py-3.5 px-5 text-center">
                       <a
                         href={`https://wa.me/${COMPANY_INFO.whatsappTender.number}?text=${encodeURIComponent(
-                          `Halo Tim MSC, saya tertarik membeli unit: ${row.item}. Mohon informasi ketersediaan stock dan diskon volume.`
+                          `Halo Tim MSC Scaffolding, saya tertarik membeli unit: ${row.item} (${row.unit}) seharga ${row.priceSale}. Mohon informasi stok dan penawaran resmi.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -319,7 +366,7 @@ export default function JualScaffoldingPage() {
             </table>
           </div>
           <div className="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-            <div>* Diskon kuantitas berlaku untuk pembelian borongan proyek &gt; 50 set.</div>
+            <div>* Tersedia opsi unit Rekondisi Grade A (hemat hingga 20-30%) dan diskon volume untuk pembelian proyek &gt; 50 set.</div>
             <Link href="/produk" className="text-orange-600 font-semibold hover:underline inline-flex items-center gap-1">
               <span>Semua Produk</span>
               <ArrowRight className="w-3 h-3" />
@@ -392,26 +439,26 @@ export default function JualScaffoldingPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappTender.number}?text=${encodeURIComponent(
-                'Halo Kantor Tender MSC, kami ingin konsultasi pembelian steger scaffolding untuk proyek.'
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                'Halo Tim Procurement MSC Scaffolding, kami ingin konsultasi pembelian steger scaffolding untuk proyek.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-semibold text-sm rounded shadow-lg transition"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Hubungi CS Kantor Tender (0813-2562-024)</span>
+              <span>Minta Penawaran Beli ({COMPANY_INFO.primaryPhone.formatted})</span>
             </a>
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                'Halo Bu Hanifa, kami ingin tanya stok unit scaffolding rekondisi Grade A.'
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                'Halo Tim MSC Scaffolding, kami ingin tanya stok unit scaffolding baru & rekondisi Grade A.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded border border-slate-700 transition"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Tanya Bu Hanifa (0822-5766-4755)</span>
+              <span>Konsultasi Stok Gudang ({COMPANY_INFO.primaryPhone.formatted})</span>
             </a>
           </div>
         </div>

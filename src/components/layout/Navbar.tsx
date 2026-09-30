@@ -82,12 +82,12 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo & Corporate Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0">
               <Image
-                src="/images/branding/logo-msc.jpeg"
+                src="/images/branding/logo-msc-circle.png"
                 alt="MSC Scaffolding Logo PT Mitra Solusi Cahaya"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-contain group-hover:scale-105 transition-transform duration-300"
                 priority
               />
             </div>
@@ -220,13 +220,13 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
           })}
           <div className={`pt-3 border-t mt-2 space-y-2 ${isHome ? 'border-slate-800' : 'border-slate-100'}`}>
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}`}
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2.5 rounded-md text-xs transition shadow-sm"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>Hubungi Bu Hanifa ({COMPANY_INFO.whatsappHanifa.formatted})</span>
+              <span>Hotline WhatsApp ({COMPANY_INFO.primaryPhone.formatted})</span>
             </a>
           </div>
         </div>

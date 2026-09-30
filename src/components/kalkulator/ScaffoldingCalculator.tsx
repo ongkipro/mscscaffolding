@@ -45,13 +45,13 @@ export function ScaffoldingCalculator() {
     const tangga = Math.min(tiers, 4);
 
     // Cost Estimations (Monthly per unit in IDR)
-    // Set 170: 45.000 / mo | Catwalk: 30.000 / mo | Jackbase: 10.000 / mo | U-head: 10.000 / mo | Support: 25.000 / mo | Tangga: 35.000 / mo
-    const monthlySetCost = totalSets * 45000;
+    // Set 170: 27.000 / mo | Catwalk: 30.000 / mo | Jackbase: 10.000 / mo | U-head: 10.000 / mo | Support: 15.000 / mo | Tangga: 50.000 / mo
+    const monthlySetCost = totalSets * 27000;
     const monthlyCatwalkCost = catwalks * 30000;
     const monthlyJackBaseCost = jackBases * 10000;
     const monthlyUHeadCost = uHeads * 10000;
-    const monthlySupportCost = pipeSupports * 25000;
-    const monthlyTanggaCost = tangga * 35000;
+    const monthlySupportCost = pipeSupports * 15000;
+    const monthlyTanggaCost = tangga * 50000;
 
     const estimatedRentalMonthly =
       (monthlySetCost +
@@ -62,14 +62,14 @@ export function ScaffoldingCalculator() {
         monthlyTanggaCost) *
       durationMonths;
 
-    // Purchase New: Set ~580.000, Catwalk ~450.000, JackBase ~145.000, UHead ~145.000, Support ~320.000, Tangga ~490.000
+    // Purchase New: Set ~500.000, Catwalk ~310.000, JackBase ~95.000, UHead ~98.000, Support ~285.000, Tangga ~440.000
     const estimatedPurchaseNew =
-      totalSets * 580000 +
-      catwalks * 450000 +
-      jackBases * 145000 +
-      uHeads * 145000 +
-      pipeSupports * 320000 +
-      tangga * 490000;
+      totalSets * 500000 +
+      catwalks * 310000 +
+      jackBases * 95000 +
+      uHeads * 98000 +
+      pipeSupports * 285000 +
+      tangga * 440000;
 
     return {
       bays,
@@ -332,7 +332,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
         </div>
 
         {/* Right Output Column (7 Cols) */}
-        <div className="lg:col-span-7 bg-slate-50/70 p-8 rounded-3xl flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-slate-50/70 p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between pb-3 mb-4">
               <div>
@@ -400,7 +400,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   {formatIDR(calc.estimatedRentalMonthly)}
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">
-                  Tarif mulai Rp 45.000/set/bulan
+                  Tarif mulai Rp 27.000/set/bulan
                 </div>
               </div>
 
@@ -421,7 +421,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
           {/* Single Action CTA */}
           <div className="space-y-3 pt-2">
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
                 boqText
               )}`}
               target="_blank"

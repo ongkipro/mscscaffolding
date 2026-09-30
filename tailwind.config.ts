@@ -20,6 +20,10 @@ const config: Config = {
           light: "#d1fae5",   // emerald-100
         },
       },
+      boxShadow: {
+        '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      },
       fontFamily: {
         sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],

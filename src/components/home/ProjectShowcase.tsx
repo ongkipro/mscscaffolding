@@ -35,7 +35,7 @@ export default function ProjectShowcase() {
     },
     {
       title: 'Mobile Tower Maintenance Pabrik',
-      location: 'Pabrik Industri Buduran',
+      location: 'Pabrik Industri Gedangan',
       image: '/images/proyek/msc_project_factory_tower.jpg',
     },
     {
@@ -51,7 +51,7 @@ export default function ProjectShowcase() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-t border-slate-100">
+    <section className="py-20 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
           <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">

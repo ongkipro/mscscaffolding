@@ -4,12 +4,16 @@ import Link from 'next/link';
 import { ShieldCheck, ChevronRight, Download } from 'lucide-react';
 import { getAllProducts, getProductCategories } from '@/services/productService';
 import ProductCatalogClient from '@/components/produk/ProductCatalogClient';
+import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
   title: 'Katalog Scaffolding Galvanis SNI 1.8mm (15 Item Lengkap)',
   description: 'Daftar lengkap 15 komponen scaffolding steger galvanis standar K3 Permenakertrans: Main Frame, Catwalk, Tangga Bordes, U-Head, Jack Base, Pipe Support. Stok ready ribuan unit.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/produk',
+  },
   openGraph: {
-    title: 'Katalog 15 Komponen Scaffolding Standar SNI 1.8mm | MSC Scaffolding',
+    title: 'Katalog 15 Komponen Scaffolding Standar SNI 1.8mm - MSC Scaffolding',
     description: 'Pusat sewa & jual komponen perancah steger lengkap di Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/produk',
   },
@@ -61,7 +65,9 @@ export default async function ProductCatalogPage() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/628132562024?text=Halo%20Tim%20Tender%20MSC,%20mohon%20kirimkan%20PDF%20Company%20Profile%20dan%20Daftar%20Harga%20Katalog%20Terbaru"
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                'Halo Tim MSC Scaffolding, mohon kirimkan PDF Company Profile dan Daftar Harga Katalog Terbaru'
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-orange-600 text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm active:scale-[0.98]"

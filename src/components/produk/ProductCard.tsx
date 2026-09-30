@@ -38,8 +38,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           <span className="text-xs font-normal text-slate-500"> / bulan</span>
         </div>
         <div className="pt-0.5">
-          <span className="text-xs text-orange-600 font-medium group-hover:underline inline-flex items-center gap-1">
-            Detail →
+          <span className="text-xs text-orange-600 font-medium inline-flex items-center gap-1 group-hover:text-orange-700">
+            <span>Detail</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </span>
         </div>
       </div>

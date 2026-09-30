@@ -21,8 +21,11 @@ import { COMPANY_INFO } from '@/data/company';
 export const metadata: Metadata = {
   title: 'Tentang Kami — Profil PT MITRA SOLUSI CAHAYA (MSC Scaffolding)',
   description: 'Profil perusahaan penyedia sewa dan jual scaffolding pipa 1.8mm SNI di Surabaya & Sidoarjo. Lebih dari satu dekade melayani kontraktor B2B dan proyek infrastruktur Jawa Timur.',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com/tentang-kami',
+  },
   openGraph: {
-    title: 'Tentang PT MITRA SOLUSI CAHAYA | MSC Scaffolding Jawa Timur',
+    title: 'Tentang PT MITRA SOLUSI CAHAYA - MSC Scaffolding Jawa Timur',
     description: 'Penyedia scaffolding steger profesional dengan 2 hub gudang di Surabaya & Sidoarjo.',
     url: 'https://www.mscscaffolding.com/tentang-kami',
   },
@@ -31,24 +34,24 @@ export const metadata: Metadata = {
 export default function TentangKamiPage() {
   const values = [
     {
-      title: 'Standar Pipa 1.8mm Real SNI',
-      desc: 'Kami menetapkan standar ketat: hanya menyediakan scaffolding dengan pipa baja hitam dan galvanis berketebalan 1.8mm riil, tanpa pipa afkiran yang tipis dan berisiko.',
+      title: 'Aman dan Terpercaya',
+      desc: 'Material sesuai standar dan terjamin kualitasnya. Ketebalan pipa real 1.8mm SNI berdaya dukung SWL 1.500 kg per tiang aman.',
       icon: ShieldCheck,
     },
     {
-      title: 'Dua Hub Gudang Terintegrasi',
-      desc: 'Gudang Rungkut Surabaya dan Gudang Buduran Sidoarjo menjamin kecepatan distribusi same-day ke seluruh kawasan industri Jawa Timur.',
-      icon: Warehouse,
-    },
-    {
-      title: 'Legalitas PKP & Siap Tender',
-      desc: 'PT MITRA SOLUSI CAHAYA adalah entitas PKP resmi yang siap menerbitkan Faktur Pajak PPN 11%, SPH resmi, dan dokumen sertifikasi untuk tender swasta & BUMN.',
+      title: 'Produk Berkualitas',
+      desc: 'Tahan lama dan siap digunakan di berbagai jenis proyek residensial, komersial, pabrik, hingga infrastruktur.',
       icon: Award,
     },
     {
-      title: 'Dedikasi Konsultasi Personal',
-      desc: 'Didukung oleh Bu Hanifa dan tim engineer berpengalaman untuk menghitungkan kebutuhan steger proyek Anda secara presisi tanpa pemborosan anggaran.',
+      title: 'Dukungan Tim Profesional',
+      desc: 'Siap memberikan konsultasi dan solusi terbaik, termasuk gratis estimasi modul dan Bill of Quantity (BOQ) presisi.',
       icon: Users,
+    },
+    {
+      title: 'Pengiriman Tepat Waktu',
+      desc: 'Material dikirim sesuai jadwal ke lokasi proyek Anda dari 2 hub strategis di Rungkut Surabaya dan Gedangan Sidoarjo.',
+      icon: Warehouse,
     },
   ];
 
@@ -61,7 +64,7 @@ export default function TentangKamiPage() {
     {
       year: '2018',
       title: 'Ekspansi Hub Gudang Sidoarjo',
-      desc: 'Membuka depot logistik kedua di Buduran Sidoarjo untuk melayani lonjakan proyek industri di koridor Sidoarjo-Pasuruan.',
+      desc: 'Membuka depot logistik kedua di Tritan Hub Gedangan Sidoarjo untuk melayani lonjakan proyek industri di koridor Sidoarjo-Pasuruan.',
     },
     {
       year: '2021',
@@ -78,7 +81,7 @@ export default function TentangKamiPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -87,11 +90,14 @@ export default function TentangKamiPage() {
           </div>
 
           <div className="max-w-3xl space-y-2">
+            <span className="text-xs uppercase tracking-widest text-orange-600 font-bold block">
+              {COMPANY_INFO.tagline}
+            </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
-              Tentang MSC Scaffolding
+              Tentang PT Mitra Solusi Cahaya
             </h1>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              PT MITRA SOLUSI CAHAYA menyediakan sistem perancah steger pipa 1.8mm SNI dan shoring tower aman di Jawa Timur.
+              {COMPANY_INFO.slogan}. Melayani wilayah {COMPANY_INFO.serviceCoverage} dengan peralatan scaffolding berkualitas dan pengiriman tepat waktu.
             </p>
           </div>
         </div>
@@ -288,7 +294,7 @@ export default function TentangKamiPage() {
               className="px-8 py-4 bg-orange-600 hover:bg-orange-500 active:scale-95 text-white font-semibold text-sm tracking-wide rounded-full shadow-lg shadow-orange-950/30 transition inline-flex items-center gap-2.5"
             >
               <Phone className="w-4 h-4" />
-              <span>Hubungi Hotline Kami ({COMPANY_INFO.whatsappHanifa.formatted})</span>
+              <span>Hubungi Hotline Kami ({COMPANY_INFO.primaryPhone.formatted})</span>
             </Link>
           </div>
         </div>

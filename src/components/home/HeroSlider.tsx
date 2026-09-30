@@ -97,9 +97,9 @@ export default function HeroSlider() {
       </div>
 
       {/* Foreground Content - Full Viewport Flex Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-24 sm:pt-36 lg:pt-40 pb-20 sm:pb-8">
-        {/* Upper Hero Content: Pill Badge, High-Contrast Typography, Copy, Pill CTAs */}
-        <div className="max-w-3xl space-y-3 sm:space-y-4 lg:space-y-5">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-20 sm:pb-8">
+        {/* Upper Hero Content: Pill Badge, High-Contrast Typography, Copy, Pill CTAs - Perfectly Centered */}
+        <div className="max-w-3xl space-y-3 sm:space-y-4 lg:space-y-5 my-auto py-4 sm:py-6">
           {/* Clean Eyebrow */}
           <div>
             <span className="text-xs uppercase tracking-widest text-orange-400 font-semibold block">
@@ -122,7 +122,7 @@ export default function HeroSlider() {
             {HERO_SLIDES[currentSlide].description}
           </p>
 
-          {/* Single Clean Pill Action Button (Inspirasi SolusiBangunan) */}
+          {/* Single Clean Pill Action Button */}
           <div className="pt-2">
             <a
               href={HERO_SLIDES[currentSlide].primaryCtaLink}
@@ -137,7 +137,7 @@ export default function HeroSlider() {
         </div>
 
         {/* Lower Hero Block: 4-Metric Grid & Indicator Dots */}
-        <div className="w-full pt-3 sm:pt-6 border-t border-white/10">
+        <div className="w-full pt-3 sm:pt-6 border-t border-white/10 shrink-0">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
             {/* 4-Metric Responsive Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-8 lg:gap-12">

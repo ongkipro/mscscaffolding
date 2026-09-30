@@ -53,7 +53,7 @@ export default function CoreServices() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-slate-100">
+    <section className="py-20 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Inspirasi SolusiBangunan */}
         <div className="max-w-2xl mb-12">
@@ -96,7 +96,7 @@ export default function CoreServices() {
         </div>
 
         {/* Tahapan Layanan Kami - 4 Langkah Ringkas */}
-        <div className="mt-20 pt-14 border-t border-slate-100">
+        <div className="mt-20 pt-8">
           <div className="max-w-2xl mb-10">
             <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1.5 block">
               Alur Kerja

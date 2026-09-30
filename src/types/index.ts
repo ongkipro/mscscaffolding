@@ -78,10 +78,36 @@ export interface ServiceArea {
   warehouseHub: string;
 }
 
+export interface PricelistItem {
+  no: string;
+  name: string;
+  unit: string;
+  priceMonthly: number | null;
+  priceFormatted: string;
+  isPopular?: boolean;
+}
+
+export interface SalePricelistItem {
+  no: string;
+  name: string;
+  unit: string;
+  priceSale: number;
+  priceFormatted: string;
+  isPopular?: boolean;
+}
+
 export interface CompanyInfo {
   legalName: string;
   brandName: string;
   tagline: string;
+  slogan: string;
+  quote: string;
+  ctaText: string;
+  serviceCoverage: string;
+  primaryPhone: {
+    number: string;
+    formatted: string;
+  };
   whatsappHanifa: {
     number: string;
     formatted: string;

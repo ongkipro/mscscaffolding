@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import ClientLayout from '@/components/layout/ClientLayout';
@@ -20,30 +21,46 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mscscaffolding.com'),
-  title: {
-    default: 'MSC Scaffolding — Sewa & Jual Scaffolding Pipa 1.8mm SNI Standar K3 Jawa Timur',
-    template: '%s | MSC Scaffolding PT Mitra Solusi Cahaya',
+  alternates: {
+    canonical: 'https://www.mscscaffolding.com',
   },
-  description: 'Pusat sewa dan jual scaffolding galvanis tebal pipa real 1.8mm SNI & heavy duty shoring system beban SWL 1.500 kg di Surabaya, Sidoarjo, Gresik, Pasuruan, Mojokerto. 2 gudang fisik, kirim same-day.',
+  title: {
+    default: 'MSC Scaffolding - Solusi Akses Kerja di Ketinggian - Build Safer Together',
+    template: '%s - MSC Scaffolding PT Mitra Solusi Cahaya',
+  },
+  description: 'PT Mitra Solusi Cahaya — Solusi akses kerja di ketinggian untuk proyek Anda. Sewa scaffolding steger pipa 1.8mm SNI mulai Rp 27.000/set/bulan di Surabaya, Sidoarjo, Pasuruan, Gresik. 2 gudang fisik, kirim same-day.',
   keywords: [
     'sewa scaffolding surabaya',
     'sewa scaffolding sidoarjo',
+    'sewa scaffolding pasuruan',
+    'sewa scaffolding gresik',
     'jual scaffolding galvanis',
     'harga sewa steger bulanan',
     'scaffolding pipa 1.8mm sni',
-    'shoring system bekisting',
     'pt mitra solusi cahaya',
     'msc scaffolding',
   ],
   authors: [{ name: 'PT Mitra Solusi Cahaya' }],
   creator: 'PT Mitra Solusi Cahaya',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/images/branding/logo-msc-circle.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     type: 'website',
     locale: 'id_ID',
     url: 'https://www.mscscaffolding.com',
     siteName: 'MSC Scaffolding PT Mitra Solusi Cahaya',
-    title: 'MSC Scaffolding — Sewa & Jual Scaffolding Pipa 1.8mm SNI Standar K3',
-    description: 'Sewa & jual scaffolding steger galvanis SNI pipa 1.8mm dan heavy duty shoring 1.500 kg SWL. Siap kirim same-day dari 2 gudang di Surabaya & Sidoarjo.',
+    title: 'MSC Scaffolding - Sewa & Jual Scaffolding Pipa 1.8mm SNI Standar K3',
+    description: 'Solusi akses kerja di ketinggian untuk proyek Anda. Sewa scaffolding mulai Rp 27.000/set/bulan. Siap kirim same-day dari 2 gudang di Surabaya & Sidoarjo.',
     images: [
       {
         url: '/images/hero/hero_slide_1_facade_engineer.jpg',
@@ -55,8 +72,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MSC Scaffolding — Sewa & Jual Scaffolding Standar K3',
-    description: 'Pusat sewa & jual scaffolding steger tebal pipa 1.8mm SNI & shoring system Jawa Timur.',
+    title: 'MSC Scaffolding — Build Safer Together',
+    description: 'Pusat sewa & jual scaffolding steger tebal pipa 1.8mm SNI Jawa Timur.',
     images: ['/images/hero/hero_slide_1_facade_engineer.jpg'],
   },
   robots: {
@@ -82,13 +99,15 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'MSC Scaffolding (PT Mitra Solusi Cahaya)',
     image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.jpg',
-    '@id': 'https://www.mscscaffolding.com',
+    logo: 'https://www.mscscaffolding.com/images/branding/logo-msc-circle.png',
+    '@id': 'https://www.mscscaffolding.com/#organization',
     url: 'https://www.mscscaffolding.com',
-    telephone: '+6282257664755',
-    priceRange: 'IDR 45.000 - 585.000',
+    telephone: '+628132562024',
+    priceRange: 'IDR 27.000 - 585.000',
+    areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Kawasan Industri Rungkut Industri Raya No. 45',
+      streetAddress: 'Medokan Asri Utara, Rungkut',
       addressLocality: 'Surabaya',
       addressRegion: 'Jawa Timur',
       postalCode: '60293',
@@ -116,6 +135,23 @@ export default function RootLayout({
   return (
     <html lang="id" className={`scroll-smooth ${poppins.variable}`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18484671476"
+        />
+        <Script
+          id="google-tag-aw"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18484671476');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

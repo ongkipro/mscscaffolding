@@ -118,7 +118,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
     if (!validate()) return;
     const msg = encodeURIComponent(generateWhatsAppMessage());
     window.open(
-      `https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${msg}`,
+      `https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${msg}`,
       '_blank',
       'noopener,noreferrer'
     );
@@ -139,7 +139,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
   };
 
   return (
-    <div className="bg-slate-50/70 p-8 sm:p-12 rounded-3xl">
+    <div className="bg-slate-50/70 p-8 sm:p-12 rounded-2xl">
       {/* Form Header */}
       <div className="pb-4 mb-8">
         <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
@@ -170,7 +170,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
 
           <div className="pt-3 flex flex-wrap justify-center gap-3">
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
+              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
                 generateWhatsAppMessage()
               )}`}
               target="_blank"

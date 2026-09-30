@@ -35,15 +35,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!location) {
     return {
-      title: 'Area Layanan Tidak Ditemukan | MSC Scaffolding',
+      title: 'Area Layanan Tidak Ditemukan - MSC Scaffolding',
     };
   }
 
   return {
     title: `Sewa & Jual Scaffolding ${location.city} — Siap Kirim ${location.leadTimeHours} Pipa 1.8mm SNI`,
     description: `Pusat rental steger scaffolding galvanis pipa 1.8mm di ${location.city}. Jangkauan kawasan industri ${location.industrialEstates.slice(0, 2).join(', ')}. Kirim dari ${location.warehouseHub}.`,
+    alternates: {
+      canonical: `https://www.mscscaffolding.com/area-layanan/${location.slug}`,
+    },
     openGraph: {
-      title: `Sewa Scaffolding ${location.city} Murah & Cepat | MSC Scaffolding`,
+      title: `Sewa Scaffolding ${location.city} Murah & Cepat - MSC Scaffolding`,
       description: location.description,
       url: `https://www.mscscaffolding.com/area-layanan/${location.slug}`,
     },
@@ -91,7 +94,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       />
 
       {/* Clean Unified Page Header */}
-      <section className="bg-white border-b border-slate-100 py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
             <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
@@ -111,8 +114,8 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
 
             <div className="pt-2">
               <a
-                href={`https://wa.me/${COMPANY_INFO.whatsappHanifa.number}?text=${encodeURIComponent(
-                  `Halo Bu Hanifa, saya ingin pesan sewa scaffolding untuk lokasi proyek di ${location.city}. Mohon info armada kirim.`
+                href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+                  `Halo Tim MSC Scaffolding, saya ingin pesan sewa scaffolding untuk lokasi proyek di ${location.city}. Mohon info armada kirim.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -127,7 +130,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Logistics SLA Bar */}
-      <section className="py-6 bg-slate-900 text-white border-y border-slate-800">
+      <section className="py-6 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs sm:text-sm">
             <div className="flex items-center gap-3">
@@ -188,7 +191,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="lg:col-span-6 bg-slate-50/70 p-6 sm:p-10 rounded-2xl sm:rounded-3xl">
+            <div className="lg:col-span-6 bg-slate-50/70 p-6 sm:p-10 rounded-2xl">
               <div className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2">
                 Keunggulan Layanan di {location.city}
               </div>
@@ -209,7 +212,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
                   <ShieldCheck className="w-4 h-4 text-orange-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-slate-900 block mb-0.5">Stok Melimpah di 2 Gudang Jatim:</strong>
-                    Tidak ada kekhawatiran stok kurang di tengah proyek berkat dukungan ribuan set di Rungkut & Buduran.
+                    Tidak ada kekhawatiran stok kurang di tengah proyek berkat dukungan ribuan set di Rungkut & Gedangan.
                   </div>
                 </div>
 
@@ -258,13 +261,13 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">1 Set Fasad T170</div>
-              <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 45.000</div>
+              <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 27.000</div>
               <div className="text-xs text-slate-500">/ set / bulan (2 Frame + 2 Cross + 4 Pin)</div>
             </div>
 
             <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
               <div className="text-xs text-slate-500 font-medium">1 Set Headroom T190</div>
-              <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 50.000</div>
+              <div className="text-2xl font-bold font-mono text-orange-600 my-2">Rp 29.000</div>
               <div className="text-xs text-slate-500">/ set / bulan (Gawang Lebih Tinggi)</div>
             </div>
 
@@ -275,9 +278,9 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
             </div>
 
             <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-orange-500 hover:shadow-xs transition-all">
-              <div className="text-xs text-slate-500 font-medium">Tangga Bordes Baja</div>
-              <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 35.000</div>
-              <div className="text-xs text-slate-500">/ unit / bulan (Akses 7 Trap Kokoh)</div>
+              <div className="text-xs text-slate-500 font-medium">Tangga Bordes Baja T170</div>
+              <div className="text-2xl font-bold font-mono text-slate-950 my-2">Rp 50.000</div>
+              <div className="text-xs text-slate-500">/ unit / bulan (Akses Trap Kokoh K3)</div>
             </div>
           </div>
         </div>
