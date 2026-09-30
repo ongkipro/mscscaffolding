@@ -241,7 +241,7 @@ export default function JualScaffoldingPage() {
             <div className="lg:col-span-5">
               <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-sm">
                 <Image
-                  src="/images/proyek/msc_service_jual_clean.jpg"
+                  src="/images/proyek/msc_service_jual_clean.webp"
                   alt="Gudang Stok Pengadaan Scaffolding Baru SNI MSC"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

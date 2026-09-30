@@ -7,19 +7,19 @@ export default function CoreServices() {
   const services = [
     {
       title: 'Sewa Scaffolding & Steger',
-      image: '/images/proyek/msc_service_sewa_clean.jpg',
+      image: '/images/proyek/msc_service_sewa_clean.webp',
       link: '/sewa-scaffolding',
       ctaText: 'Lihat Sewa',
     },
     {
       title: 'Jual Unit Baru & Rekondisi',
-      image: '/images/proyek/msc_service_jual_clean.jpg',
+      image: '/images/proyek/msc_service_jual_clean.webp',
       link: '/jual-scaffolding',
       ctaText: 'Lihat Jual',
     },
     {
       title: 'Heavy-Duty Shoring Bekisting',
-      image: '/images/proyek/msc_service_shoring_clean.jpg',
+      image: '/images/proyek/msc_service_shoring_clean.webp',
       link: '/produk',
       ctaText: 'Lihat Shoring',
     },
@@ -57,7 +57,7 @@ export default function CoreServices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Inspirasi SolusiBangunan */}
         <div className="max-w-2xl mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+          <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
             Layanan Utama
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-950 tracking-tight">
@@ -84,10 +84,10 @@ export default function CoreServices() {
               </div>
 
               <div className="flex items-center justify-between pt-1">
-                <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-orange-700 transition-colors">
                   {item.title}
                 </h3>
-                <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-orange-600 flex items-center justify-center text-slate-600 group-hover:text-white transition-all shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-orange-700 flex items-center justify-center text-slate-600 group-hover:text-white transition-all shrink-0">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function CoreServices() {
         {/* Tahapan Layanan Kami - 4 Langkah Ringkas */}
         <div className="mt-20 pt-8">
           <div className="max-w-2xl mb-10">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1.5 block">
+            <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-1.5 block">
               Alur Kerja
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
@@ -115,10 +115,10 @@ export default function CoreServices() {
                   className="p-6 rounded-2xl bg-slate-50 border border-slate-100/80 space-y-3 hover:border-slate-200 transition-colors"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-orange-600">
+                    <span className="text-2xl font-black text-orange-700">
                       {st.step}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-orange-600 shadow-2xs">
+                    <div className="w-9 h-9 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-orange-700 shadow-2xs">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
@@ -126,7 +126,7 @@ export default function CoreServices() {
                     <h4 className="text-sm font-bold text-slate-950">
                       {st.title}
                     </h4>
-                    <p className="text-xs text-slate-500 mt-1">
+                    <p className="text-xs text-slate-600 mt-1">
                       {st.desc}
                     </p>
                   </div>

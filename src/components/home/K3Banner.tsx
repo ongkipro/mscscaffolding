@@ -42,7 +42,7 @@ export default function K3Banner() {
             <div className="pt-2">
               <Link
                 href="/k3-panduan"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-700 hover:bg-emerald-600 active:scale-95 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-sm"
               >
                 <span>Panduan K3 Lengkap</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -55,7 +55,7 @@ export default function K3Banner() {
             {/* Real HSE Inspection Photo */}
             <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <Image
-                src="/images/proyek/msc_k3_inspection_clean.jpg"
+                src="/images/proyek/msc_k3_inspection_clean.webp"
                 alt="Inspeksi K3 Scaffolding PT Mitra Solusi Cahaya"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

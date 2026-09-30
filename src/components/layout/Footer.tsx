@@ -96,11 +96,11 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Clock className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span className="text-slate-400">{COMPANY_INFO.operatingHours}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
                   className="text-slate-400 hover:text-white transition-colors"
@@ -154,7 +154,7 @@ export default function Footer() {
                     <div className="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">
                       {reg.city}
                     </div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="text-[11px] text-slate-400">
                       {reg.leadTime}
                     </div>
                   </Link>
@@ -220,7 +220,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright & Compliance Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
           <div>
             © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Hak Cipta Dilindungi.
           </div>

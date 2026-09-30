@@ -171,7 +171,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+              <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
                 Cakupan Zona Konstruksi
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
@@ -192,7 +192,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
             </div>
 
             <div className="lg:col-span-6 bg-slate-50/70 p-6 sm:p-10 rounded-2xl">
-              <div className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2">
+              <div className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2">
                 Keunggulan Layanan di {location.city}
               </div>
               <h3 className="text-xl font-bold text-slate-950 mb-4">
@@ -247,7 +247,7 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
       <section className="py-12 sm:py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-8 sm:mb-10">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+            <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
               Tarif Sewa Wilayah {location.city}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">

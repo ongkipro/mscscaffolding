@@ -125,7 +125,7 @@ export default async function ProductDetailPage({
           </div>
 
           <div className="max-w-3xl space-y-1">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-1 block">
+            <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-1 block">
               {product.categoryName}
             </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
@@ -238,7 +238,7 @@ export default async function ProductDetailPage({
           {/* Technical Spec List - Clean & De-duplicated */}
           <div className="mt-14 pt-10 border-t border-slate-100">
             <div className="max-w-2xl mb-6">
-              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+              <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
                 Spesifikasi Teknis
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">

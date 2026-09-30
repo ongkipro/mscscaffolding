@@ -9,20 +9,25 @@ import { HERO_SLIDES } from '@/data/heroSlides';
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const slideCount = HERO_SLIDES.length;
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (isPaused) return;
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !isMounted) return;
 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideCount);
-    }, 6000);
+    }, 7000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, slideCount]);
+  }, [isPaused, isMounted, slideCount]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slideCount);
@@ -73,6 +78,10 @@ export default function HeroSlider() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {HERO_SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
+          const isNext = (currentSlide + 1) % slideCount === index;
+          if (!isMounted && index !== 0) return null;
+          if (isMounted && !isActive && !isNext) return null;
+
           return (
             <div
               key={slide.id}
@@ -85,6 +94,7 @@ export default function HeroSlider() {
                 alt={`${slide.title} — ${slide.highlightText}`}
                 fill
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 className="object-cover object-center"
                 sizes="100vw"
               />
@@ -128,7 +138,7 @@ export default function HeroSlider() {
               href={HERO_SLIDES[currentSlide].primaryCtaLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange-600 hover:bg-orange-500 active:scale-95 text-white font-semibold text-xs sm:text-sm tracking-wide transition shadow-xl shadow-orange-950/50"
+              className="inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange-700 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs sm:text-sm tracking-wide transition shadow-xl shadow-orange-950/50"
             >
               <MessageSquare className="w-4 h-4" />
               <span>{HERO_SLIDES[currentSlide].primaryCtaText}</span>
@@ -173,19 +183,23 @@ export default function HeroSlider() {
               </div>
             </div>
 
-            {/* Indicator Pills */}
-            <div className="flex items-center gap-2 self-start sm:self-end pb-1">
+            {/* Indicator Pills with WCAG Accessible Touch Targets */}
+            <div className="flex items-center gap-0.5 self-start sm:self-end pb-1 -mr-2">
               {HERO_SLIDES.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => goToSlide(idx)}
-                  className={`h-1.5 transition-all rounded-full ${
-                    idx === currentSlide
-                      ? 'w-8 bg-orange-500'
-                      : 'w-2 bg-slate-600 hover:bg-slate-400'
-                  }`}
+                  className="p-2 sm:p-2.5 flex items-center justify-center min-w-[28px] min-h-[32px] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-full"
                   aria-label={`Pindah ke Slide ${idx + 1}`}
-                />
+                >
+                  <span
+                    className={`h-1.5 transition-all rounded-full block ${
+                      idx === currentSlide
+                        ? 'w-8 bg-orange-500'
+                        : 'w-2 bg-slate-600 hover:bg-slate-400'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>

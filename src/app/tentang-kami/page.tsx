@@ -90,7 +90,7 @@ export default function TentangKamiPage() {
           </div>
 
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-bold block">
+            <span className="text-xs uppercase tracking-widest text-orange-700 font-bold block">
               {COMPANY_INFO.tagline}
             </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
@@ -108,7 +108,7 @@ export default function TentangKamiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+              <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
                 Kualitas & Integritas
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
@@ -142,7 +142,7 @@ export default function TentangKamiPage() {
             <div className="lg:col-span-6 space-y-4">
               <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
                 <Image
-                  src="/images/hero/hero_slide_4_business_partnership.jpg"
+                  src="/images/hero/hero_slide_4_business_partnership.webp"
                   alt="Kemitraan B2B PT MITRA SOLUSI CAHAYA"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

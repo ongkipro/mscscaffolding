@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     description: 'Solusi akses kerja di ketinggian untuk proyek Anda. Sewa scaffolding mulai Rp 27.000/set/bulan. Siap kirim same-day dari 2 gudang di Surabaya & Sidoarjo.',
     images: [
       {
-        url: '/images/hero/hero_slide_1_facade_engineer.jpg',
+        url: '/images/hero/hero_slide_1_facade_engineer.webp',
         width: 1200,
         height: 675,
         alt: 'MSC Scaffolding Proyek Konstruksi Fasad Jawa Timur',
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MSC Scaffolding — Build Safer Together',
     description: 'Pusat sewa & jual scaffolding steger tebal pipa 1.8mm SNI Jawa Timur.',
-    images: ['/images/hero/hero_slide_1_facade_engineer.jpg'],
+    images: ['/images/hero/hero_slide_1_facade_engineer.webp'],
   },
   robots: {
     index: true,
@@ -98,7 +98,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'MSC Scaffolding (PT Mitra Solusi Cahaya)',
-    image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.jpg',
+    image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
     logo: 'https://www.mscscaffolding.com/images/branding/logo-msc-circle.png',
     '@id': 'https://www.mscscaffolding.com/#organization',
     url: 'https://www.mscscaffolding.com',
@@ -135,6 +135,10 @@ export default function RootLayout({
   return (
     <html lang="id" className={`scroll-smooth ${poppins.variable}`}>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
@@ -150,6 +154,9 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'AW-18484671476');
+            gtag('config', 'AW-18484671476/b7jxCK-p3IsdEPTnlu5E', {
+              'phone_conversion_number': '082257664755'
+            });
           `}
         </Script>
         <script

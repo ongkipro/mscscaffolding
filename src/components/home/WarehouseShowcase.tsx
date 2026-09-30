@@ -7,12 +7,12 @@ export default function WarehouseShowcase() {
   const warehouses = [
     {
       ...COMPANY_INFO.warehouses[0],
-      image: '/images/proyek/msc_service_jual_clean.jpg',
+      image: '/images/proyek/msc_service_jual_clean.webp',
       coverage: 'Surabaya Pusat, Rungkut, Margomulyo, Kenjeran & sekitarnya',
     },
     {
       ...COMPANY_INFO.warehouses[1],
-      image: '/images/proyek/msc_logistics_truck_clean.jpg',
+      image: '/images/proyek/msc_logistics_truck_clean.webp',
       coverage: 'Kab. Sidoarjo, Waru, Berbek, Porong, Mojokerto & Pasuruan',
     },
   ];
@@ -21,7 +21,7 @@ export default function WarehouseShowcase() {
     <section className="py-20 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+          <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
             Fasilitas Fisik
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-950 tracking-tight">
@@ -52,16 +52,16 @@ export default function WarehouseShowcase() {
                 </div>
 
                 <div className="space-y-2.5">
-                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-orange-700 transition-colors">
                     {wh.name}
                   </h3>
                   
-                  <div className="flex items-start gap-2 text-xs text-slate-500 leading-relaxed">
-                    <MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 text-xs text-slate-600 leading-relaxed">
+                    <MapPin className="w-4 h-4 text-orange-700 shrink-0 mt-0.5" />
                     <span>{wh.address}</span>
                   </div>
 
-                  <div className="text-xs text-slate-500">
+                  <div className="text-xs text-slate-600">
                     Jangkauan: <span className="text-slate-800 font-medium">{wh.coverage}</span>
                   </div>
                 </div>

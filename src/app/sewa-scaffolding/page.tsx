@@ -217,7 +217,7 @@ export default function SewaScaffoldingPage() {
             <div className="lg:col-span-5">
               <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-sm">
                 <Image
-                  src="/images/proyek/msc_service_sewa_clean.jpg"
+                  src="/images/proyek/msc_service_sewa_clean.webp"
                   alt="Proyek Sewa Scaffolding Fasad Gedung MSC"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

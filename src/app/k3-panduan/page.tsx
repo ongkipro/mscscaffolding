@@ -112,7 +112,7 @@ export default function K3PanduanPage() {
       name: COMPANY_INFO.brandName,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.mscscaffolding.com/images/branding/logo-msc.jpeg',
+        url: 'https://www.mscscaffolding.com/images/branding/logo-msc.webp',
       },
     },
     datePublished: '2026-01-15',

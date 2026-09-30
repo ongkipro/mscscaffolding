@@ -6,47 +6,47 @@ export default function ProjectShowcase() {
     {
       title: 'Fasad Gedung Bertingkat Surabaya',
       location: 'Surabaya Pusat',
-      image: '/images/proyek/msc_project_facade_hotel.jpg',
+      image: '/images/proyek/msc_project_facade_hotel.webp',
     },
     {
       title: 'Pusat Stok Gudang Utama SIER',
       location: 'Kawasan Industri SIER',
-      image: '/images/proyek/msc_service_jual_clean.jpg',
+      image: '/images/proyek/msc_service_jual_clean.webp',
     },
     {
       title: 'Shoring Falsework Girder Flyover',
       location: 'Infrastruktur Jawa Timur',
-      image: '/images/proyek/msc_project_bridge_flyover.jpg',
+      image: '/images/proyek/msc_project_bridge_flyover.webp',
     },
     {
       title: 'Maintenance Atrium Mall Surabaya',
       location: 'Komersial & Ritel',
-      image: '/images/proyek/msc_project_mall_atrium.jpg',
+      image: '/images/proyek/msc_project_mall_atrium.webp',
     },
     {
       title: 'Piping Scaffolding Kilang Kimia',
       location: 'Kawasan Industri Gresik',
-      image: '/images/proyek/msc_project_refinery_plant.jpg',
+      image: '/images/proyek/msc_project_refinery_plant.webp',
     },
     {
       title: 'Steger Perumahan & Ruko Modern',
       location: 'Sidoarjo Kota',
-      image: '/images/proyek/msc_project_housing_cluster.jpg',
+      image: '/images/proyek/msc_project_housing_cluster.webp',
     },
     {
       title: 'Mobile Tower Maintenance Pabrik',
       location: 'Pabrik Industri Gedangan',
-      image: '/images/proyek/msc_project_factory_tower.jpg',
+      image: '/images/proyek/msc_project_factory_tower.webp',
     },
     {
       title: 'Armada Pengiriman Truk Flatbed',
       location: 'Logistik Yard Surabaya',
-      image: '/images/proyek/msc_project_loading_yard.jpg',
+      image: '/images/proyek/msc_project_loading_yard.webp',
     },
     {
       title: 'Penopang Shoring Dak Beton Cor',
       location: 'Basement Gedung Komersial',
-      image: '/images/proyek/msc_service_shoring_clean.jpg',
+      image: '/images/proyek/msc_service_shoring_clean.webp',
     },
   ];
 
@@ -54,7 +54,7 @@ export default function ProjectShowcase() {
     <section className="py-20 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+          <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
             Proyek Kami
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-950 tracking-tight">

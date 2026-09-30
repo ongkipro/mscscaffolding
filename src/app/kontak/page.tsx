@@ -40,7 +40,7 @@ export default function KontakPage() {
           </div>
 
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs uppercase tracking-widest text-orange-600 font-bold block">
+            <span className="text-xs uppercase tracking-widest text-orange-700 font-bold block">
               {COMPANY_INFO.tagline}
             </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
@@ -61,7 +61,7 @@ export default function KontakPage() {
             {/* Bu Hanifa Card */}
             <div className="bg-slate-50/80 p-8 sm:p-10 rounded-2xl flex flex-col justify-between">
               <div>
-                <span className="text-xs uppercase tracking-wider font-semibold text-orange-600 mb-2 block">
+                <span className="text-xs uppercase tracking-wider font-semibold text-orange-700 mb-2 block">
                   Sewa & Retail
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-950 mb-1">
@@ -147,7 +147,7 @@ export default function KontakPage() {
           {/* Warehouses Map Section */}
           <div className="mb-16">
             <div className="max-w-2xl mb-10">
-              <span className="text-xs uppercase tracking-widest text-orange-600 font-semibold mb-2 block">
+              <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
                 Gudang & Workshop
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
