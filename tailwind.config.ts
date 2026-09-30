@@ -25,9 +25,9 @@ const config: Config = {
         'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       },
       fontFamily: {
-        sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-        mono: ['Poppins', 'sans-serif'],
+        sans: ['var(--font-poppins)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+        mono: ['var(--font-poppins)', 'sans-serif'],
       },
     },
   },
