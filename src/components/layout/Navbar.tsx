@@ -44,19 +44,19 @@ export default function Navbar({ onOpenDrawer, isDrawerOpen }: NavbarProps) {
       }`
     : 'sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md text-slate-950 transition-all';
 
-  const utilityBarClass = isHome
-    ? `py-1.5 px-4 text-[11px] hidden sm:block transition-colors ${
-        scrolled
-          ? 'bg-slate-950/90 text-slate-400'
-          : 'bg-transparent text-slate-300'
-      }`
-    : 'bg-slate-950 text-slate-400 py-1.5 px-4 text-[11px] hidden sm:block';
+  const utilityBarClass = `hidden sm:block transition-all duration-300 ease-in-out overflow-hidden ${
+    scrolled
+      ? 'max-h-0 py-0 opacity-0 -translate-y-2 pointer-events-none'
+      : isHome
+      ? 'max-h-12 py-1.5 px-4 text-[11px] bg-transparent text-slate-300 opacity-100 translate-y-0'
+      : 'max-h-12 py-1.5 px-4 text-[11px] bg-slate-950 text-slate-400 opacity-100 translate-y-0'
+  }`;
 
   return (
     <header className={headerBaseClass}>
-      {/* Sleek Minimalist Top Utility Bar - Ringkas & Padat */}
-      <div className={utilityBarClass}>
-        <div className="max-w-7xl mx-auto flex justify-between items-center font-medium">
+      {/* Sleek Minimalist Top Utility Bar - Only visible at top of page, hidden on scroll so it never sticks */}
+      <div className={utilityBarClass} aria-hidden={scrolled}>
+        <div className={`max-w-7xl mx-auto flex justify-between items-center font-medium transition-opacity duration-200 ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
           <div className="flex items-center gap-2.5">
             <span className={isHome ? 'text-slate-200' : 'text-slate-300'}>Gudang: Surabaya & Sidoarjo</span>
             <span className={isHome && !scrolled ? 'text-slate-500' : 'text-slate-700'}>•</span>

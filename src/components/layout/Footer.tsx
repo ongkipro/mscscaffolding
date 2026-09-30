@@ -227,21 +227,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright & Compliance Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
-          <div>
+        <div className="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+          <div className="text-center sm:text-left">
             © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Hak Cipta Dilindungi.
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
-            <Link href="/k3-panduan" className="hover:text-slate-300 transition-colors">
-              Standar Mutu K3
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs">
+            <Link href="/kebijakan-privasi" prefetch={false} className="hover:text-orange-400 transition-colors">
+              Kebijakan Privasi
             </Link>
             <span className="text-slate-700">•</span>
-            <Link href="/sewa-scaffolding" className="hover:text-slate-300 transition-colors">
-              SOP &amp; Ketentuan Sewa
+            <Link href="/syarat-ketentuan" prefetch={false} className="hover:text-orange-400 transition-colors">
+              Syarat &amp; Ketentuan
             </Link>
-            <span className="text-slate-700">•</span>
-            <Link href="/kontak" className="hover:text-slate-300 transition-colors">
-              Lokasi Gudang
+            <span className="text-slate-700 hidden md:inline">•</span>
+            <Link href="/k3-panduan" prefetch={false} className="hover:text-orange-400 transition-colors hidden md:inline">
+              Standar K3
+            </Link>
+            <span className="text-slate-700 hidden md:inline">•</span>
+            <Link href="/kontak" prefetch={false} className="hover:text-orange-400 transition-colors hidden md:inline">
+              Gudang &amp; Kontak
             </Link>
           </div>
         </div>

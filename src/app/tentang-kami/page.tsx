@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   title: 'Tentang Kami: Profil PT Mitra Solusi Cahaya',
   description: 'Profil PT Mitra Solusi Cahaya, penyedia sewa & jual scaffolding pipa 1.8mm SNI di Surabaya & Sidoarjo. Melayani kontraktor proyek konstruksi Jawa Timur.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/tentang-kami',
+    canonical: 'https://mscscaffolding.com/tentang-kami',
   },
   openGraph: {
     title: 'Tentang PT Mitra Solusi Cahaya - MSC Scaffolding Jawa Timur',
     description: 'Penyedia scaffolding steger profesional dengan 2 hub gudang di Surabaya & Sidoarjo.',
-    url: 'https://www.mscscaffolding.com/tentang-kami',
+    url: 'https://mscscaffolding.com/tentang-kami',
   },
 };
 

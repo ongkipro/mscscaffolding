@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Katalog Scaffolding Galvanis 1.8mm SNI',
   description: 'Katalog 15 komponen scaffolding galvanis standar K3: Main Frame, Catwalk, Tangga, U-Head, Jack Base & Pipe Support pipa 1.8mm SNI. Ready stock Surabaya.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/produk',
+    canonical: 'https://mscscaffolding.com/produk',
   },
   openGraph: {
     title: 'Katalog Scaffolding Galvanis 1.8mm SNI - MSC Scaffolding',
     description: '15 komponen scaffolding steger galvanis standar K3: Main Frame, Catwalk, Tangga, Jack Base, Pipe Support pipa 1.8mm SNI. Ready stock Surabaya.',
-    url: 'https://www.mscscaffolding.com/produk',
+    url: 'https://mscscaffolding.com/produk',
   },
 };
 
@@ -29,9 +29,9 @@ export default async function ProductCatalogPage() {
     itemListElement: products.map((prod, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `https://www.mscscaffolding.com/produk/${prod.slug}`,
+      url: `https://mscscaffolding.com/produk/${prod.slug}`,
       name: prod.name,
-      image: `https://www.mscscaffolding.com${prod.image}`,
+      image: `https://mscscaffolding.com${prod.image}`,
     })),
   };
 

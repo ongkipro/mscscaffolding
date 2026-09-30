@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya',
   description: 'Hitung kebutuhan scaffolding modular, catwalk, jack base & tangga online. Estimasi jumlah set dan rincian biaya sewa proyek akurat dalam hitungan detik.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/kalkulator',
+    canonical: 'https://mscscaffolding.com/kalkulator',
   },
   openGraph: {
     title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya - MSC Scaffolding',
     description: 'Simulasi gratis kebutuhan scaffolding modular, catwalk, jack base, dan tangga. Estimasi jumlah set dan biaya sewa proyek akurat.',
-    url: 'https://www.mscscaffolding.com/kalkulator',
+    url: 'https://mscscaffolding.com/kalkulator',
   },
 };
 

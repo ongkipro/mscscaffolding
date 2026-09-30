@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://www.mscscaffolding.com/sitemap.xml',
-    host: 'https://www.mscscaffolding.com',
+    sitemap: 'https://mscscaffolding.com/sitemap.xml',
+    host: 'https://mscscaffolding.com',
   };
 }

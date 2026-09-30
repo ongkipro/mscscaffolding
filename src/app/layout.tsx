@@ -22,9 +22,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.mscscaffolding.com'),
+  metadataBase: new URL('https://mscscaffolding.com'),
   alternates: {
-    canonical: 'https://www.mscscaffolding.com',
+    canonical: 'https://mscscaffolding.com',
   },
   title: {
     default: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'id_ID',
-    url: 'https://www.mscscaffolding.com',
+    url: 'https://mscscaffolding.com',
     siteName: 'MSC Scaffolding PT Mitra Solusi Cahaya',
     title: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
@@ -101,11 +101,11 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.mscscaffolding.com/#organization',
+        '@id': 'https://mscscaffolding.com/#organization',
         name: 'PT MITRA SOLUSI CAHAYA',
         alternateName: 'MSC Scaffolding',
-        url: 'https://www.mscscaffolding.com',
-        logo: 'https://www.mscscaffolding.com/images/branding/logo-msc-circle.png',
+        url: 'https://mscscaffolding.com',
+        logo: 'https://mscscaffolding.com/images/branding/logo-msc-circle.png',
         telephone: '+6282257664755',
         email: 'sales@mscscaffolding.com',
         sameAs: [
@@ -124,13 +124,13 @@ export default function RootLayout({
       },
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://www.mscscaffolding.com/#hub-surabaya',
+        '@id': 'https://mscscaffolding.com/#hub-surabaya',
         name: 'MSC Scaffolding — Hub Surabaya',
         parentOrganization: {
-          '@id': 'https://www.mscscaffolding.com/#organization',
+          '@id': 'https://mscscaffolding.com/#organization',
         },
-        image: 'https://www.mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
-        url: 'https://www.mscscaffolding.com',
+        image: 'https://mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
+        url: 'https://mscscaffolding.com',
         telephone: '+6282257664755',
         priceRange: 'IDR 27.000 - 585.000',
         areaServed: ['Surabaya', 'Gresik', 'Bangkalan'],
@@ -158,13 +158,13 @@ export default function RootLayout({
       },
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://www.mscscaffolding.com/#hub-sidoarjo',
+        '@id': 'https://mscscaffolding.com/#hub-sidoarjo',
         name: 'MSC Scaffolding — Hub Sidoarjo',
         parentOrganization: {
-          '@id': 'https://www.mscscaffolding.com/#organization',
+          '@id': 'https://mscscaffolding.com/#organization',
         },
-        image: 'https://www.mscscaffolding.com/images/proyek/msc_logistics_truck_clean.webp',
-        url: 'https://www.mscscaffolding.com',
+        image: 'https://mscscaffolding.com/images/proyek/msc_logistics_truck_clean.webp',
+        url: 'https://mscscaffolding.com',
         telephone: '+6282257664755',
         priceRange: 'IDR 27.000 - 585.000',
         areaServed: ['Sidoarjo', 'Pasuruan', 'Mojokerto'],

@@ -48,12 +48,12 @@ export async function generateMetadata({
     title: `${product.name} Pipa 1.8mm SNI`,
     description: `${product.name} pipa galvanis ${product.pipeThickness} SNI, SWL ${product.swlKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bln. Ready stock Surabaya & Sidoarjo.`,
     alternates: {
-      canonical: `https://www.mscscaffolding.com/produk/${product.slug}`,
+      canonical: `https://mscscaffolding.com/produk/${product.slug}`,
     },
     openGraph: {
       title: `${product.name} - MSC Scaffolding`,
       description: product.shortDesc,
-      url: `https://www.mscscaffolding.com/produk/${product.slug}`,
+      url: `https://mscscaffolding.com/produk/${product.slug}`,
       images: [
         {
           url: product.image,
@@ -88,7 +88,7 @@ export default async function ProductDetailPage({
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: `https://www.mscscaffolding.com${product.image}`,
+    image: `https://mscscaffolding.com${product.image}`,
     description: product.description,
     sku: product.id,
     mpn: product.slug,
@@ -98,7 +98,7 @@ export default async function ProductDetailPage({
     },
     offers: {
       '@type': 'Offer',
-      url: `https://www.mscscaffolding.com/produk/${product.slug}`,
+      url: `https://mscscaffolding.com/produk/${product.slug}`,
       priceCurrency: 'IDR',
       price: product.rentalPriceMonthly,
       priceValidUntil: '2027-12-31',

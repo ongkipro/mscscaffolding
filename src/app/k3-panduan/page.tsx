@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   title: 'Panduan K3 Scaffolding & Standar Safety',
   description: 'Panduan keselamatan kerja perancah steger: standar SWL 1.500 kg, SOP perakitan, protokol Scafftag & checklist harian HSE sesuai Permenakertrans 01/1980.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/k3-panduan',
+    canonical: 'https://mscscaffolding.com/k3-panduan',
   },
   openGraph: {
     title: 'Panduan K3 Scaffolding & Standar Safety - MSC Scaffolding',
     description: 'Panduan keselamatan kerja perancah steger, kapasitas SWL 1.500 kg, checklist inspeksi, dan sistem Scafftag hijau-merah.',
-    url: 'https://www.mscscaffolding.com/k3-panduan',
+    url: 'https://mscscaffolding.com/k3-panduan',
   },
 };
 
@@ -105,14 +105,14 @@ export default function K3PanduanPage() {
     author: {
       '@type': 'Organization',
       name: COMPANY_INFO.legalName,
-      url: 'https://www.mscscaffolding.com',
+      url: 'https://mscscaffolding.com',
     },
     publisher: {
       '@type': 'Organization',
       name: COMPANY_INFO.brandName,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.mscscaffolding.com/images/branding/logo-msc.webp',
+        url: 'https://mscscaffolding.com/images/branding/logo-msc.webp',
       },
     },
     datePublished: '2026-01-15',

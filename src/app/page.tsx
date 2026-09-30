@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   },
   description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com',
+    canonical: 'https://mscscaffolding.com',
   },
   openGraph: {
     title: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
-    url: 'https://www.mscscaffolding.com',
+    url: 'https://mscscaffolding.com',
     siteName: 'MSC Scaffolding',
     locale: 'id_ID',
     type: 'website',
@@ -40,28 +40,28 @@ export default function HomePage() {
     '@type': 'WebSite',
     name: 'MSC Scaffolding',
     alternateName: 'PT MITRA SOLUSI CAHAYA',
-    url: 'https://www.mscscaffolding.com',
+    url: 'https://mscscaffolding.com',
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo.',
     hasPart: [
       {
         '@type': 'WebPage',
         name: 'Sewa Scaffolding',
-        url: 'https://www.mscscaffolding.com/sewa-scaffolding',
+        url: 'https://mscscaffolding.com/sewa-scaffolding',
       },
       {
         '@type': 'WebPage',
         name: 'Jual Scaffolding',
-        url: 'https://www.mscscaffolding.com/jual-scaffolding',
+        url: 'https://mscscaffolding.com/jual-scaffolding',
       },
       {
         '@type': 'WebPage',
         name: 'Katalog Komponen',
-        url: 'https://www.mscscaffolding.com/produk',
+        url: 'https://mscscaffolding.com/produk',
       },
       {
         '@type': 'WebPage',
         name: 'Kalkulator Kebutuhan',
-        url: 'https://www.mscscaffolding.com/kalkulator',
+        url: 'https://mscscaffolding.com/kalkulator',
       },
     ],
   };

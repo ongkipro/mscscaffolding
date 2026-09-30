@@ -3,10 +3,10 @@ import { getAllProducts } from '@/services/productService';
 import { getAllLocations } from '@/services/locationService';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.mscscaffolding.com';
+  const baseUrl = 'https://mscscaffolding.com';
   const currentDate = new Date().toISOString();
 
-  // 1. Static Core Pages (9 routes)
+  // 1. Static Core Pages (11 routes)
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
@@ -61,6 +61,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/kebijakan-privasi`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/syarat-ketentuan`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.4,
     },
   ];
 

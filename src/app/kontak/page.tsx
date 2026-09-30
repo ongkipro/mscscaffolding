@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   title: 'Kontak & Gudang Scaffolding Surabaya Sidoarjo',
   description: 'Kontak resmi MSC Scaffolding. Hotline WA: 0822-5766-4755. Lokasi gudang di Rungkut Surabaya & Gedangan Sidoarjo. Konsultasi sewa & beli siap respon cepat.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/kontak',
+    canonical: 'https://mscscaffolding.com/kontak',
   },
   openGraph: {
     title: 'Kontak & Alamat Gudang MSC Scaffolding Surabaya Sidoarjo',
     description: 'Hotline resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA.',
-    url: 'https://www.mscscaffolding.com/kontak',
+    url: 'https://mscscaffolding.com/kontak',
   },
 };
 
@@ -32,7 +32,7 @@ export default function KontakPage() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Kontak & Lokasi Gudang MSC Scaffolding',
-    url: 'https://www.mscscaffolding.com/kontak',
+    url: 'https://mscscaffolding.com/kontak',
     mainEntity: {
       '@type': 'Organization',
       name: 'PT MITRA SOLUSI CAHAYA',

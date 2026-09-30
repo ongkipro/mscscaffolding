@@ -43,12 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Sewa & Jual Scaffolding ${location.city} Pipa 1.8mm`,
     description: `Pusat rental steger scaffolding galvanis pipa 1.8mm di ${location.city}. Jangkauan kawasan industri ${location.industrialEstates.slice(0, 2).join(', ')}. Kirim dari ${location.warehouseHub}.`,
     alternates: {
-      canonical: `https://www.mscscaffolding.com/area-layanan/${location.slug}`,
+      canonical: `https://mscscaffolding.com/area-layanan/${location.slug}`,
     },
     openGraph: {
       title: `Sewa Scaffolding ${location.city} Murah & Cepat - MSC Scaffolding`,
       description: location.description,
-      url: `https://www.mscscaffolding.com/area-layanan/${location.slug}`,
+      url: `https://mscscaffolding.com/area-layanan/${location.slug}`,
     },
   };
 }

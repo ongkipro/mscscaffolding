@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik',
   description: 'Jual scaffolding steger baru pipa 1.8mm SNI harga pabrik. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender & faktur pajak.',
   alternates: {
-    canonical: 'https://www.mscscaffolding.com/jual-scaffolding',
+    canonical: 'https://mscscaffolding.com/jual-scaffolding',
   },
   openGraph: {
     title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik - MSC Scaffolding',
     description: 'Pricelist scaffolding baru pipa 1.8mm SNI. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender B2B.',
-    url: 'https://www.mscscaffolding.com/jual-scaffolding',
+    url: 'https://mscscaffolding.com/jual-scaffolding',
   },
 };
 
@@ -171,7 +171,7 @@ export default function JualScaffoldingPage() {
     name: 'Jual Scaffolding Baru & Rekondisi Surabaya Sidoarjo',
     serviceType: 'Penjualan Scaffolding Steger Galvanis',
     provider: {
-      '@id': 'https://www.mscscaffolding.com/#organization',
+      '@id': 'https://mscscaffolding.com/#organization',
     },
     areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
     offers: {
