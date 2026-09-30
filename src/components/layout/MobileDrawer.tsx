@@ -165,6 +165,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           {/* Calculator Shortcut */}
           <Link
             href="/kalkulator"
+            prefetch={false}
             onClick={onClose}
             className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 text-white active:scale-95 transition-all group"
           >
@@ -199,6 +200,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                     <Link
                       key={item.name}
                       href={item.href}
+                      prefetch={false}
                       onClick={onClose}
                       className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-all ${
                         isActive

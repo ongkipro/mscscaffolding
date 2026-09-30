@@ -6,10 +6,11 @@ import ClientLayout from '@/components/layout/ClientLayout';
 import { COMPANY_INFO } from '@/data/company';
 
 const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -199,14 +200,14 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - loaded via lazyOnload to prioritize FCP and LCP */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=AW-18484671476"
         />
         <Script
           id="google-tag-aw"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         >
           {`
             window.dataLayer = window.dataLayer || [];

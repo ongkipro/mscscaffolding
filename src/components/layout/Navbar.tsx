@@ -135,6 +135,7 @@ export default function Navbar({ onOpenDrawer, isDrawerOpen }: NavbarProps) {
                 <Link
                   key={link.name}
                   href={link.href}
+                  prefetch={false}
                   className={`text-sm px-3.5 py-2 rounded-full transition-all duration-150 ${linkClasses}`}
                 >
                   {link.name}

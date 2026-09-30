@@ -10,11 +10,16 @@ export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [preloadNext, setPreloadNext] = useState(false);
   const slideCount = HERO_SLIDES.length;
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
+    const t = setTimeout(() => {
+      setPreloadNext(true);
+    }, 3500);
+    return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
@@ -80,7 +85,7 @@ export default function HeroSlider() {
           const isActive = index === currentSlide;
           const isNext = (currentSlide + 1) % slideCount === index;
           if (!isMounted && index !== 0) return null;
-          if (isMounted && !isActive && !isNext) return null;
+          if (isMounted && !isActive && !(preloadNext && isNext)) return null;
 
           return (
             <div
@@ -96,7 +101,7 @@ export default function HeroSlider() {
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 className="object-cover object-center"
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
               {/* Natural High-Contrast Balanced Gradient Protection - Reduced Opacity */}
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/40 to-transparent" />

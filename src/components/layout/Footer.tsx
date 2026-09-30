@@ -123,6 +123,7 @@ export default function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
+                      prefetch={false}
                       className="text-slate-400 hover:text-orange-400 transition-colors block py-0.5 leading-snug"
                     >
                       {item.name}
@@ -132,6 +133,7 @@ export default function Footer() {
                 <li className="pt-2">
                   <Link
                     href="/produk"
+                    prefetch={false}
                     className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
                   >
                     <span>Semua Produk</span>
@@ -151,6 +153,7 @@ export default function Footer() {
                   <li key={reg.city}>
                     <Link
                       href={reg.href}
+                      prefetch={false}
                       className="group block space-y-0.5 text-slate-400 hover:text-orange-400 transition-colors"
                     >
                       <div className="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">
@@ -165,6 +168,7 @@ export default function Footer() {
                 <li className="pt-2">
                   <Link
                     href="/area-layanan"
+                    prefetch={false}
                     className="group inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors whitespace-nowrap"
                   >
                     <span>Cek Area Layanan</span>
