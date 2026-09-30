@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ShieldCheck, ChevronRight, Lock, Eye, FileText, Mail, Phone, MapPin } from 'lucide-react';
+import { ShieldCheck, ChevronRight, Lock, Eye, FileText, Phone, MapPin, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
@@ -72,7 +72,7 @@ export default function KebijakanPrivasiPage() {
             <p>Kami mengumpulkan data yang diperlukan untuk kelancaran transaksi dan layanan pelanggan:</p>
             <ul className="list-disc pl-5 space-y-2 text-slate-600">
               <li>
-                <strong>Data Kontak &amp; Identitas:</strong> Nama pemesan, nama perusahaan/badan usaha, nomor telepon/WhatsApp, dan alamat email yang Anda berikan melalui formulir permintaan penawaran atau tombol chat WhatsApp.
+                <strong>Data Kontak &amp; Identitas:</strong> Nama pemesan, nama perusahaan/badan usaha, dan nomor telepon/WhatsApp yang Anda berikan melalui formulir permintaan penawaran atau tombol chat WhatsApp.
               </li>
               <li>
                 <strong>Data Lokasi Proyek:</strong> Alamat titik bongkar proyek dan kota tujuan (Surabaya, Sidoarjo, Gresik, Pasuruan, Mojokerto) untuk keperluan estimasi biaya transportasi armada (mob-demob) dan jadwal pengiriman.
@@ -137,14 +137,19 @@ export default function KebijakanPrivasiPage() {
                 <span>{COMPANY_INFO.warehouses[0].address}</span>
               </div>
               <div className="flex items-center gap-2 text-slate-600">
-                <Mail className="w-4 h-4 text-orange-600 shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.email}`} className="text-orange-600 hover:underline">
-                  {COMPANY_INFO.email}
+                <MessageSquare className="w-4 h-4 text-emerald-600 shrink-0" />
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent('Halo Tim Legal MSC, saya ingin menanyakan mengenai privasi data.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-700 font-semibold hover:underline"
+                >
+                  WhatsApp Hotline: {COMPANY_INFO.primaryPhone.formatted}
                 </a>
               </div>
               <div className="flex items-center gap-2 text-slate-600">
                 <Phone className="w-4 h-4 text-orange-600 shrink-0" />
-                <span>Hotline: {COMPANY_INFO.primaryPhone.formatted}</span>
+                <span>Telepon: {COMPANY_INFO.officePhone}</span>
               </div>
             </div>
           </div>

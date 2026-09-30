@@ -11,27 +11,27 @@ export default function MobileBottomBar() {
   return (
     <aside
       aria-label="Aksi Cepat Mobile"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/75 backdrop-blur-2xl border-t border-white/10 px-4 py-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_32px_rgba(0,0,0,0.5)]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/80 backdrop-blur-xl border-t border-slate-800/80 px-4 py-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-lg"
     >
       <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
-        {/* Direct Call Hotline - Glass Effect */}
+        {/* Direct Call Hotline - Flat Minimalist Glass */}
         <a
           href={`tel:${hotlineDigits}`}
           onClick={() => trackPhoneConversion('mobile_bottom_bar')}
-          className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 active:scale-[0.98] border border-white/15 backdrop-blur-md text-white transition-all shadow-sm"
+          className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 active:scale-[0.98] border border-slate-800 text-white transition-all shadow-sm"
           aria-label={`Telepon Hotline ${COMPANY_INFO.primaryPhone.formatted}`}
         >
-          <Phone className="w-4 h-4 text-slate-200 shrink-0" />
-          <span className="text-xs sm:text-sm font-bold tracking-wide">Telepon</span>
+          <Phone className="w-4 h-4 text-slate-300 shrink-0" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wide">Telepon</span>
         </a>
 
-        {/* WhatsApp Direct Hotline - Glass Effect */}
+        {/* WhatsApp Direct Hotline - Flat Minimalist Vibrant Green */}
         <a
           href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent('Halo Tim MSC Scaffolding, saya butuh info sewa/jual scaffolding.')}`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackWhatsAppConversion('mobile_bottom_bar')}
-          className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600/70 hover:bg-emerald-600/85 active:scale-[0.98] border border-emerald-400/40 backdrop-blur-md text-white transition-all shadow-md shadow-emerald-950/30"
+          className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-white transition-all shadow-sm"
           aria-label="Chat WhatsApp Hotline MSC Scaffolding"
         >
           <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current shrink-0" aria-hidden="true">

@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   MapPin,
   Phone,
-  Mail,
   Clock,
   ExternalLink,
   MessageSquare,
@@ -98,15 +97,6 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span className="text-slate-400">{COMPANY_INFO.operatingHours}</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <a
-                  href={`mailto:${COMPANY_INFO.email}`}
-                  className="text-slate-400 hover:text-white transition-colors"
-                >
-                  {COMPANY_INFO.email}
-                </a>
               </div>
             </div>
           </div>

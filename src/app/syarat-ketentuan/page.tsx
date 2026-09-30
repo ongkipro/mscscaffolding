@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FileText, ChevronRight, CheckCircle2, AlertTriangle, Truck, ShieldCheck, Phone, Mail } from 'lucide-react';
+import { FileText, ChevronRight, CheckCircle2, AlertTriangle, Truck, ShieldCheck, Phone, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
@@ -146,12 +146,12 @@ export default function SyaratKetentuanPage() {
             </p>
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm space-y-2">
               <div className="flex items-center gap-2 text-slate-700">
-                <Phone className="w-4 h-4 text-orange-600 shrink-0" />
+                <MessageSquare className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>WhatsApp Tender &amp; SPH: <strong>{COMPANY_INFO.whatsappTender.formatted}</strong></span>
               </div>
               <div className="flex items-center gap-2 text-slate-700">
-                <Mail className="w-4 h-4 text-orange-600 shrink-0" />
-                <span>Email Dokumen: <strong>{COMPANY_INFO.email}</strong></span>
+                <Phone className="w-4 h-4 text-orange-600 shrink-0" />
+                <span>Telepon Kantor: <strong>{COMPANY_INFO.officePhone}</strong></span>
               </div>
             </div>
           </div>

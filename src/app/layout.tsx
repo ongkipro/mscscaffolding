@@ -107,7 +107,6 @@ export default function RootLayout({
         url: 'https://mscscaffolding.com',
         logo: 'https://mscscaffolding.com/images/branding/logo-msc-circle.png',
         telephone: '+6282257664755',
-        email: 'sales@mscscaffolding.com',
         sameAs: [
           'https://www.facebook.com/mscscaffolding',
           'https://www.instagram.com/mscscaffolding',

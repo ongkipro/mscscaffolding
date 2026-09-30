@@ -20,6 +20,7 @@ import {
   Building,
   Home,
   Clock,
+  Lock,
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 import { trackWhatsAppConversion, trackPhoneConversion } from '@/utils/analytics';
@@ -79,10 +80,12 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       ],
     },
     {
-      label: 'Tentang Perusahaan',
+      label: 'Perusahaan & Legal',
       items: [
         { name: 'Tentang Kami', href: '/tentang-kami', icon: Building },
         { name: 'Kontak & Gudang', href: '/kontak', icon: MapPin },
+        { name: 'Kebijakan Privasi', href: '/kebijakan-privasi', icon: Lock },
+        { name: 'Syarat & Ketentuan', href: '/syarat-ketentuan', icon: FileText },
       ],
     },
   ];
@@ -103,14 +106,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         aria-hidden="true"
       />
 
-      {/* Drawer Main Panel - Cohesive Dark Slate Theme */}
+      {/* Drawer Main Panel - Flat Minimalist Dark Slate */}
       <div
-        className={`relative w-full max-w-[330px] sm:max-w-sm bg-slate-950/98 text-slate-100 h-full shadow-[-10px_0_40px_rgba(0,0,0,0.8)] border-l border-slate-800/80 flex flex-col z-10 overflow-y-auto transition-transform duration-300 ease-out backdrop-blur-2xl ${
+        className={`relative w-full max-w-[330px] sm:max-w-sm bg-slate-950 text-slate-100 h-full shadow-2xl border-l border-slate-900 flex flex-col z-10 overflow-y-auto transition-transform duration-300 ease-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Drawer Header */}
-        <div className="p-4 sm:p-5 flex items-center justify-between border-b border-slate-900 bg-slate-950/95 sticky top-0 z-10 backdrop-blur-md">
+        <div className="p-4 sm:p-5 flex items-center justify-between border-b border-slate-900 bg-slate-950 sticky top-0 z-10">
           <div className="flex items-center gap-2.5">
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image
@@ -125,22 +128,22 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <div className="text-sm font-extrabold text-white tracking-tight leading-none">
                 MSC <span className="text-orange-500">SCAFFOLDING</span>
               </div>
-              <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
+              <div className="text-[9px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
                 PT Mitra Solusi Cahaya
               </div>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-colors active:scale-95"
+            className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors active:scale-95"
             aria-label="Tutup Menu Navigasi"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Quick Action Tiles */}
-        <div className="p-3 bg-slate-900/60 border-b border-slate-900 grid grid-cols-2 gap-2">
+        {/* Quick Action Tiles - Flat Minimalist */}
+        <div className="p-3 bg-slate-950 border-b border-slate-900 grid grid-cols-2 gap-2.5">
           {/* Direct WhatsApp */}
           <a
             href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
@@ -149,13 +152,13 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppConversion('drawer_quick_action')}
-            className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 text-white active:scale-95 transition-all group"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-white active:scale-95 transition-all group"
           >
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
               <MessageSquare className="w-4 h-4" />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
-              <span className="text-[10px] text-slate-400 font-medium leading-none">Hotline WA</span>
+              <span className="text-[9px] text-slate-400 uppercase font-semibold tracking-wider leading-none">Hotline WA</span>
               <span className="text-xs font-bold text-white group-hover:text-emerald-400 truncate leading-tight mt-0.5">
                 Konsultasi
               </span>
@@ -167,13 +170,13 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             href="/kalkulator"
             prefetch={false}
             onClick={onClose}
-            className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 text-white active:scale-95 transition-all group"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-white active:scale-95 transition-all group"
           >
-            <div className="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-400 border border-orange-500/20 group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-orange-500/15 text-orange-400 flex items-center justify-center shrink-0">
               <Calculator className="w-4 h-4" />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
-              <span className="text-[10px] text-slate-400 font-medium leading-none">Estimasi</span>
+              <span className="text-[9px] text-slate-400 uppercase font-semibold tracking-wider leading-none">Estimasi</span>
               <span className="text-xs font-bold text-white group-hover:text-orange-400 truncate leading-tight mt-0.5">
                 Kalkulator
               </span>
@@ -202,10 +205,10 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                       href={item.href}
                       prefetch={false}
                       onClick={onClose}
-                      className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-all ${
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-colors ${
                         isActive
-                          ? 'bg-orange-500/15 text-orange-400 font-bold border-l-2 border-orange-500'
-                          : 'text-slate-300 hover:bg-slate-900/80 hover:text-white font-medium'
+                          ? 'bg-slate-900 text-orange-400 font-semibold border-l-2 border-orange-500'
+                          : 'text-slate-300 hover:bg-slate-900 hover:text-white font-medium'
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
@@ -219,9 +222,9 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                       <div className="flex items-center gap-1.5 shrink-0 ml-2">
                         {item.badge && (
                           <span
-                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                            className={`text-[10px] font-semibold px-2 py-0.5 rounded-md ${
                               isActive
-                                ? 'bg-orange-950/80 text-orange-300 border border-orange-600/40'
+                                ? 'bg-orange-500/15 text-orange-300 border border-orange-500/30'
                                 : 'bg-slate-900 text-slate-400 border border-slate-800'
                             }`}
                           >
@@ -230,7 +233,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                         )}
                         <ChevronRight
                           className={`w-3.5 h-3.5 ${
-                            isActive ? 'text-orange-400' : 'text-slate-400'
+                            isActive ? 'text-orange-400' : 'text-slate-500'
                           }`}
                         />
                       </div>
@@ -245,7 +248,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         {/* Drawer Footer Information */}
         <div className="p-4 bg-slate-950 border-t border-slate-900 text-slate-300 text-xs space-y-3.5 mt-auto">
           {/* Warehouses Info Card */}
-          <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-1.5">
+          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5">
             <div className="text-white font-bold text-xs flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
               <span>2 Hub Gudang Fisik Jawa Timur</span>
@@ -260,7 +263,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             </div>
           </div>
 
-          {/* Request SPH Action Button */}
+          {/* Request SPH Action Button - Flat Minimalist Solid */}
           <div className="pt-0.5">
             <a
               href={`https://wa.me/${COMPANY_INFO.whatsappTender.number}?text=${encodeURIComponent(
@@ -269,7 +272,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppConversion('drawer_sph_button')}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 active:scale-[0.98] text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-md shadow-orange-950/40"
+              className="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 active:scale-[0.98] text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition-colors shadow-sm"
             >
               <FileText className="w-4 h-4 text-orange-200" />
               <span>Minta Surat Penawaran (SPH)</span>

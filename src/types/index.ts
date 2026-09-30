@@ -121,7 +121,6 @@ export interface CompanyInfo {
     role: string;
   };
   officePhone: string;
-  email: string;
   operatingHours: string;
   warehouses: WarehouseLocation[];
 }

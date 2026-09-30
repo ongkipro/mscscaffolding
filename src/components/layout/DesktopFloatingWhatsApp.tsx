@@ -88,12 +88,6 @@ export default function DesktopFloatingWhatsApp() {
         className="group relative flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] active:scale-95 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl shadow-emerald-950/30 transition-all"
         aria-label="Hubungi WhatsApp Hotline MSC Scaffolding"
       >
-        {/* Pulsing Green Status Wave */}
-        <span className="relative flex h-3.5 w-3.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-white" />
-        </span>
-
         {/* WhatsApp Icon */}
         <svg
           viewBox="0 0 24 24"

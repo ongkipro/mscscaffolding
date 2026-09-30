@@ -25,7 +25,6 @@ export const COMPANY_INFO: CompanyInfo = {
     role: 'Pengadaan Tender BUMN/Swasta, Surat Penawaran Harga (SPH), Beli Unit Baru',
   },
   officePhone: '0813-2562-024',
-  email: 'sales@mscscaffolding.com',
   operatingHours: 'Senin – Sabtu: 07.30 – 17.00 WIB (Kirim 24/7 By Request)',
   warehouses: [
     {

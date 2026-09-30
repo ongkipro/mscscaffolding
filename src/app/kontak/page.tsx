@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Phone,
-  Mail,
   MapPin,
   Clock,
   MessageSquare,
@@ -37,7 +36,6 @@ export default function KontakPage() {
       '@type': 'Organization',
       name: 'PT MITRA SOLUSI CAHAYA',
       telephone: '+6282257664755',
-      email: 'sales@mscscaffolding.com',
       contactPoint: [
         {
           '@type': 'ContactPoint',
@@ -142,10 +140,6 @@ export default function KontakPage() {
                     <span className="font-mono font-bold text-lg">
                       {COMPANY_INFO.whatsappTender.formatted}
                     </span>
-                  </div>
-                  <div className="flex items-center gap-3 text-slate-400 text-xs">
-                    <Mail className="w-4 h-4 text-slate-400" />
-                    <span>{COMPANY_INFO.email}</span>
                   </div>
                 </div>
               </div>
