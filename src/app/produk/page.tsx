@@ -7,14 +7,14 @@ import ProductCatalogClient from '@/components/produk/ProductCatalogClient';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Katalog Scaffolding Galvanis 1.8mm SNI',
-  description: 'Katalog 15 komponen scaffolding galvanis standar K3: Main Frame, Catwalk, Tangga, U-Head, Jack Base & Pipe Support pipa 1.8mm SNI. Ready stock Surabaya.',
+  title: 'Katalog Scaffolding Pipa 1.8mm SNI Surabaya & Gresik',
+  description: 'Katalog lengkap sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Main frame, catwalk, tangga, jack base, dan aksesoris scaffolding.',
   alternates: {
     canonical: 'https://mscscaffolding.com/produk',
   },
   openGraph: {
-    title: 'Katalog Scaffolding Galvanis 1.8mm SNI - MSC Scaffolding',
-    description: '15 komponen scaffolding steger galvanis standar K3: Main Frame, Catwalk, Tangga, Jack Base, Pipe Support pipa 1.8mm SNI. Ready stock Surabaya.',
+    title: 'Katalog Scaffolding Pipa 1.8mm SNI Surabaya & Gresik - MSC Scaffolding',
+    description: 'Katalog lengkap sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Main frame, catwalk, tangga, jack base, dan aksesoris scaffolding.',
     url: 'https://mscscaffolding.com/produk',
   },
 };

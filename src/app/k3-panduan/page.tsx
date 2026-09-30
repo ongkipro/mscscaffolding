@@ -18,8 +18,8 @@ import { K3_STANDARDS, INSPECTION_CHECKLIST } from '@/data/k3Data';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Panduan K3 Scaffolding & Standar Safety',
-  description: 'Panduan keselamatan kerja perancah steger: standar SWL 1.500 kg, SOP perakitan, protokol Scafftag & checklist harian HSE sesuai Permenakertrans 01/1980.',
+  title: 'Panduan K3 Scaffolding & Standar Keselamatan Kerja',
+  description: 'Panduan keselamatan kerja K3 scaffolding standar Permenaker No. 01/1980. Prosedur inspeksi pipa 1.8mm SNI, pemasangan catwalk, guardrail, dan safety tie.',
   alternates: {
     canonical: 'https://mscscaffolding.com/k3-panduan',
   },

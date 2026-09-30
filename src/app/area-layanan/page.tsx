@@ -11,14 +11,14 @@ import { getAllLocations } from '@/services/locationService';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Area Layanan Scaffolding Jawa Timur',
-  description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day dari gudang Rungkut Surabaya & Gedangan Sidoarjo ke seluruh kawasan industri Jawa Timur.',
+  title: 'Area Layanan Scaffolding Surabaya, Sidoarjo & Gresik',
+  description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto dari 2 hub gudang resmi PT Mitra Solusi Cahaya.',
   alternates: {
     canonical: 'https://mscscaffolding.com/area-layanan',
   },
   openGraph: {
-    title: 'Area Layanan Scaffolding Jawa Timur - MSC Scaffolding',
-    description: 'Armada siap kirim scaffolding ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
+    title: 'Area Layanan Scaffolding Surabaya, Sidoarjo & Gresik - MSC Scaffolding',
+    description: 'Armada siap kirim scaffolding pipa 1.8mm SNI ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
     url: 'https://mscscaffolding.com/area-layanan',
   },
 };

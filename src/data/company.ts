@@ -7,7 +7,7 @@ export const COMPANY_INFO: CompanyInfo = {
   slogan: 'Solusi akses kerja di ketinggian untuk proyek Anda',
   quote: 'Material tepat, proyek lancar, hasil maksimal.',
   ctaText: 'Konsultasi Sewa & Estimasi Proyek',
-  serviceCoverage: 'Surabaya • Sidoarjo • Pasuruan • Gresik dan sekitarnya',
+  serviceCoverage: 'Surabaya • Sidoarjo • Gresik dan sekitarnya',
   primaryPhone: {
     number: '6282257664755',
     formatted: '0822-5766-4755',

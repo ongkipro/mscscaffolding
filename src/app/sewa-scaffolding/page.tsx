@@ -16,14 +16,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Sewa Scaffolding Surabaya & Sidoarjo Mulai 27rb',
-  description: 'Sewa scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Tarif mulai Rp 27.000/set/bln, stok ribuan unit, kirim same-day dari gudang Rungkut & Gedangan.',
+  title: 'Sewa Scaffolding Surabaya, Sidoarjo, Gresik - Mulai 27rb',
+  description: 'Sewa scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Tarif mulai Rp 27.000/set/bln, stok ribuan unit, kirim same-day dari 2 hub gudang.',
   alternates: {
     canonical: 'https://mscscaffolding.com/sewa-scaffolding',
   },
   openGraph: {
-    title: 'Sewa Scaffolding Surabaya & Sidoarjo Mulai Rp 27.000 - MSC Scaffolding',
-    description: 'Tarif sewa steger mulai Rp 27.000/set/bulan pipa 1.8mm SNI. Ready stock ribuan set di Surabaya & Sidoarjo.',
+    title: 'Sewa Scaffolding Surabaya, Sidoarjo, Gresik Mulai Rp 27.000 - MSC Scaffolding',
+    description: 'Tarif sewa steger mulai Rp 27.000/set/bulan pipa 1.8mm SNI. Ready stock ribuan set di Surabaya, Sidoarjo, dan Gresik.',
     url: 'https://mscscaffolding.com/sewa-scaffolding',
   },
 };

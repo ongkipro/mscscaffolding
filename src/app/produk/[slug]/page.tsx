@@ -46,7 +46,7 @@ export async function generateMetadata({
 
   return {
     title: `${product.name} Pipa 1.8mm SNI`,
-    description: `${product.name} pipa galvanis ${product.pipeThickness} SNI, SWL ${product.swlKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bln. Ready stock Surabaya & Sidoarjo.`,
+    description: `${product.name} pipa galvanis ${product.pipeThickness} SNI, SWL ${product.swlKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bln. Ready stock Surabaya, Sidoarjo & Gresik.`,
     alternates: {
       canonical: `https://mscscaffolding.com/produk/${product.slug}`,
     },

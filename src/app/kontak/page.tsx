@@ -14,14 +14,14 @@ import { COMPANY_INFO } from '@/data/company';
 import ContactInquiryForm from '@/components/kontak/ContactInquiryForm';
 
 export const metadata: Metadata = {
-  title: 'Kontak & Gudang Scaffolding Surabaya Sidoarjo',
-  description: 'Kontak resmi MSC Scaffolding. Hotline WA: 0822-5766-4755. Lokasi gudang di Rungkut Surabaya & Gedangan Sidoarjo. Konsultasi sewa & beli siap respon cepat.',
+  title: 'Kontak Gudang Scaffolding Surabaya, Sidoarjo & Gresik',
+  description: 'Kontak resmi MSC Scaffolding hub Surabaya, Sidoarjo & Gresik. Konsultasi sewa, beli, dan penawaran SPH via WhatsApp hotline 0822-5766-4755. Respon cepat.',
   alternates: {
     canonical: 'https://mscscaffolding.com/kontak',
   },
   openGraph: {
-    title: 'Kontak & Alamat Gudang MSC Scaffolding Surabaya Sidoarjo',
-    description: 'Hotline resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA.',
+    title: 'Kontak Gudang Scaffolding Surabaya, Sidoarjo & Gresik - MSC Scaffolding',
+    description: 'Kontak resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA di Surabaya, Sidoarjo & Gresik.',
     url: 'https://mscscaffolding.com/kontak',
   },
 };

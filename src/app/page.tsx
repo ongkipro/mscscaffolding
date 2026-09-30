@@ -10,15 +10,15 @@ import ConsultantCTA from '@/components/home/ConsultantCTA';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
+    absolute: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC',
   },
-  description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
+  description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
   alternates: {
     canonical: 'https://mscscaffolding.com',
   },
   openGraph: {
-    title: 'Sewa & Jual Scaffolding Surabaya Sidoarjo - MSC Scaffolding',
-    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo. Stok ribuan unit, standar K3, mulai Rp 27.000/bln. Siap kirim same-day ke proyek.',
+    title: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC Scaffolding',
+    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
     url: 'https://mscscaffolding.com',
     siteName: 'MSC Scaffolding',
     locale: 'id_ID',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: '/images/hero/hero_slide_1_facade_engineer.webp',
         width: 1200,
         height: 675,
-        alt: 'Sewa dan Jual Scaffolding Pipa 1.8mm SNI Surabaya Sidoarjo',
+        alt: 'Sewa dan Jual Scaffolding Pipa 1.8mm SNI Surabaya Sidoarjo Gresik',
       },
     ],
   },
@@ -41,7 +41,7 @@ export default function HomePage() {
     name: 'MSC Scaffolding',
     alternateName: 'PT MITRA SOLUSI CAHAYA',
     url: 'https://mscscaffolding.com',
-    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya & Sidoarjo.',
+    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik.',
     hasPart: [
       {
         '@type': 'WebPage',

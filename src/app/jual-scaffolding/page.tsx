@@ -18,14 +18,14 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik',
-  description: 'Jual scaffolding steger baru pipa 1.8mm SNI harga pabrik. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender & faktur pajak.',
+  title: 'Jual Scaffolding Surabaya, Sidoarjo, Gresik Harga Pabrik',
+  description: 'Jual scaffolding steger pipa 1.8mm SNI harga pabrik di Surabaya, Sidoarjo, dan Gresik. Sedia SPH resmi tender, faktur pajak PKP, dan kirim langsung ke proyek.',
   alternates: {
     canonical: 'https://mscscaffolding.com/jual-scaffolding',
   },
   openGraph: {
-    title: 'Jual Scaffolding Surabaya Sidoarjo Harga Pabrik - MSC Scaffolding',
-    description: 'Pricelist scaffolding baru pipa 1.8mm SNI. 1 Set T170 Rp 500rb, Set T190 Rp 540rb, Catwalk Rp 310rb. Ready stock supply tender B2B.',
+    title: 'Jual Scaffolding Surabaya, Sidoarjo, Gresik Harga Pabrik - MSC Scaffolding',
+    description: 'Jual scaffolding steger pipa 1.8mm SNI harga pabrik di Surabaya, Sidoarjo, dan Gresik. Sedia SPH resmi tender, faktur pajak PKP, dan kirim langsung ke proyek.',
     url: 'https://mscscaffolding.com/jual-scaffolding',
   },
 };

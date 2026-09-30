@@ -4,9 +4,9 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'slide-facade-engineer',
     badge: 'Build Safer Together',
-    title: 'Sewa Scaffolding Surabaya & Sidoarjo',
+    title: 'Sewa Scaffolding Surabaya, Sidoarjo & Gresik',
     highlightText: 'Solusi Akses Kerja di Ketinggian',
-    description: 'Peralatan scaffolding berkualitas dengan harga kompetitif untuk mendukung kelancaran proyek Anda. Tarif sewa mulai Rp 27.000 / set / bulan.',
+    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
     image: '/images/hero/hero_slide_1_facade_engineer.webp',
     primaryCtaText: 'Konsultasi Sekarang',
     primaryCtaLink: 'https://wa.me/6282257664755?text=Halo%20Tim%20MSC%20Scaffolding,%20saya%20ingin%20konsultasi%20kebutuhan%20sewa%20scaffolding.',

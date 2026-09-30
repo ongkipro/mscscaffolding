@@ -14,14 +14,14 @@ import { ScaffoldingCalculator } from '@/components/kalkulator/ScaffoldingCalcul
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya',
-  description: 'Hitung kebutuhan scaffolding modular, catwalk, jack base & tangga online. Estimasi jumlah set dan rincian biaya sewa proyek akurat dalam hitungan detik.',
+  title: 'Kalkulator Scaffolding - Hitung Kebutuhan & Biaya',
+  description: 'Kalkulator scaffolding online untuk menghitung kebutuhan main frame, catwalk, dan estimasi biaya sewa proyek di Surabaya, Sidoarjo, dan Gresik.',
   alternates: {
     canonical: 'https://mscscaffolding.com/kalkulator',
   },
   openGraph: {
-    title: 'Kalkulator Scaffolding: Hitung Kebutuhan & Biaya - MSC Scaffolding',
-    description: 'Simulasi gratis kebutuhan scaffolding modular, catwalk, jack base, dan tangga. Estimasi jumlah set dan biaya sewa proyek akurat.',
+    title: 'Kalkulator Scaffolding - Hitung Kebutuhan & Biaya - MSC Scaffolding',
+    description: 'Simulasi gratis kebutuhan scaffolding modular, catwalk, jack base, dan estimasi biaya sewa di Surabaya, Sidoarjo & Gresik.',
     url: 'https://mscscaffolding.com/kalkulator',
   },
 };
