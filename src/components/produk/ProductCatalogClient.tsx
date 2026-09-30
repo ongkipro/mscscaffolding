@@ -92,10 +92,11 @@ export default function ProductCatalogClient({
       {/* Products Grid - Borderless Airy Grid (2-Cols Mobile, 3-Cols Desktop) */}
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-12">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product, idx) => (
             <ProductCard
               key={product.id}
               product={product}
+              priority={idx < 2}
               onQuickView={(p) => setActiveModalProduct(p)}
             />
           ))}
