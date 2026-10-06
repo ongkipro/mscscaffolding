@@ -1,24 +1,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { FileText, ChevronRight, CheckCircle2, AlertTriangle, Truck, ShieldCheck, Phone, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Syarat & Ketentuan',
-  description: 'Syarat dan ketentuan sewa serta jual scaffolding PT Mitra Solusi Cahaya. Prosedur SPH, periode sewa, standar K3, pengiriman armada, dan garansi unit.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/syarat-ketentuan',
-  },
-  openGraph: {
-    title: 'Syarat & Ketentuan - MSC Scaffolding',
-    description: 'Syarat dan ketentuan resmi transaksi sewa dan jual scaffolding PT Mitra Solusi Cahaya (MSC Scaffolding).',
-    url: 'https://mscscaffolding.com/syarat-ketentuan',
-    siteName: 'MSC Scaffolding',
-    locale: 'id_ID',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Syarat & Ketentuan Sewa dan Jual',
+  description: 'Syarat dan ketentuan sewa serta jual scaffolding PT Mitra Solusi Cahaya: prosedur SPH, periode sewa, standar K3, pengiriman, dan garansi unit.',
+  path: '/syarat-ketentuan',
+});
 
 export default function SyaratKetentuanPage() {
   const lastUpdated = '30 September 2026';
@@ -28,11 +20,7 @@ export default function SyaratKetentuanPage() {
       {/* Clean Unified Header */}
       <section className="bg-slate-50 py-10 sm:py-14 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Syarat &amp; Ketentuan</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Syarat & Ketentuan' }]} />
 
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/80 text-orange-700 text-xs font-semibold">

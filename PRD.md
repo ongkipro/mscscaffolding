@@ -76,7 +76,7 @@ src/app/
 ├── produk/
 │   ├── page.tsx                # Full Catalog Index with Category Filters & Search
 │   └── [slug]/
-│       └── page.tsx            # Product Detail Page (15 Components with Technical Specs)
+│       └── page.tsx            # Product Detail Page (18 Products with Technical Specs)
 ├── sewa-scaffolding/
 │   └── page.tsx                # Rental Service, Rates Table, Same-day Delivery SOP, FAQ
 ├── jual-scaffolding/
@@ -93,7 +93,7 @@ src/app/
 │   └── page.tsx                # Contact Directory, Dual Hotlines, Google Maps Embeds
 ├── not-found.tsx               # Clean 404 Error Page
 ├── robots.ts                   # Dynamic robots.txt
-└── sitemap.ts                  # Dynamic sitemap.xml for all 29 public routes
+└── sitemap.ts                  # Dynamic sitemap.xml for all 34 public routes
 
 *Catatan Arsitektur: Kebutuhan dashboard admin CMS dan backend database ditunda ke Phase 2.*
 ```

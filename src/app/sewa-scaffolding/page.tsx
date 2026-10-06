@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { ORGANIZATION_ID, SITE_URL, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -15,18 +17,11 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Sewa Scaffolding Surabaya, Sidoarjo, Gresik - Mulai 27rb',
-  description: 'Sewa scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Tarif mulai Rp 27.000/set/bln, stok ribuan unit, kirim same-day dari 2 hub gudang.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/sewa-scaffolding',
-  },
-  openGraph: {
-    title: 'Sewa Scaffolding Surabaya, Sidoarjo, Gresik Mulai Rp 27.000 - MSC Scaffolding',
-    description: 'Tarif sewa steger mulai Rp 27.000/set/bulan pipa 1.8mm SNI. Ready stock ribuan set di Surabaya, Sidoarjo, dan Gresik.',
-    url: 'https://mscscaffolding.com/sewa-scaffolding',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Sewa Scaffolding Surabaya Sidoarjo Gresik',
+  description: 'Sewa scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Tarif mulai Rp 27.000/set/bln, stok ribuan set, kirim same-day dari 2 gudang.',
+  path: '/sewa-scaffolding',
+});
 
 export default function SewaScaffoldingPage() {
   const rentalRates = [
@@ -46,7 +41,7 @@ export default function SewaScaffoldingPage() {
     },
     {
       item: '1 Set Ladder Frame T90',
-      components: '2 Ladder Frame 90 + 2 Cross Brace + 4 Joint Pin',
+      components: '2 Ladder Frame 90 + 2 Cross Ladder 190',
       rateMonthly: 'Rp 20.000',
       minRental: '1 Bulan',
       deposit: 'Fleksibel / SPH Kontraktor',
@@ -74,7 +69,7 @@ export default function SewaScaffoldingPage() {
     },
     {
       item: 'Catwalk Metal Plank Anti-Slip',
-      components: 'Pelat Baja Galvanis Berlubang 50 x 183 cm K3',
+      components: 'Metal Plank Galvanis Berlubang 50 x 180 cm K3',
       rateMonthly: 'Rp 30.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
@@ -88,7 +83,7 @@ export default function SewaScaffoldingPage() {
     },
     {
       item: 'Pipe Support Teleskopik TS-90',
-      components: 'Rentang Ketinggian 2.0 - 3.8 Meter Adjustable',
+      components: 'Rentang Ketinggian 2.6 - 3.8 Meter Adjustable',
       rateMonthly: 'Rp 15.000',
       minRental: '1 Bulan',
       deposit: 'Sesuai Jumlah',
@@ -142,23 +137,56 @@ export default function SewaScaffoldingPage() {
     },
   ];
 
+  const rentalPrices = rentalRates.map((r) => Number(r.rateMonthly.replace(/\D/g, '')));
+
+  const faqs = [
+    {
+      q: 'Berapa harga sewa scaffolding per bulan?',
+      a: 'Sewa 1 set scaffolding T170 (2 main frame, 2 cross brace, 4 joint pin) mulai Rp 27.000 per bulan, set T190 Rp 29.000 per bulan. Komponen eceran mulai Rp 1.000 per bulan. Harga belum termasuk PPN 11% dan ongkos kirim.',
+    },
+    {
+      q: 'Berapa minimal durasi sewa scaffolding?',
+      a: 'Minimal sewa 1 bulan. Untuk proyek jangka panjang, durasi dan termin pembayaran dapat disepakati dalam Surat Penawaran Harga (SPH).',
+    },
+    {
+      q: 'Dokumen apa yang dibutuhkan untuk sewa?',
+      a: 'Cukup verifikasi KTP untuk perorangan atau dokumen perusahaan (SIUP/NIB) untuk badan usaha, tanpa prosedur deposit yang berbelit.',
+    },
+    {
+      q: 'Apakah bisa kirim di hari yang sama?',
+      a: 'Bisa. Pengiriman same-day untuk Surabaya dan Sidoarjo dengan estimasi tiba 2–4 jam, Gresik 4–6 jam, serta Pasuruan dan Mojokerto 4–8 jam setelah konfirmasi.',
+    },
+    {
+      q: 'Siapa yang menjemput scaffolding setelah masa sewa selesai?',
+      a: 'Armada kami menjemput kembali unit di lokasi proyek setelah masa sewa berakhir, didahului pengecekan fisik bersama tim Anda.',
+    },
+  ];
+
   const sewaPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Sewa Scaffolding Surabaya & Sidoarjo',
+    name: 'Sewa Scaffolding Surabaya, Sidoarjo & Gresik',
     serviceType: 'Rental Scaffolding Steger',
-    provider: {
-      '@id': 'https://mscscaffolding.com/#organization',
-    },
+    url: `${SITE_URL}/sewa-scaffolding`,
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'IDR',
-      lowPrice: 27000,
-      highPrice: 50000,
-      offerCount: 8,
-      priceValidUntil: '2027-12-31',
+      lowPrice: Math.min(...rentalPrices),
+      highPrice: Math.max(...rentalPrices),
+      offerCount: rentalPrices.length,
     },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   };
 
   return (
@@ -167,23 +195,23 @@ export default function SewaScaffoldingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(sewaPageSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* Clean Unified Page Header with Visual Photo */}
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Sewa Scaffolding</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Sewa Scaffolding' }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-3">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
-                Sewa Scaffolding Surabaya & Sidoarjo
+                Sewa Scaffolding Surabaya, Sidoarjo & Gresik
               </h1>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Stok puluhan ribu set steger pipa 1.8mm SNI siap kirim same-day dari 2 hub gudang Surabaya & Sidoarjo.
+                Stok ribuan set steger pipa 1.8mm SNI siap kirim same-day dari 2 gudang Surabaya & Sidoarjo ke Gresik, Pasuruan, dan Mojokerto.
               </p>
 
               <div className="pt-2">
@@ -311,6 +339,36 @@ export default function SewaScaffoldingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ (mirrors FAQPage JSON-LD above) */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 mb-1 block">
+            FAQ Sewa
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-6 flex items-center gap-2">
+            <HelpCircle className="w-6 h-6 text-orange-600 shrink-0" aria-hidden="true" />
+            Pertanyaan Seputar Sewa Scaffolding
+          </h2>
+          <div className="divide-y divide-slate-100 border-y border-slate-100">
+            {faqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-sm sm:text-base font-semibold text-slate-900">
+                  <span>{f.q}</span>
+                  <ChevronRight className="w-4 h-4 mt-1 shrink-0 text-orange-600 transition-transform group-open:rotate-90" aria-hidden="true" />
+                </summary>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-slate-600">
+            Butuh hitungan cepat? Coba{' '}
+            <Link href="/kalkulator" className="font-semibold text-orange-600 hover:underline">kalkulator scaffolding</Link>{' '}
+            atau lihat{' '}
+            <Link href="/area-layanan" className="font-semibold text-orange-600 hover:underline">area layanan</Link> kami.
+          </p>
         </div>
       </section>
     </div>

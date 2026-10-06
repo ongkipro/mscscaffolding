@@ -22,7 +22,7 @@ src/
 │   ├── tentang-kami/page.tsx       # Corporate Profile & Physical Warehouses
 │   ├── produk/
 │   │   ├── page.tsx                # 15-Product Catalog with Reactive Category Filter & Search
-│   │   └── [slug]/page.tsx         # SSG Product Detail Page (15 components)
+│   │   └── [slug]/page.tsx         # SSG Product Detail Page (18 products)
 │   ├── sewa-scaffolding/page.tsx   # Rental Service & SOP
 │   ├── jual-scaffolding/page.tsx   # Sales Service & SPH Quote Flow
 │   ├── k3-panduan/page.tsx         # HSE Standard & Permenaker Guidelines
@@ -33,7 +33,7 @@ src/
 │   ├── kontak/page.tsx             # Contact Directory, Hotlines, Maps Embeds
 │   ├── not-found.tsx               # Minimalist Industrial 404
 │   ├── robots.ts                   # Dynamic robots.txt
-│   └── sitemap.ts                  # Dynamic sitemap.xml (All 29 public routes)
+│   └── sitemap.ts                  # Dynamic sitemap.xml (All 34 public routes)
 │
 ├── components/
 │   ├── layout/
@@ -66,7 +66,7 @@ src/
 ├── data/                               # Static Authoritative Data Layer
 │   ├── company.ts                      # Company profile, hotlines, addresses, GPS
 │   ├── heroSlides.ts                   # 5 Curated 16:9 slides (images, badges, titles, CTAs)
-│   ├── products.ts                     # 15 Component models with exact specs
+│   ├── products.ts                     # 18 product models with client-sheet specs
 │   ├── locations.ts                    # 5 East Java industrial cities
 │   └── k3Data.ts                       # SOP, SWL standards, inspection checklist
 │
@@ -106,7 +106,7 @@ When the CMS is connected in the future, `getAllProducts()` can simply call `fet
 
 ## 3. STATIC SITE GENERATION (SSG) & PERFORMANCE
 
-- All 29 public routes are pre-rendered at build time via `generateStaticParams`:
+- All 34 public routes are pre-rendered at build time via `generateStaticParams`:
   - 15 products: `/produk/[slug]`
   - 5 cities: `/area-layanan/[kota]`
   - 9 static informational pages: `/`, `/tentang-kami`, `/sewa-scaffolding`, `/jual-scaffolding`, `/k3-panduan`, `/kalkulator`, `/area-layanan`, `/kontak`, `/404`
@@ -133,6 +133,6 @@ When the CMS is connected in the future, `getAllProducts()` can simply call `fet
 ## 5. VERIFICATION ROADMAP
 1. Next.js 15 project structure initialized cleanly with Tailwind CSS industrial design tokens.
 2. High-performance public frontend layout assembled with responsive navigation & mobile thumb bar.
-3. Static generation (SSG) of all 29 public routes verified via `npm run build`.
+3. Static generation (SSG) of all 34 public routes verified via `npm run build`.
 4. Lighthouse audits verify Core Web Vitals (LCP < 1.0s, CLS = 0, FID < 50ms) and valid JSON-LD schemas.
 5. Dev server verified at `http://localhost:3000/`.

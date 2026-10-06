@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { COMPANY_INFO } from '@/data/company';
-import { trackWhatsAppConversion } from '@/utils/analytics';
 
 export default function DesktopFloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,7 +83,7 @@ export default function DesktopFloatingWhatsApp() {
         href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${defaultWaText}`}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackWhatsAppConversion('desktop_floating_sticky')}
+        data-track-label="desktop_floating_sticky"
         className="group relative flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] active:scale-95 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl shadow-emerald-950/30 transition-all"
         aria-label="Hubungi WhatsApp Hotline MSC Scaffolding"
       >

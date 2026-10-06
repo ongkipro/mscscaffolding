@@ -3,7 +3,6 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
-import { trackWhatsAppConversion, trackPhoneConversion } from '@/utils/analytics';
 
 export default function MobileBottomBar() {
   const hotlineDigits = COMPANY_INFO.primaryPhone.formatted.replace(/[^0-9]/g, '');
@@ -17,7 +16,7 @@ export default function MobileBottomBar() {
         {/* Direct Call Hotline - Flat Minimalist Glass */}
         <a
           href={`tel:${hotlineDigits}`}
-          onClick={() => trackPhoneConversion('mobile_bottom_bar')}
+          data-track-label="mobile_bottom_bar"
           className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 active:scale-[0.98] border border-slate-800 text-white transition-all shadow-sm"
           aria-label={`Telepon Hotline ${COMPANY_INFO.primaryPhone.formatted}`}
         >
@@ -30,7 +29,7 @@ export default function MobileBottomBar() {
           href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent('Halo Tim MSC Scaffolding, saya butuh info sewa/jual scaffolding.')}`}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackWhatsAppConversion('mobile_bottom_bar')}
+          data-track-label="mobile_bottom_bar"
           className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-white transition-all shadow-sm"
           aria-label="Chat WhatsApp Hotline MSC Scaffolding"
         >

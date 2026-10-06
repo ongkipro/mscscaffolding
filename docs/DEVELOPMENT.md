@@ -107,7 +107,7 @@ mscscaffolding/
 │   │   ├── tentang-kami/page.tsx
 │   │   ├── produk/
 │   │   │   ├── page.tsx                # Catalog Index with Category Filter & Search
-│   │   │   └── [slug]/page.tsx         # SSG Product Detail (15 components)
+│   │   │   └── [slug]/page.tsx         # SSG Product Detail (18 products)
 │   │   ├── sewa-scaffolding/page.tsx
 │   │   ├── jual-scaffolding/page.tsx
 │   │   ├── k3-panduan/page.tsx

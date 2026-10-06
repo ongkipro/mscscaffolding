@@ -33,6 +33,8 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
+  /** <title> text without brand suffix; keep <= 42 chars. */
+  seoTitle: string;
   category: CategorySlug;
   categoryName: string;
   shortDesc: string;
@@ -125,22 +127,3 @@ export interface CompanyInfo {
   warehouses: WarehouseLocation[];
 }
 
-export interface CalculatorState {
-  length: number;
-  height: number;
-  type: 'fasad' | 'cor';
-}
-
-export interface CalculationResult {
-  totalSets: number;
-  mainFrames: number;
-  crossBraces: number;
-  jointPins: number;
-  catwalks: number;
-  jackBases: number;
-  uHeads: number;
-  pipeSupports: number;
-  tangga: number;
-  estimatedRentalMonthly: number;
-  estimatedPurchaseNew: number;
-}

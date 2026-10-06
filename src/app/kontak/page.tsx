@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import {
   Phone,
@@ -13,18 +15,11 @@ import {
 import { COMPANY_INFO } from '@/data/company';
 import ContactInquiryForm from '@/components/kontak/ContactInquiryForm';
 
-export const metadata: Metadata = {
-  title: 'Kontak Gudang Scaffolding Surabaya, Sidoarjo & Gresik',
-  description: 'Kontak resmi MSC Scaffolding hub Surabaya, Sidoarjo & Gresik. Konsultasi sewa, beli, dan penawaran SPH via WhatsApp hotline 0822-5766-4755. Respon cepat.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/kontak',
-  },
-  openGraph: {
-    title: 'Kontak Gudang Scaffolding Surabaya, Sidoarjo & Gresik - MSC Scaffolding',
-    description: 'Kontak resmi sewa scaffolding cepat dan tender B2B PT MITRA SOLUSI CAHAYA di Surabaya, Sidoarjo & Gresik.',
-    url: 'https://mscscaffolding.com/kontak',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Kontak & Gudang Scaffolding Surabaya',
+  description: 'Kontak MSC Scaffolding: gudang Surabaya & Sidoarjo, melayani Gresik dan sekitarnya. Konsultasi sewa, beli, dan SPH via WhatsApp 0822-5766-4755.',
+  path: '/kontak',
+});
 
 export default function KontakPage() {
   const contactSchema = {
@@ -56,11 +51,7 @@ export default function KontakPage() {
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Kontak & Lokasi</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Kontak & Lokasi' }]} />
 
           <div className="max-w-3xl space-y-2">
             <span className="text-xs uppercase tracking-widest text-orange-700 font-bold block">
@@ -103,7 +94,7 @@ export default function KontakPage() {
                   </div>
                   <div className="flex items-center gap-3 text-slate-600 text-xs">
                     <Clock className="w-4 h-4 text-slate-400" />
-                    <span>Layanan Konsultasi (07.30 - 21.00 WIB)</span>
+                    <span>Layanan Konsultasi (07.30 - 17.00 WIB)</span>
                   </div>
                 </div>
               </div>
@@ -217,7 +208,7 @@ export default function KontakPage() {
                       className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-slate-100 active:scale-[0.98] text-slate-800 text-xs font-medium rounded-md border border-slate-200 transition"
                     >
                       <Phone className="w-3.5 h-3.5" />
-                      <span>Telepon Gudang</span>
+                      <span>WhatsApp Gudang</span>
                     </a>
                   </div>
                 </div>

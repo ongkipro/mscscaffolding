@@ -1,23 +1,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { ShieldCheck, ChevronRight, Download } from 'lucide-react';
 import { getAllProducts, getProductCategories } from '@/services/productService';
 import ProductCatalogClient from '@/components/produk/ProductCatalogClient';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Katalog Scaffolding Pipa 1.8mm SNI Surabaya & Gresik',
-  description: 'Katalog lengkap sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Main frame, catwalk, tangga, jack base, dan aksesoris scaffolding.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/produk',
-  },
-  openGraph: {
-    title: 'Katalog Scaffolding Pipa 1.8mm SNI Surabaya & Gresik - MSC Scaffolding',
-    description: 'Katalog lengkap sewa & beli scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Main frame, catwalk, tangga, jack base, dan aksesoris scaffolding.',
-    url: 'https://mscscaffolding.com/produk',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Katalog Scaffolding & Komponen Lengkap',
+  description: 'Katalog sewa & jual scaffolding pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik: main frame, catwalk, tangga, jack base, U-head, dan aksesoris.',
+  path: '/produk',
+});
 
 export default async function ProductCatalogPage() {
   const products = await getAllProducts();
@@ -44,13 +39,7 @@ export default async function ProductCatalogPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-xs text-slate-500 font-mono">
-          <Link href="/" className="hover:text-orange-600 transition-colors">
-            Beranda
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-          <span className="text-slate-900 font-bold">Katalog Produk</span>
-        </nav>
+        <Breadcrumbs className="" items={[{ name: 'Katalog Produk' }]} />
 
         {/* Page Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-100">

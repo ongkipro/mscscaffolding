@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   ShieldCheck,
-  ChevronRight,
   MessageSquare,
   FileText,
   CheckCircle2,
@@ -20,10 +19,14 @@ import {
   getProductsByCategory,
 } from '@/services/productService';
 import { COMPANY_INFO } from '@/data/company';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { ORGANIZATION_ID, SITE_URL, pageMetadata, productOgImage } from '@/lib/seo';
 
 interface ProductDetailPageProps {
   params: Promise<{ slug: string }>;
 }
+
+const idr = (n: number) => n.toLocaleString('id-ID');
 
 export async function generateStaticParams() {
   const products = await getAllProducts();
@@ -41,29 +44,16 @@ export async function generateMetadata({
   if (!product) {
     return {
       title: 'Produk Tidak Ditemukan',
+      robots: { index: false },
     };
   }
 
-  return {
-    title: `${product.name} Pipa 1.8mm SNI`,
-    description: `${product.name} pipa galvanis ${product.pipeThickness} SNI, SWL ${product.swlKg} kg. Sewa mulai Rp ${product.rentalPriceMonthly.toLocaleString('id-ID')}/bln. Ready stock Surabaya, Sidoarjo & Gresik.`,
-    alternates: {
-      canonical: `https://mscscaffolding.com/produk/${product.slug}`,
-    },
-    openGraph: {
-      title: `${product.name} - MSC Scaffolding`,
-      description: product.shortDesc,
-      url: `https://mscscaffolding.com/produk/${product.slug}`,
-      images: [
-        {
-          url: product.image,
-          width: 800,
-          height: 600,
-          alt: product.name,
-        },
-      ],
-    },
-  };
+  return pageMetadata({
+    title: product.seoTitle,
+    description: `Sewa ${product.seoTitle} mulai Rp ${idr(product.rentalPriceMonthly)}/bln atau beli baru Rp ${idr(product.purchasePriceNew)}. Spesifikasi lengkap, stok ready Surabaya & Sidoarjo.`,
+    path: `/produk/${product.slug}`,
+    image: productOgImage(product.image, product.name),
+  });
 }
 
 export default async function ProductDetailPage({
@@ -84,26 +74,63 @@ export default async function ProductDetailPage({
     `Halo Tim MSC Scaffolding, saya ingin sewa/beli ${product.name} (SWL: ${product.swlKg} kg, Tebal: ${product.pipeThickness}). Mohon info penawaran harga & ketersediaan stok di gudang.`
   );
 
+  const productUrl = `${SITE_URL}/produk/${product.slug}`;
+  const seller = { '@id': ORGANIZATION_ID };
+  const offers: Record<string, unknown>[] = [
+    {
+      '@type': 'Offer',
+      url: productUrl,
+      priceCurrency: 'IDR',
+      price: product.purchasePriceNew,
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      seller,
+    },
+    {
+      '@type': 'Offer',
+      name: `Sewa bulanan ${product.name}`,
+      url: productUrl,
+      businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut',
+      priceCurrency: 'IDR',
+      price: product.rentalPriceMonthly,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: product.rentalPriceMonthly,
+        priceCurrency: 'IDR',
+        referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' },
+      },
+      availability: product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      seller,
+    },
+  ];
+  if (product.purchasePriceUsed) {
+    offers.push({
+      '@type': 'Offer',
+      name: `${product.name} rekondisi`,
+      url: productUrl,
+      priceCurrency: 'IDR',
+      price: product.purchasePriceUsed,
+      itemCondition: 'https://schema.org/RefurbishedCondition',
+      availability: product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      seller,
+    });
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: `https://mscscaffolding.com${product.image}`,
+    image: `${SITE_URL}${product.image}`,
     description: product.description,
     sku: product.id,
     mpn: product.slug,
+    category: product.categoryName,
+    weight: { '@type': 'QuantitativeValue', value: product.weightKg, unitCode: 'KGM' },
     brand: {
       '@type': 'Brand',
       name: 'MSC Scaffolding',
     },
-    offers: {
-      '@type': 'Offer',
-      url: `https://mscscaffolding.com/produk/${product.slug}`,
-      priceCurrency: 'IDR',
-      price: product.rentalPriceMonthly,
-      priceValidUntil: '2027-12-31',
-      availability: 'https://schema.org/InStock',
-    },
+    offers,
   };
 
   return (
@@ -116,13 +143,10 @@ export default async function ProductDetailPage({
       {/* Clean Unified Page Header */}
       <section className="bg-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-3">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <Link href="/produk" className="hover:text-orange-600 transition-colors">Produk</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">{product.name}</span>
-          </div>
+          <Breadcrumbs
+            className="mb-3"
+            items={[{ name: 'Produk', href: '/produk' }, { name: product.name }]}
+          />
 
           <div className="max-w-3xl space-y-1">
             <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-1 block">
@@ -229,7 +253,7 @@ export default async function ProductDetailPage({
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-600 pl-6">
                   <div>Surabaya & Sidoarjo: <strong>2 - 4 Jam (Same-Day)</strong></div>
-                  <div>Gresik, Pasuruan, Mojokerto: <strong>4 - 6 Jam</strong></div>
+                  <div>Gresik: <strong>4 - 6 Jam</strong> · Pasuruan & Mojokerto: <strong>4 - 8 Jam</strong></div>
                 </div>
               </div>
             </div>

@@ -6,9 +6,10 @@ This file contains repository-specific rules only. Global safety, Git, secret-ha
 
 ## Project
 
-- Purpose: Native astro baseline. Database=none; auth=none; deploy=none. Selected capabilities are decisions, not operational claims.
-- Category: astro
-- Expected stack: Astro (minimal TypeScript template)
+- Purpose: Static Next.js marketing & SEO site for PT Mitra Solusi Cahaya (scaffolding rental/sale, East Java). Database=none; auth=none; deploy=none. Selected capabilities are decisions, not operational claims.
+- Category: nextjs
+- Expected stack: Next.js 15 App Router + React 19 + TypeScript + Tailwind CSS (SSG, no backend; superseded Astro per `DEC-005`)
+- Checks: `npx tsc --noEmit`, `npm test` (calculator estimator), `npm run build`
 
 ## Sources of truth
 

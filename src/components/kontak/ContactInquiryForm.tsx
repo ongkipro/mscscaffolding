@@ -1,20 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import {
-  Send,
-  CheckCircle2,
-  AlertCircle,
-  MessageSquare,
-  Building,
-  User,
-  Phone,
-  MapPin,
-  ClipboardList,
-  RotateCcw,
-  Clock,
-} from 'lucide-react';
+import { CheckCircle2, AlertCircle, MessageSquare, RotateCcw, Clock } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
+import { trackWhatsAppConversion } from '@/utils/analytics';
 
 interface FormState {
   nama: string;
@@ -46,7 +35,6 @@ export default function ContactInquiryForm() {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // Validation function
   const validate = (): boolean => {
@@ -102,26 +90,19 @@ Catatan Proyek: ${formData.catatan || '-'}
 Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima kasih.`;
   };
 
+  const waUrl = () =>
+    `https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
+      generateWhatsAppMessage()
+    )}`;
+
+  // There is no backend: the only delivery channel is WhatsApp. Never show "received" for data we did not send.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
-    setIsSubmitting(true);
-    // Simulate brief network submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-    }, 600);
-  };
-
-  const handleDirectWhatsApp = () => {
-    if (!validate()) return;
-    const msg = encodeURIComponent(generateWhatsAppMessage());
-    window.open(
-      `https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${msg}`,
-      '_blank',
-      'noopener,noreferrer'
-    );
+    // window.open bypasses the global <a> click tracker, so track here.
+    trackWhatsAppConversion('contact_form_submit', formData.layanan);
+    window.open(waUrl(), '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
   };
 
   const handleReset = () => {
@@ -149,7 +130,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
           Ajukan Permintaan Harga & Konsultasi Teknis
         </h2>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Lengkapi detail proyek Anda. Tim kami akan menyiapkan estimasi unit dan Surat Penawaran Harga (SPH) dalam 5-10 menit.
+          Lengkapi detail proyek Anda. Tim kami akan menyiapkan estimasi unit dan Surat Penawaran Harga (SPH), biasanya dalam 1–2 jam kerja. Data dikirim lewat chat WhatsApp ke tim kami.
         </p>
       </div>
 
@@ -160,25 +141,25 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
           </div>
           <div>
             <h3 className="text-lg font-bold text-slate-950">
-              Permintaan Anda Berhasil Diterima!
+              Chat WhatsApp Sudah Dibuka
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto mt-1">
-              Terima kasih, <strong>{formData.nama}</strong>. Data kebutuhan steger proyek Anda di{' '}
-              <strong>{formData.kota}</strong> telah tercatat.
+              Terima kasih, <strong>{formData.nama}</strong>. Pesan permintaan untuk proyek di{' '}
+              <strong>{formData.kota}</strong> sudah kami siapkan di WhatsApp. Tekan <strong>Kirim</strong>{' '}
+              di WhatsApp agar tim kami menerimanya. Jika jendela WhatsApp belum terbuka, gunakan tombol di bawah.
             </p>
           </div>
 
           <div className="pt-3 flex flex-wrap justify-center gap-3">
             <a
-              href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
-                generateWhatsAppMessage()
-              )}`}
+              href={waUrl()}
+              data-track-label="contact_form_fallback"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow-sm transition touch-manipulation"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Buka Chat WhatsApp Sekarang</span>
+              <span>Buka WhatsApp Lagi</span>
             </a>
 
             <button
@@ -364,30 +345,20 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
             />
           </div>
 
-          {/* Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          {/* Action Button: the form is delivered via WhatsApp (no backend). */}
+          <div className="pt-2">
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 active:scale-[0.99] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shadow-sm touch-manipulation"
-            >
-              <Send className="w-3.5 h-3.5" />
-              <span>{isSubmitting ? 'Memproses...' : 'Kirim Permintaan Penawaran'}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={handleDirectWhatsApp}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm touch-manipulation"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Kirim Cepat via WhatsApp</span>
+              <span>Kirim Permintaan via WhatsApp</span>
             </button>
           </div>
 
           <div className="pt-2 flex items-center gap-2 text-[11px] text-slate-500">
             <Clock className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-            <span>Respon WhatsApp biasanya dalam 5 menit pada jam kerja (07.30 - 17.00 WIB).</span>
+            <span>Pesan WhatsApp dibalas pada jam kerja (Senin–Sabtu, 07.30 - 17.00 WIB).</span>
           </div>
         </form>
       )}

@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import {
   ShieldCheck,
@@ -17,18 +19,11 @@ import {
 import { K3_STANDARDS, INSPECTION_CHECKLIST } from '@/data/k3Data';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Panduan K3 Scaffolding & Standar Keselamatan Kerja',
-  description: 'Panduan keselamatan kerja K3 scaffolding standar Permenaker No. 01/1980. Prosedur inspeksi pipa 1.8mm SNI, pemasangan catwalk, guardrail, dan safety tie.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/k3-panduan',
-  },
-  openGraph: {
-    title: 'Panduan K3 Scaffolding & Standar Safety - MSC Scaffolding',
-    description: 'Panduan keselamatan kerja perancah steger, kapasitas SWL 1.500 kg, checklist inspeksi, dan sistem Scafftag hijau-merah.',
-    url: 'https://mscscaffolding.com/k3-panduan',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Panduan K3 Scaffolding & Keselamatan Kerja',
+  description: 'Panduan K3 scaffolding mengacu Permenakertrans No. 01/1980: inspeksi pipa, pemasangan catwalk, guardrail, wall tie, dan sistem Scafftag hijau-kuning-merah.',
+  path: '/k3-panduan',
+});
 
 export default function K3PanduanPage() {
   const swlMatrix = [
@@ -129,11 +124,7 @@ export default function K3PanduanPage() {
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Panduan K3 Scaffolding</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Panduan K3 Scaffolding' }]} />
 
           <div className="max-w-3xl space-y-2">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
@@ -293,7 +284,7 @@ export default function K3PanduanPage() {
               Tahapan Perakitan Scaffolding Sesuai SOP K3
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Prosedur baku ereksi untuk memastikan kestabilan geometri dan mencegah resiko rubuh atau perancah miring.
+              Prosedur baku ereksi untuk memastikan kestabilan geometri dan mencegah risiko rubuh atau perancah miring.
             </p>
           </div>
 

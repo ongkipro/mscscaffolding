@@ -1,24 +1,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { ShieldCheck, ChevronRight, Lock, Eye, FileText, Phone, MapPin, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Kebijakan Privasi',
-  description: 'Kebijakan privasi PT Mitra Solusi Cahaya (MSC Scaffolding). Komitmen perlindungan data pelanggan, penggunaan cookie, dan transparansi tracking iklan.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/kebijakan-privasi',
-  },
-  openGraph: {
-    title: 'Kebijakan Privasi - MSC Scaffolding',
-    description: 'Kebijakan privasi dan komitmen perlindungan data pelanggan PT Mitra Solusi Cahaya (MSC Scaffolding).',
-    url: 'https://mscscaffolding.com/kebijakan-privasi',
-    siteName: 'MSC Scaffolding',
-    locale: 'id_ID',
-    type: 'website',
-  },
-};
+  description: 'Kebijakan privasi PT Mitra Solusi Cahaya (MSC Scaffolding): perlindungan data pelanggan, penggunaan cookie, dan transparansi tracking iklan.',
+  path: '/kebijakan-privasi',
+});
 
 export default function KebijakanPrivasiPage() {
   const lastUpdated = '30 September 2026';
@@ -28,11 +20,7 @@ export default function KebijakanPrivasiPage() {
       {/* Clean Unified Header */}
       <section className="bg-slate-50 py-10 sm:py-14 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Kebijakan Privasi</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Kebijakan Privasi' }]} />
 
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/80 text-orange-700 text-xs font-semibold">

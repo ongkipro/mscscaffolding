@@ -7,40 +7,25 @@ import ProjectShowcase from '@/components/home/ProjectShowcase';
 import K3Banner from '@/components/home/K3Banner';
 import WarehouseShowcase from '@/components/home/WarehouseShowcase';
 import ConsultantCTA from '@/components/home/ConsultantCTA';
+import { ORGANIZATION_ID, SITE_URL, pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC',
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC',
+  absoluteTitle: true,
   description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com',
-  },
-  openGraph: {
-    title: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC Scaffolding',
-    description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
-    url: 'https://mscscaffolding.com',
-    siteName: 'MSC Scaffolding',
-    locale: 'id_ID',
-    type: 'website',
-    images: [
-      {
-        url: '/images/hero/hero_slide_1_facade_engineer.webp',
-        width: 1200,
-        height: 675,
-        alt: 'Sewa dan Jual Scaffolding Pipa 1.8mm SNI Surabaya Sidoarjo Gresik',
-      },
-    ],
-  },
-};
+  path: '/',
+});
 
 export default function HomePage() {
   const homepageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
     name: 'MSC Scaffolding',
     alternateName: 'PT MITRA SOLUSI CAHAYA',
-    url: 'https://mscscaffolding.com',
+    url: SITE_URL,
+    inLanguage: 'id-ID',
+    publisher: { '@id': ORGANIZATION_ID },
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik.',
     hasPart: [
       {

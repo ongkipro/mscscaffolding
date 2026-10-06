@@ -2,7 +2,7 @@
 ## Task Breakdown & Implementation Queue (100% Frontend & Content SEO Focus)
 
 > **Project Slug:** `mscscaffolding`  
-> **Status:** Production Ready (All 27 Tasks Verified)  
+> **Status:** Production Ready (28 Tasks Verified)  
 > **Framework:** Next.js 15 (App Router) + TypeScript + Tailwind CSS + Lucide Icons  
 > **Theme:** Professional, Minimalist Modern, Corporate, Industrial Theme Elegant  
 > **Scope:** 100% Focused on Frontend & Content SEO (Admin & CMS Deferred to Phase 2)  
@@ -200,3 +200,13 @@
   - Dependencies: All tasks
   - Scope: Execute cache purge protocol, run `npm run build`, confirm 29 static pages build with 0 errors, audit local HTTP 200 responses, and verify zero layout shifts or missing assets.
   - Done when: Static build completes with 0 errors, 29 static pages generated, and dev server returns 200 OK.
+
+---
+
+## PHASE 9: SEO, CONTENT ACCURACY & QUALITY HARDENING
+
+- [x] `TASK-28`: **SEO / Content Accuracy / Bug Hardening Pass**
+  - Primary requirement: `REQ-8`, `REQ-9`, `REQ-10`
+  - Dependencies: `TASK-27`
+  - Scope: Central `pageMetadata()` (self canonical, full OG/Twitter, JPG share image, titles ≤ 60 / descriptions 70–160 chars); visible breadcrumbs + `BreadcrumbList`; product `Offer`s (sale/rental/refurbished); `FAQPage` on `/sewa-scaffolding` and city hubs; `WebApplication` on `/kalkulator`; noindex 404; product specs aligned to the client sheet; calculator moved to a tested shared-frame estimator priced from the catalogue; honest WhatsApp-only contact form; de-duplicated conversion tracking; hero slider reduced-motion + same-tab internal CTA; typo fixes (`resiko` → `risiko`).
+  - Done when: `npx tsc --noEmit`, `npm test`, and `npm run build` pass; every built page passes the title/description/canonical/OG/H1 audit; all JSON-LD blocks parse.

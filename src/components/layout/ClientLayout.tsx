@@ -16,15 +16,19 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
+    // Single source of click conversions for every wa.me / tel: anchor. Components label anchors with
+    // data-track-label instead of calling the tracker themselves (that double-counted conversions).
     const handleGlobalLinkClicks = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a');
       if (!target) return;
       const href = target.getAttribute('href') || '';
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-        const label = target.getAttribute('aria-label') || target.innerText || 'WhatsApp Button';
+        const label =
+          target.dataset.trackLabel || target.getAttribute('aria-label') || target.innerText || 'WhatsApp Button';
         trackWhatsAppConversion(label.trim());
       } else if (href.startsWith('tel:')) {
-        const label = target.getAttribute('aria-label') || target.innerText || 'Phone Call';
+        const label =
+          target.dataset.trackLabel || target.getAttribute('aria-label') || target.innerText || 'Phone Call';
         trackPhoneConversion(label.trim());
       }
     };

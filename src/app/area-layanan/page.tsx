@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import {
   Truck,
@@ -10,18 +12,11 @@ import {
 import { getAllLocations } from '@/services/locationService';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Area Layanan Scaffolding Surabaya, Sidoarjo & Gresik',
-  description: 'Pengiriman scaffolding steger pipa 1.8mm SNI same-day ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto dari 2 hub gudang resmi PT Mitra Solusi Cahaya.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/area-layanan',
-  },
-  openGraph: {
-    title: 'Area Layanan Scaffolding Surabaya, Sidoarjo & Gresik - MSC Scaffolding',
-    description: 'Armada siap kirim scaffolding pipa 1.8mm SNI ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto.',
-    url: 'https://mscscaffolding.com/area-layanan',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Area Layanan Scaffolding Jawa Timur',
+  description: 'Pengiriman scaffolding same-day ke Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto dari 2 gudang PT Mitra Solusi Cahaya di Rungkut dan Sidoarjo.',
+  path: '/area-layanan',
+});
 
 const CITY_AREAS: Record<string, string> = {
   surabaya: 'SIER, Margomulyo, Tambak Langon, Surabaya Barat',
@@ -39,11 +34,7 @@ export default async function AreaLayananPage() {
       {/* Header Bersih */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-medium">Area Layanan</span>
-          </div>
+          <Breadcrumbs className="mb-3" items={[{ name: 'Area Layanan' }]} />
 
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950">
             Area Layanan & Distribusi

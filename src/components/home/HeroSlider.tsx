@@ -24,6 +24,8 @@ export default function HeroSlider() {
 
   useEffect(() => {
     if (isPaused || !isMounted) return;
+    // WCAG 2.2.2: no auto-advancing content for users who asked for reduced motion.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideCount);
@@ -139,15 +141,26 @@ export default function HeroSlider() {
 
           {/* Single Clean Pill Action Button */}
           <div className="pt-2">
-            <a
-              href={HERO_SLIDES[currentSlide].primaryCtaLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange-700 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs sm:text-sm tracking-wide transition shadow-xl shadow-orange-950/50"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>{HERO_SLIDES[currentSlide].primaryCtaText}</span>
-            </a>
+            {HERO_SLIDES[currentSlide].primaryCtaLink.startsWith('/') ? (
+              <Link
+                href={HERO_SLIDES[currentSlide].primaryCtaLink}
+                className="inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange-700 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs sm:text-sm tracking-wide transition shadow-xl shadow-orange-950/50"
+              >
+                <ArrowRight className="w-4 h-4" />
+                <span>{HERO_SLIDES[currentSlide].primaryCtaText}</span>
+              </Link>
+            ) : (
+              <a
+                href={HERO_SLIDES[currentSlide].primaryCtaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track-label="hero_slider_cta"
+                className="inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange-700 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs sm:text-sm tracking-wide transition shadow-xl shadow-orange-950/50"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>{HERO_SLIDES[currentSlide].primaryCtaText}</span>
+              </a>
+            )}
           </div>
         </div>
 
@@ -196,6 +209,7 @@ export default function HeroSlider() {
                   onClick={() => goToSlide(idx)}
                   className="p-2 sm:p-2.5 flex items-center justify-center min-w-[28px] min-h-[32px] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-full"
                   aria-label={`Pindah ke Slide ${idx + 1}`}
+                  aria-current={idx === currentSlide ? 'true' : undefined}
                 >
                   <span
                     className={`h-1.5 transition-all rounded-full block ${

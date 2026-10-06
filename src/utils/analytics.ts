@@ -27,12 +27,9 @@ export function trackWhatsAppConversion(buttonLocation: string, message?: string
       send_to: GOOGLE_ADS_ID,
     });
 
-    // 2. Google Ads Conversion Event (Call / Lead Action)
+    // 2. Google Ads Conversion Event (Call / Lead Action) — labelled action only; a bare AW-ID conversion is not attributed to any conversion action
     window.gtag('event', 'conversion', {
       send_to: GOOGLE_ADS_CALL_CONVERSION,
-    });
-    window.gtag('event', 'conversion', {
-      send_to: GOOGLE_ADS_ID,
     });
   }
 }
@@ -52,9 +49,6 @@ export function trackPhoneConversion(buttonLocation: string) {
     // 2. Google Ads Conversion Event (Call / Lead Action)
     window.gtag('event', 'conversion', {
       send_to: GOOGLE_ADS_CALL_CONVERSION,
-    });
-    window.gtag('event', 'conversion', {
-      send_to: GOOGLE_ADS_ID,
     });
   }
 }

@@ -1,92 +1,38 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import {
-  Calculator,
-  RotateCcw,
-  CheckCircle2,
-  Copy,
-  MessageSquare,
-  Building,
-  Ruler,
-  Layers,
-  ArrowRight,
-  ShieldAlert,
-  Info,
-} from 'lucide-react';
+import { RotateCcw, CheckCircle2, Copy, MessageSquare, Ruler, Layers, ShieldAlert } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
-import { CalculationResult } from '@/types';
+import {
+  estimateScaffolding,
+  MAX_HEIGHT_M,
+  MAX_LENGTH_M,
+  type EstimatePrices,
+  type WorkType,
+} from '@/utils/scaffoldingEstimate';
 
-export function ScaffoldingCalculator() {
-  const [length, setLength] = useState<number>(10);
-  const [height, setHeight] = useState<number>(5.1);
-  const [workType, setWorkType] = useState<'fasad' | 'cor'>('fasad');
+const DEFAULT_LENGTH = '10';
+const DEFAULT_HEIGHT = '5.1';
+
+// `prices` is built on the server from the product catalogue (see app/kalkulator/page.tsx)
+// so the calculator never drifts from the price list and the catalogue is not shipped to the client.
+export function ScaffoldingCalculator({ prices }: { prices: EstimatePrices }) {
+  // Inputs are kept as raw strings so users can clear and retype; clamping happens in the estimator.
+  const [length, setLength] = useState<string>(DEFAULT_LENGTH);
+  const [height, setHeight] = useState<string>(DEFAULT_HEIGHT);
+  const [workType, setWorkType] = useState<WorkType>('fasad');
   const [durationMonths, setDurationMonths] = useState<number>(1);
   const [selectedCity, setSelectedCity] = useState<string>('Surabaya');
   const [copied, setCopied] = useState<boolean>(false);
 
-  // Calculation Logic
-  const calc = useMemo<CalculationResult & { bays: number; tiers: number }>(() => {
-    const validLength = Math.max(2, length);
-    const validHeight = Math.max(1.7, height);
-
-    // Standard bay length is ~1.83m, tier height is 1.70m
-    const bays = Math.ceil(validLength / 1.83);
-    const tiers = Math.ceil(validHeight / 1.7);
-    const totalSets = bays * tiers;
-
-    const mainFrames = totalSets * 2;
-    const crossBraces = workType === 'cor' ? totalSets * 4 : totalSets * 2;
-    const jointPins = tiers > 1 ? bays * (tiers - 1) * 2 : 0;
-    const catwalks = workType === 'cor' ? bays * tiers : bays;
-    const jackBases = (bays + 1) * 2;
-    const uHeads = workType === 'cor' ? (bays + 1) * 2 : 0;
-    const pipeSupports = workType === 'cor' ? bays * 2 : 0;
-    const tangga = Math.min(tiers, 4);
-
-    // Cost Estimations (Monthly per unit in IDR)
-    // Set 170: 27.000 / mo | Catwalk: 30.000 / mo | Jackbase: 10.000 / mo | U-head: 10.000 / mo | Support: 15.000 / mo | Tangga: 50.000 / mo
-    const monthlySetCost = totalSets * 27000;
-    const monthlyCatwalkCost = catwalks * 30000;
-    const monthlyJackBaseCost = jackBases * 10000;
-    const monthlyUHeadCost = uHeads * 10000;
-    const monthlySupportCost = pipeSupports * 15000;
-    const monthlyTanggaCost = tangga * 50000;
-
-    const estimatedRentalMonthly =
-      (monthlySetCost +
-        monthlyCatwalkCost +
-        monthlyJackBaseCost +
-        monthlyUHeadCost +
-        monthlySupportCost +
-        monthlyTanggaCost) *
-      durationMonths;
-
-    // Purchase New: Set ~500.000, Catwalk ~310.000, JackBase ~95.000, UHead ~98.000, Support ~285.000, Tangga ~440.000
-    const estimatedPurchaseNew =
-      totalSets * 500000 +
-      catwalks * 310000 +
-      jackBases * 95000 +
-      uHeads * 98000 +
-      pipeSupports * 285000 +
-      tangga * 440000;
-
-    return {
-      bays,
-      tiers,
-      totalSets,
-      mainFrames,
-      crossBraces,
-      jointPins,
-      catwalks,
-      jackBases,
-      uHeads,
-      pipeSupports,
-      tangga,
-      estimatedRentalMonthly,
-      estimatedPurchaseNew,
-    };
-  }, [length, height, workType, durationMonths]);
+  const calc = useMemo(
+    () =>
+      estimateScaffolding(
+        { lengthM: Number(length), heightM: Number(height), workType, durationMonths },
+        prices
+      ),
+    [length, height, workType, durationMonths, prices]
+  );
 
   const formatIDR = (val: number) => {
     return new Intl.NumberFormat('id-ID', {
@@ -96,39 +42,47 @@ export function ScaffoldingCalculator() {
     }).format(val);
   };
 
+  const { qty } = calc;
+
   const boqText = useMemo(() => {
     return `ESTIMASI KEBUTUHAN SCAFFOLDING — PT MITRA SOLUSI CAHAYA
 Lokasi Proyek: ${selectedCity}
 Tipe Pekerjaan: ${workType === 'fasad' ? 'Fasad & Finishing Dinding' : 'Pengecoran Plat Beton / Shoring'}
-Dimensi: Panjang ${length}m x Ketinggian ${height}m (${calc.bays} Bay x ${calc.tiers} Tingkat)
-Durasi Sewa: ${durationMonths} Bulan
+Dimensi: Panjang ${calc.lengthM}m x Ketinggian ${calc.heightM}m (${calc.bays} Bay x ${calc.tiers} Tingkat)
+Durasi Sewa: ${calc.durationMonths} Bulan
 
 RINCIAN ESTIMASI BILL OF QUANTITY (BOQ):
-- Total Set Scaffolding: ${calc.totalSets} Set
-- Main Frame T170 (Pipa 1.8mm Real SNI): ${calc.mainFrames} Pcs
-- Cross Brace 220cm (Galvanis): ${calc.crossBraces} Pcs
-- Joint Pin Sambungan: ${calc.jointPins} Pcs
-- Catwalk Metal Plank K3: ${calc.catwalks} Pcs
-- Jack Base T60cm: ${calc.jackBases} Pcs
-${calc.uHeads > 0 ? `- U-Head Adjuster T60cm: ${calc.uHeads} Pcs\n` : ''}${
-      calc.pipeSupports > 0 ? `- Pipe Support TS-90: ${calc.pipeSupports} Pcs\n` : ''
-    }- Tangga Bordes Baja: ${calc.tangga} Unit
+- Main Frame T170: ${qty.mainFrame} Pcs
+- Cross Brace 220cm: ${qty.crossBrace} Pcs
+- Joint Pin Sambungan: ${qty.jointPin} Pcs
+- Catwalk Metal Plank: ${qty.catwalk} Pcs
+- Jack Base 60cm: ${qty.jackBase} Pcs
+${qty.uHead > 0 ? `- U-Head 60cm: ${qty.uHead} Pcs\n` : ''}${
+      qty.pipeSupport > 0 ? `- Pipe Support TS-90: ${qty.pipeSupport} Pcs\n` : ''
+    }- Tangga Bordes 170: ${qty.tangga} Unit
 
-Estimasi Biaya Sewa (${durationMonths} Bulan): ${formatIDR(calc.estimatedRentalMonthly)}
-Estimasi Pembelian Unit Baru: ${formatIDR(calc.estimatedPurchaseNew)}
+Estimasi Biaya Sewa (${calc.durationMonths} Bulan): ${formatIDR(calc.rentTotal)}
+Estimasi Pembelian Unit Baru: ${formatIDR(calc.buyNew)}
 
 Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH). Terima kasih.`;
-  }, [selectedCity, workType, length, height, calc, durationMonths]);
+  }, [selectedCity, workType, calc, qty]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(boqText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 3000);
+    navigator.clipboard
+      .writeText(boqText)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
+      })
+      .catch(() => {
+        // Clipboard can be blocked (insecure context / permissions); WhatsApp button still works.
+        setCopied(false);
+      });
   };
 
   const resetDefaults = () => {
-    setLength(10);
-    setHeight(5.1);
+    setLength(DEFAULT_LENGTH);
+    setHeight(DEFAULT_HEIGHT);
     setWorkType('fasad');
     setDurationMonths(1);
   };
@@ -209,13 +163,10 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   id="length-input"
                   type="number"
                   min={2}
-                  max={100}
+                  max={MAX_LENGTH_M}
                   step={1}
                   value={length}
-                  onChange={(e) => {
-                    const val = Number(e.target.value);
-                    if (!isNaN(val)) setLength(Math.min(100, Math.max(1, val)));
-                  }}
+                  onChange={(e) => setLength(e.target.value)}
                   className="w-20 text-right font-mono text-[16px] font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition touch-manipulation"
                   aria-label="Panjang bidang kerja dalam meter"
                 />
@@ -227,8 +178,8 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               min={2}
               max={60}
               step={1}
-              value={Math.min(60, Math.max(2, length))}
-              onChange={(e) => setLength(Number(e.target.value))}
+              value={Math.min(60, Math.max(2, Number(length) || 2))}
+              onChange={(e) => setLength(e.target.value)}
               className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition touch-manipulation"
               aria-label="Slider panjang bidang kerja"
             />
@@ -251,13 +202,10 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   id="height-input"
                   type="number"
                   min={1.7}
-                  max={50}
+                  max={MAX_HEIGHT_M}
                   step={0.5}
                   value={height}
-                  onChange={(e) => {
-                    const val = Number(e.target.value);
-                    if (!isNaN(val)) setHeight(Math.min(50, Math.max(1, val)));
-                  }}
+                  onChange={(e) => setHeight(e.target.value)}
                   className="w-20 text-right font-mono text-[16px] font-bold text-slate-950 bg-slate-100 hover:bg-slate-200/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 border border-slate-200 px-2.5 py-1.5 rounded-lg transition touch-manipulation"
                   aria-label="Tinggi bidang kerja dalam meter"
                 />
@@ -269,8 +217,8 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               min={1.7}
               max={25}
               step={1.7}
-              value={Math.min(25, Math.max(1.7, height))}
-              onChange={(e) => setHeight(Number(e.target.value))}
+              value={Math.min(25, Math.max(1.7, Number(height) || 1.7))}
+              onChange={(e) => setHeight(e.target.value)}
               className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600 hover:accent-orange-500 transition touch-manipulation"
               aria-label="Slider tinggi bidang kerja"
             />
@@ -284,10 +232,11 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
           {/* Duration & City */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-1.5">
+              <label htmlFor="duration-select" className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-1.5">
                 4. Durasi Sewa
               </label>
               <select
+                id="duration-select"
                 value={durationMonths}
                 onChange={(e) => setDurationMonths(Number(e.target.value))}
                 className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-[16px] font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
@@ -301,10 +250,11 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
             </div>
 
             <div>
-              <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-1.5">
+              <label htmlFor="city-select" className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-1.5">
                 5. Kota Pengiriman
               </label>
               <select
+                id="city-select"
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
                 className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-[16px] font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer touch-manipulation"
@@ -323,7 +273,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
             <div className="p-3.5 bg-amber-50 rounded-lg border border-amber-200 flex items-start gap-2.5 text-amber-900 text-xs leading-relaxed">
               <ShieldAlert className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold">Ketentuan K3 Ketinggian &gt; 3 Tingkat:</span> Sesuai
+                <span className="font-bold">Ketentuan K3 Ketinggian ≥ 3 Tingkat:</span> Sesuai
                 Permenakertrans 01/1980, perancah dengan elevasi lebih dari 5 meter WAJIB dipasang
                 wall tie (pengikat jangkar ke dinding) setiap 3 tier untuk mencegah gaya guling angin.
               </div>
@@ -340,7 +290,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   Hasil Estimasi Bill of Quantity (BOQ)
                 </div>
                 <div className="text-lg sm:text-xl font-bold text-slate-950 mt-0.5">
-                  {calc.totalSets} Set Scaffolding Modular
+                  Setara {calc.modules} Modul Scaffolding
                 </div>
               </div>
               <div className="text-right">
@@ -354,39 +304,39 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
             <div className="space-y-1 mb-6">
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Main Frame T170 (Pipa 1.8mm Real SNI)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.mainFrames} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.mainFrame} Pcs</span>
               </div>
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Cross Brace 220cm (Pengaku Silang Galvanis)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.crossBraces} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.crossBrace} Pcs</span>
               </div>
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Joint Pin (Sambungan Antar Tingkat)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.jointPins} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.jointPin} Pcs</span>
               </div>
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Catwalk Metal Plank (Lantai Kerja K3 Anti-Slip)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.catwalks} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.catwalk} Pcs</span>
               </div>
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Jack Base T60cm (Tapak Bawah Ulir Solid)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.jackBases} Pcs</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.jackBase} Pcs</span>
               </div>
-              {calc.uHeads > 0 && (
+              {qty.uHead > 0 && (
                 <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                   <span className="text-slate-600">U-Head Adjuster T60cm (Penyangga Balok Cor)</span>
-                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.uHeads} Pcs</span>
+                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.uHead} Pcs</span>
                 </div>
               )}
-              {calc.pipeSupports > 0 && (
+              {qty.pipeSupport > 0 && (
                 <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                   <span className="text-slate-600">Pipe Support Teleskopik TS-90</span>
-                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.pipeSupports} Pcs</span>
+                  <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.pipeSupport} Pcs</span>
                 </div>
               )}
               <div className="flex justify-between items-center text-xs sm:text-sm py-1.5">
                 <span className="text-slate-600">Tangga Bordes Baja 170 (Akses Aman)</span>
-                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{calc.tangga} Unit</span>
+                <span className="font-mono font-bold text-slate-950 shrink-0 ml-2">{qty.tangga} Unit</span>
               </div>
             </div>
 
@@ -397,7 +347,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   Estimasi Sewa ({durationMonths} Bulan)
                 </div>
                 <div className="text-xl font-extrabold text-orange-600 mt-1">
-                  {formatIDR(calc.estimatedRentalMonthly)}
+                  {formatIDR(calc.rentTotal)}
                 </div>
                 <div className="text-xs text-slate-500 mt-0.5">
                   Tarif mulai Rp 27.000/set/bulan
@@ -409,10 +359,10 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
                   Estimasi Beli Unit Baru
                 </div>
                 <div className="text-xl font-extrabold text-slate-950 mt-1">
-                  {formatIDR(calc.estimatedPurchaseNew)}
+                  {formatIDR(calc.buyNew)}
                 </div>
                 <div className="text-xs text-slate-500 mt-0.5">
-                  Fabrikasi SNI baru 100%
+                  Harga unit baru sesuai katalog
                 </div>
               </div>
             </div>
@@ -424,6 +374,7 @@ Mohon konfirmasi ketersediaan armada pengiriman dan penawaran harga resmi (SPH).
               href={`https://wa.me/${COMPANY_INFO.primaryPhone.number}?text=${encodeURIComponent(
                 boqText
               )}`}
+              data-track-label="calculator_boq"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2.5 py-3.5 sm:py-4 px-6 bg-orange-600 hover:bg-orange-500 active:scale-95 text-white font-semibold text-xs sm:text-sm tracking-wide rounded-full shadow-lg shadow-orange-950/20 transition-all"

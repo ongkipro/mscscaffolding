@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import ClientLayout from '@/components/layout/ClientLayout';
-import { COMPANY_INFO } from '@/data/company';
+import { DEFAULT_OG_IMAGE, ORGANIZATION_ID, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -13,22 +13,20 @@ const poppins = Poppins({
   preload: true,
 });
 
+// Pinch-zoom stays enabled (WCAG 1.4.4); iOS input auto-zoom is prevented by the 16px rule in globals.css.
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: '#020617',
 };
 
+// Page-level metadata comes from pageMetadata() in src/lib/seo.ts; these are fallbacks only.
+// No root canonical on purpose: it would be inherited by any page that forgets its own.
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mscscaffolding.com'),
-  alternates: {
-    canonical: 'https://mscscaffolding.com',
-  },
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC',
-    template: '%s - MSC Scaffolding',
+    template: `%s | ${SITE_NAME}`,
   },
   description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
   keywords: [
@@ -62,24 +60,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'id_ID',
-    url: 'https://mscscaffolding.com',
-    siteName: 'MSC Scaffolding PT Mitra Solusi Cahaya',
+    url: SITE_URL,
+    siteName: SITE_NAME,
     title: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC Scaffolding',
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Ribuan unit siap kirim same-day, standar K3, mulai Rp 27.000/bln.',
-    images: [
-      {
-        url: '/images/hero/hero_slide_1_facade_engineer.webp',
-        width: 1200,
-        height: 675,
-        alt: 'Sewa dan Jual Scaffolding Pipa 1.8mm SNI Surabaya Sidoarjo Gresik',
-      },
-    ],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sewa & Jual Scaffolding Surabaya, Sidoarjo, Gresik - MSC Scaffolding',
     description: 'Pusat sewa & jual scaffolding steger pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. Kirim same-day.',
-    images: ['/images/hero/hero_slide_1_facade_engineer.webp'],
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -104,16 +95,13 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://mscscaffolding.com/#organization',
+        '@id': ORGANIZATION_ID,
         name: 'PT MITRA SOLUSI CAHAYA',
         alternateName: 'MSC Scaffolding',
-        url: 'https://mscscaffolding.com',
-        logo: 'https://mscscaffolding.com/images/branding/logo-msc-circle.png',
+        url: SITE_URL,
+        logo: `${SITE_URL}/images/branding/logo-msc-circle.png`,
         telephone: '+6282257664755',
-        sameAs: [
-          'https://www.facebook.com/mscscaffolding',
-          'https://www.instagram.com/mscscaffolding',
-        ],
+        // sameAs intentionally omitted until official social profile URLs are confirmed.
         contactPoint: [
           {
             '@type': 'ContactPoint',
@@ -134,14 +122,14 @@ export default function RootLayout({
         image: 'https://mscscaffolding.com/images/hero/hero_slide_1_facade_engineer.webp',
         url: 'https://mscscaffolding.com',
         telephone: '+6282257664755',
-        priceRange: 'IDR 27.000 - 585.000',
-        areaServed: ['Surabaya', 'Gresik', 'Bangkalan'],
+        priceRange: 'Rp 1.000 - Rp 540.000',
+        areaServed: ['Surabaya', 'Gresik'],
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Medokan Asri Utara, Rungkut',
+          streetAddress: 'Medokan Asri Utara, Medokan Ayu, Rungkut',
           addressLocality: 'Surabaya',
           addressRegion: 'Jawa Timur',
-          postalCode: '60293',
+          postalCode: '60295',
           addressCountry: 'ID',
         },
         geo: {
@@ -168,11 +156,11 @@ export default function RootLayout({
         image: 'https://mscscaffolding.com/images/proyek/msc_logistics_truck_clean.webp',
         url: 'https://mscscaffolding.com',
         telephone: '+6282257664755',
-        priceRange: 'IDR 27.000 - 585.000',
+        priceRange: 'Rp 1.000 - Rp 540.000',
         areaServed: ['Sidoarjo', 'Pasuruan', 'Mojokerto'],
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Tritan Hub, Gedangan',
+          streetAddress: 'Pergudangan Tritan Hub, Wedi, Gedangan',
           addressLocality: 'Sidoarjo',
           addressRegion: 'Jawa Timur',
           postalCode: '61254',

@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -18,18 +20,11 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Tentang Kami - Profil PT Mitra Solusi Cahaya',
-  description: 'Profil PT Mitra Solusi Cahaya, penyedia sewa & jual scaffolding steger pipa 1.8mm SNI terpercaya dengan 2 hub gudang fisik di Surabaya dan Sidoarjo.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/tentang-kami',
-  },
-  openGraph: {
-    title: 'Tentang PT Mitra Solusi Cahaya - MSC Scaffolding Jawa Timur',
-    description: 'Penyedia scaffolding steger profesional dengan 2 hub gudang fisik melayani Surabaya, Sidoarjo, dan Gresik.',
-    url: 'https://mscscaffolding.com/tentang-kami',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Tentang PT Mitra Solusi Cahaya',
+  description: 'Profil PT Mitra Solusi Cahaya (MSC Scaffolding), penyedia sewa & jual scaffolding pipa 1.8mm SNI dengan 2 gudang di Surabaya dan Sidoarjo.',
+  path: '/tentang-kami',
+});
 
 export default function TentangKamiPage() {
   const values = [
@@ -55,26 +50,28 @@ export default function TentangKamiPage() {
     },
   ];
 
-  const milestones = [
+  // Source: docs/raw-sources/Tentang Kami.txt ("mulai dari konsultasi kebutuhan, penyediaan material, hingga
+  // proses pengiriman dan pengambilan"). No founding dates here: none exist in the client sources.
+  const serviceSteps = [
     {
-      year: '2014',
-      title: 'Pendirian & Gudang Pertama',
-      desc: 'Memulai operasi penyewaan perancah konstruksi di Surabaya Timur dengan komitmen awal standardisasi pipa tebal.',
+      step: '01',
+      title: 'Konsultasi Kebutuhan',
+      desc: 'Diskusi jenis pekerjaan, dimensi area, dan durasi proyek untuk menentukan komponen scaffolding yang tepat.',
     },
     {
-      year: '2018',
-      title: 'Ekspansi Hub Gudang Sidoarjo',
-      desc: 'Membuka depot logistik kedua di Tritan Hub Gedangan Sidoarjo untuk melayani lonjakan proyek industri di koridor Sidoarjo-Pasuruan.',
+      step: '02',
+      title: 'Penyediaan Material',
+      desc: 'Frame, cross brace, joint pin, jack base, u-head, catwalk, dan perlengkapan pendukung disiapkan dari gudang Surabaya atau Sidoarjo.',
     },
     {
-      year: '2021',
-      title: 'Pengukuhan PT MITRA SOLUSI CAHAYA',
-      desc: 'Transformasi badan usaha menjadi PT resmi dengan sertifikasi PKP, memperluas pengadaan tender B2B dan suplai kontraktor BUMN.',
+      step: '03',
+      title: 'Pengiriman ke Proyek',
+      desc: 'Material dikirim ke lokasi proyek sesuai jadwal yang disepakati.',
     },
     {
-      year: '2026',
-      title: 'Inovasi Digital & Shoring Heavy Duty',
-      desc: 'Pengembangan armada shoring tower heavy-duty untuk proyek jembatan dan integrasi layanan digital konsultasi 24/7.',
+      step: '04',
+      title: 'Pengambilan Kembali',
+      desc: 'Setelah masa sewa selesai, scaffolding diambil kembali sesuai kesepakatan tanpa merepotkan tim Anda.',
     },
   ];
 
@@ -83,11 +80,7 @@ export default function TentangKamiPage() {
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Tentang Kami</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Tentang Kami' }]} />
 
           <div className="max-w-3xl space-y-2">
             <span className="text-xs uppercase tracking-widest text-orange-700 font-bold block">
@@ -194,22 +187,22 @@ export default function TentangKamiPage() {
         </div>
       </section>
 
-      {/* Corporate Milestones */}
+      {/* Service Process */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full inline-block mb-3">
-              Jejak Langkah
+              Cara Kami Bekerja
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
-              Perjalanan & Pertumbuhan MSC Scaffolding
+              Dari Konsultasi hingga Pengambilan Kembali
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {milestones.map((m, idx) => (
+            {serviceSteps.map((m, idx) => (
               <div key={idx} className="bg-slate-50/70 hover:bg-slate-50 p-7 rounded-2xl transition-colors">
-                <div className="text-2xl font-black text-orange-600 font-mono mb-2">{m.year}</div>
+                <div className="text-2xl font-black text-orange-600 font-mono mb-2">{m.step}</div>
                 <h3 className="font-bold text-slate-950 text-base mb-2">{m.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{m.desc}</p>
               </div>

@@ -17,6 +17,9 @@ import {
 } from 'lucide-react';
 import { getAllLocations, getLocationBySlug } from '@/services/locationService';
 import { COMPANY_INFO } from '@/data/company';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { ORGANIZATION_ID, SITE_URL, pageMetadata } from '@/lib/seo';
+import type { ServiceArea } from '@/types';
 
 interface Props {
   params: Promise<{ kota: string }>;
@@ -35,22 +38,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!location) {
     return {
-      title: 'Area Layanan Tidak Ditemukan - MSC Scaffolding',
+      title: 'Area Layanan Tidak Ditemukan',
+      robots: { index: false },
     };
   }
 
-  return {
-    title: `Sewa & Jual Scaffolding ${location.city} Pipa 1.8mm`,
-    description: `Pusat rental steger scaffolding galvanis pipa 1.8mm di ${location.city}. Jangkauan kawasan industri ${location.industrialEstates.slice(0, 2).join(', ')}. Kirim dari ${location.warehouseHub}.`,
-    alternates: {
-      canonical: `https://mscscaffolding.com/area-layanan/${location.slug}`,
+  return pageMetadata({
+    title: `Sewa & Jual Scaffolding ${location.city}`,
+    description: `Sewa & jual scaffolding ${location.city} mulai Rp 27.000/set/bln. Estimasi tiba ${location.leadTimeHours} ke ${location.industrialEstates[0]} & sekitarnya. Pipa 1.8mm SNI.`,
+    path: `/area-layanan/${location.slug}`,
+  });
+}
+
+function cityFaqs(location: ServiceArea) {
+  return [
+    {
+      q: `Berapa lama pengiriman scaffolding ke ${location.city}?`,
+      a: `Estimasi tiba ${location.leadTimeHours} setelah konfirmasi pesanan (jarak tempuh ${location.distanceKm.replace(/^Radius /, '')}), dikirim dari ${location.warehouseHub}.`,
     },
-    openGraph: {
-      title: `Sewa Scaffolding ${location.city} Murah & Cepat - MSC Scaffolding`,
-      description: location.description,
-      url: `https://mscscaffolding.com/area-layanan/${location.slug}`,
+    {
+      q: `Kawasan mana saja di ${location.city} yang dilayani?`,
+      a: `Armada kami rutin mengirim ke ${location.industrialEstates.join(', ')}, serta proyek perumahan, ruko, dan gedung di seluruh ${location.city}.`,
     },
-  };
+    {
+      q: `Berapa harga sewa scaffolding di ${location.city}?`,
+      a: `Sewa 1 set scaffolding T170 mulai Rp 27.000 per bulan dan set T190 Rp 29.000 per bulan, belum termasuk PPN 11% dan ongkos kirim. Harga final tercantum di Surat Penawaran Harga (SPH).`,
+    },
+    {
+      q: `Apakah bisa membeli scaffolding baru untuk proyek di ${location.city}?`,
+      a: `Bisa. Kami menjual unit baru dan rekondisi, lengkap dengan SPH resmi dan faktur pajak PPN untuk kebutuhan tender maupun kontraktor.`,
+    },
+  ];
 }
 
 export default async function LocalizedServiceAreaPage({ params }: Props) {
@@ -63,27 +81,31 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
 
   const allLocations = await getAllLocations();
   const otherLocations = allLocations.filter((l) => l.slug !== kota);
+  const faqs = cityFaqs(location);
 
   const localServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `Sewa & Jual Scaffolding ${location.city}`,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: COMPANY_INFO.legalName,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: location.city,
-        addressRegion: 'Jawa Timur',
-        addressCountry: 'ID',
-      },
-      telephone: COMPANY_INFO.officePhone,
-    },
+    name: `Sewa & Jual Scaffolding ${location.city}`,
+    serviceType: 'Sewa dan Jual Scaffolding',
+    url: `${SITE_URL}/area-layanan/${location.slug}`,
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: {
       '@type': 'City',
       name: location.city,
+      containedInPlace: { '@type': 'State', name: 'Jawa Timur' },
     },
     description: location.description,
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   };
 
   return (
@@ -92,17 +114,15 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localServiceSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* Clean Unified Page Header */}
       <section className="bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <Link href="/area-layanan" className="hover:text-orange-600 transition-colors">Area Layanan</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">{location.city}</span>
-          </div>
+          <Breadcrumbs items={[{ name: 'Area Layanan', href: '/area-layanan' }, { name: location.city }]} />
 
           <div className="max-w-3xl space-y-2">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
@@ -286,13 +306,36 @@ export default async function LocalizedServiceAreaPage({ params }: Props) {
         </div>
       </section>
 
+      {/* City FAQ (mirrors FAQPage JSON-LD above) */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-xs uppercase tracking-widest text-orange-700 font-semibold mb-2 block">
+            FAQ {location.city}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-6">
+            Pertanyaan Seputar Scaffolding di {location.city}
+          </h2>
+          <div className="divide-y divide-slate-100 border-y border-slate-100">
+            {faqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-sm sm:text-base font-semibold text-slate-900">
+                  <span>{f.q}</span>
+                  <ChevronRight className="w-4 h-4 mt-1 shrink-0 text-orange-600 transition-transform group-open:rotate-90" aria-hidden="true" />
+                </summary>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Cross Links to Other Cities */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
-            <h3 className="text-lg font-bold text-slate-950">
+            <h2 className="text-lg font-bold text-slate-950">
               Layanan Scaffolding di Kota Lainnya di Jawa Timur
-            </h3>
+            </h2>
             <p className="text-slate-500 text-xs mt-1">
               Jelajahi jangkauan armada kami di koridor industri sekitarnya:
             </p>

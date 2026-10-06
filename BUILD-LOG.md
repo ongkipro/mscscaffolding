@@ -2,6 +2,19 @@
 
 Record only durable implementation changes, validation evidence, and gotchas that the next maintainer needs. Temporary task narration belongs in neither this file nor global memory.
 
+## 2026-10-06 — SEO, Content Accuracy & Quality Hardening (TASK-28)
+
+- **SEO**: added `src/lib/seo.ts` (`pageMetadata()`); every page now has a self canonical, full Open Graph + Twitter card and a JPG share image. Removed the root-layout canonical (Next.js inherited it on every page that omitted one, pointing them at the homepage). Titles ≤ 60 and descriptions 70–160 chars on all 35 built pages; product pages use `Product.seoTitle`.
+- **Gotcha — Next.js metadata merge is shallow**: a page that sets `openGraph: { title }` replaces the whole parent `openGraph` (site name, images, locale are lost). Always build the full object via `pageMetadata()`.
+- **Structured data**: visible breadcrumbs + `BreadcrumbList` (`Breadcrumbs.tsx`), product `Offer`s (sale, `LeaseOut` monthly rental, refurbished), `AggregateOffer` computed from rate tables, `FAQPage` with visible FAQ on `/sewa-scaffolding` and all city hubs, `WebApplication` on `/kalkulator`, noindex 404 with its own title. All 104 JSON-LD blocks parse.
+- **Content accuracy**: product specs aligned to `docs/raw-sources/Deskripsi product.txt` (Pre-Galvanis material, weights, catwalk Kanal C, jack base/U-head Ø30 13×13 plate, pipe support 260–380 cm, lock pin, etc.); `resiko` → `risiko`; inflated "puluhan ribu" stock wording → "ribuan".
+- **Calculator bug**: old model priced 2 frames per bay (shared frames double-counted), hardcoded prices, clamped input while typing (could not clear the field) and capped stairs at 4. Now `estimateScaffolding()` (shared-frame model, prices from `products.ts` built on the server) with `npm test` coverage; bundle 11.5 kB → 6 kB by not shipping the catalogue. Estimates are lower than before for the same dimensions.
+- **Lead-loss bug**: contact form showed "Berhasil Diterima" without sending anything. It now opens WhatsApp with the prefilled SPH request and tracks the conversion.
+- **Tracking bug**: 4 components called the tracker on click while the global listener also tracked every `wa.me`/`tel:` anchor → every conversion counted twice. Components now only set `data-track-label`.
+- **A11y/UX**: hero slider no autoplay under reduced motion, `aria-current` on dots, internal K3 CTA same-tab `next/link`; viewport zoom re-enabled; calculator selects labelled; warehouse button relabelled "WhatsApp Gudang".
+- **Owner follow-up (same day)**: certification/legal claims left as-is (proof shared via WhatsApp, not on site). Replaced invented `/tentang-kami` milestone years with the source-backed service process; Surabaya postal code 60293 → 60295; Sidoarjo address "Pergudangan Tritan Hub, Wedi, Gedangan"; removed `Bangkalan` from `areaServed`; consultation hours aligned to 07.30–17.00; removed unlabelled `AW-…` conversion events.
+- **Verification**: `npx tsc --noEmit` OK; `npm test` 6/6 pass; `npm run build` OK (41 pages); scratch SEO audit 35/35 pages OK; `next start` smoke: 16 routes 200, unknown product 404 + noindex, OG images 200.
+
 ## 2026-09-21 — UI/UX Refinement, AI-Slop Purge & Typography Precision
 
 - **Design System & AI-Slop Elimination**:

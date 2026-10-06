@@ -23,7 +23,6 @@ import {
   Lock,
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
-import { trackWhatsAppConversion, trackPhoneConversion } from '@/utils/analytics';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -151,7 +150,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackWhatsAppConversion('drawer_quick_action')}
+            data-track-label="drawer_quick_action"
             className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-white active:scale-95 transition-all group"
           >
             <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
@@ -271,7 +270,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppConversion('drawer_sph_button')}
+              data-track-label="drawer_sph_button"
               className="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 active:scale-[0.98] text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition-colors shadow-sm"
             >
               <FileText className="w-4 h-4 text-orange-200" />

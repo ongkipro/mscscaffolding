@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { ORGANIZATION_ID, SITE_URL, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -17,18 +19,11 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
-export const metadata: Metadata = {
-  title: 'Jual Scaffolding Surabaya, Sidoarjo, Gresik Harga Pabrik',
-  description: 'Jual scaffolding steger pipa 1.8mm SNI harga pabrik di Surabaya, Sidoarjo, dan Gresik. Sedia SPH resmi tender, faktur pajak PKP, dan kirim langsung ke proyek.',
-  alternates: {
-    canonical: 'https://mscscaffolding.com/jual-scaffolding',
-  },
-  openGraph: {
-    title: 'Jual Scaffolding Surabaya, Sidoarjo, Gresik Harga Pabrik - MSC Scaffolding',
-    description: 'Jual scaffolding steger pipa 1.8mm SNI harga pabrik di Surabaya, Sidoarjo, dan Gresik. Sedia SPH resmi tender, faktur pajak PKP, dan kirim langsung ke proyek.',
-    url: 'https://mscscaffolding.com/jual-scaffolding',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Jual Scaffolding Surabaya Sidoarjo Gresik',
+  description: 'Jual scaffolding baru & rekondisi pipa 1.8mm SNI di Surabaya, Sidoarjo, dan Gresik. SPH resmi tender, faktur pajak PPN, kirim langsung ke proyek.',
+  path: '/jual-scaffolding',
+});
 
 export default function JualScaffoldingPage() {
   const saleProducts = [
@@ -64,7 +59,7 @@ export default function JualScaffoldingPage() {
       no: '05',
       item: 'CROSS BRACE 190',
       unit: 'PCS',
-      specs: 'Pipa silang diagonal pengaku bentang 190cm',
+      specs: 'Cross ladder 190cm, pasangan ladder frame T90',
       priceSale: 'Rp 45.000',
     },
     {
@@ -99,14 +94,14 @@ export default function JualScaffoldingPage() {
       no: '10',
       item: 'LADDER FRAME T90',
       unit: 'SET',
-      specs: '1 Set lengkap (2 Ladder Frame 90 + 2 Cross Brace + 4 Joint Pin)',
+      specs: '1 Set lengkap (2 Ladder Frame 90 + 2 Cross Ladder 190)',
       priceSale: 'Rp 350.000',
     },
     {
       no: '11',
       item: 'PIPE SUPPORT TS90',
       unit: 'PCS',
-      specs: 'Tiang prop teleskopik 2.0 - 3.8 meter adjustable',
+      specs: 'Tiang prop teleskopik 2.6 - 3.8 meter adjustable, pipa 2.2mm',
       priceSale: 'Rp 285.000',
     },
     {
@@ -127,7 +122,7 @@ export default function JualScaffoldingPage() {
       no: '14',
       item: 'CATWALK',
       unit: 'PCS',
-      specs: 'Papan pijakan pelat baja galvanis berlubang anti-slip 50x183cm',
+      specs: 'Papan pijakan metal plank galvanis berlubang anti-slip 50x180cm',
       priceSale: 'Rp 310.000',
     },
   ];
@@ -165,22 +160,22 @@ export default function JualScaffoldingPage() {
     },
   ];
 
+  const salePrices = saleProducts.map((r) => Number(r.priceSale.replace(/\D/g, '')));
+
   const jualPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Jual Scaffolding Baru & Rekondisi Surabaya Sidoarjo',
+    name: 'Jual Scaffolding Baru & Rekondisi Surabaya, Sidoarjo, Gresik',
     serviceType: 'Penjualan Scaffolding Steger Galvanis',
-    provider: {
-      '@id': 'https://mscscaffolding.com/#organization',
-    },
+    url: `${SITE_URL}/jual-scaffolding`,
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: ['Surabaya', 'Sidoarjo', 'Pasuruan', 'Gresik', 'Mojokerto'],
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'IDR',
-      lowPrice: 42000,
-      highPrice: 540000,
-      offerCount: 12,
-      priceValidUntil: '2027-12-31',
+      lowPrice: Math.min(...salePrices),
+      highPrice: Math.max(...salePrices),
+      offerCount: salePrices.length,
     },
   };
 
@@ -194,16 +189,12 @@ export default function JualScaffoldingPage() {
       {/* Clean Unified Page Header with Visual Photo */}
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-900 font-bold">Jual Scaffolding</span>
-          </div>
+          <Breadcrumbs className="mb-4" items={[{ name: 'Jual Scaffolding' }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-3">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-950 leading-tight">
-                Jual Scaffolding Baru & Rekondisi
+                Jual Scaffolding Baru & Rekondisi Surabaya, Sidoarjo, Gresik
               </h1>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Pengadaan pipa 1.8mm SNI fabrikasi presisi dan rekondisi Grade A siap pakai langsung dari gudang.
@@ -277,7 +268,7 @@ export default function JualScaffoldingPage() {
               </div>
               <h3 className="font-bold text-slate-950 text-base mb-2">Opsi Rekondisi Grade A Siap Pakai</h3>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                Solusi cerdas bagi pengadaan dengan anggaran efisien. Unit rekondisi telah diluruskan presisi, cat baru, dan diuji kekuatan las tanpa resiko safety.
+                Solusi cerdas bagi pengadaan dengan anggaran efisien. Unit rekondisi telah diluruskan presisi, cat baru, dan diuji kekuatan las tanpa risiko safety.
               </p>
             </div>
           </div>

@@ -1,6 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowLeft, Home, FileQuestion } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Halaman Tidak Ditemukan',
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
