@@ -153,7 +153,7 @@ Mohon informasi ketersediaan stok di gudang dan penawaran harga resmi. Terima ka
           <div className="pt-3 flex flex-wrap justify-center gap-3">
             <a
               href={waUrl()}
-              data-track-label="contact_form_fallback"
+              data-no-track // submit already counted this lead
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow-sm transition touch-manipulation"

@@ -20,7 +20,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     // data-track-label instead of calling the tracker themselves (that double-counted conversions).
     const handleGlobalLinkClicks = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a');
-      if (!target) return;
+      if (!target || target.hasAttribute('data-no-track')) return;
       const href = target.getAttribute('href') || '';
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
         const label =

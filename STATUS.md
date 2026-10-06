@@ -2,12 +2,12 @@
 
 Updated: 2026-10-06
 Status: Active
-State: PRODUCTION_READY
+State: VERIFIED
 Review-Risk: R3 (ledger effective risk; declared R1)
 Independent-Review: PASS
 Primary-Worker: Antigravity
 Independent-Reviewer: independent-subagent-a2fb10cc (read-only diff review, APPROVE)
-Independent-Review-Head: HEAD (uncommitted working tree)
+Independent-Review-Head: 006ebe7
 
 ## Delivery state machine
 
@@ -26,7 +26,7 @@ Next.js 15 App Router static site (no backend). `TASK-28` (SEO, content accuracy
 
 ## Active work
 
-Owner approved commit, push and deploy (2026-10-06). Push to `main` triggers the Vercel production deployment (git integration).
+Deployed: commit `006ebe7` → Vercel production deployment `mscscaffolding-hek79zos7` (READY, 2026-10-06). Follow-up: contact-form fallback link no longer double-counts a conversion (`data-no-track`).
 
 ## Blockers
 
@@ -51,4 +51,9 @@ None. Owner decisions (2026-10-06):
 
 ## Next verified action
 
-Smoke-test production after the Vercel deployment is READY.
+Optional: rendered browser check of contact form, calculator and hero slider on production; add Facebook/Instagram `sameAs` when URLs are available.
+
+## Production smoke (2026-10-06, https://mscscaffolding.com, commit 006ebe7)
+
+- 13 core URLs (home, sewa, jual, kalkulator, k3, produk, product detail, city hub, tentang-kami, kontak, sitemap, robots, OG image) → 200; unknown product → 404.
+- Live HTML confirms: "Cara Kami Bekerja" section, postal code 60295, self canonical, `WebApplication` schema, sitemap with 34 URLs.
