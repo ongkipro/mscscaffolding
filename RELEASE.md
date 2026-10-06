@@ -1,13 +1,13 @@
 # Release Manifest — mscscaffolding
 
-Release-ID: REL-2026-09-21-NEXTJS-01
-Base: HEAD
+Release-ID: REL-2026-10-06-NEXTJS-02
+Base: afe4fc1
 Environment: production
-Declared-Risk: R0
-Rollback-Ref: HEAD
-Rollback-Command: git checkout -- . && npm run build
+Declared-Risk: R3
+Rollback-Ref: afe4fc1
+Rollback-Command: git checkout afe4fc1 -- . && npm run build
 Backup-Proof: NOT_REQUIRED
-Status: DRAFT
+Status: READY
 
 ## Contract
 

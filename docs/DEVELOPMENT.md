@@ -80,7 +80,7 @@ Setiap rute wajib memenuhi standar teknis SEO:
    - `/kalkulator`: `WebApplication` schema.
    - `/k3-panduan`: `TechArticle` schema.
 3. **Robots & Sitemap:**
-   - `src/app/sitemap.ts`: Otomatis mengindeks seluruh 29 rute publik.
+   - `src/app/sitemap.ts`: Otomatis mengindeks seluruh 34 rute publik.
    - `src/app/robots.ts`: Mengizinkan seluruh rute publik dan melarang (`Disallow: /admin`) rute CMS internal.
 
 ---
@@ -97,7 +97,7 @@ mscscaffolding/
 ├── public/
 │   ├── images/
 │   │   ├── branding/logo-msc.jpeg
-│   │   ├── produk/                     # 15 foto katalog komponen
+│   │   ├── produk/                     # 18 foto katalog komponen (.webp & .jpg)
 │   │   └── proyek/                     # 11 foto render proyek & gudang
 │   └── favicon.ico
 ├── src/
@@ -116,18 +116,23 @@ mscscaffolding/
 │   │   │   ├── page.tsx
 │   │   │   └── [kota]/page.tsx         # SSG Local SEO (5 cities)
 │   │   ├── kontak/page.tsx
+│   │   ├── kebijakan-privasi/page.tsx
+│   │   ├── syarat-ketentuan/page.tsx
 │   │   ├── not-found.tsx
 │   │   ├── robots.ts
 │   │   └── sitemap.ts
 │   ├── components/
-│   │   ├── layout/                     # Navbar, MobileDrawer, MobileBottomBar, Footer
+│   │   ├── layout/                     # Navbar, MobileDrawer, MobileBottomBar, Footer, Breadcrumbs
 │   │   ├── home/                       # Hero, Services, CatalogPreview, K3Banner, Warehouse
 │   │   ├── produk/                     # ProductCard, ProductFilter, ProductSpecs, QuickSpecModal
 │   │   ├── kalkulator/                 # ScaffoldingCalculator
 │   │   └── ui/                         # PillBadge, SectionHeading
 │   ├── data/                           # In-memory typed data source
+│   ├── lib/                            # Central SEO helpers (pageMetadata)
 │   ├── services/                       # Data access abstraction (Repository)
-│   └── types/                          # TypeScript contracts
+│   ├── types/                          # TypeScript contracts
+│   └── utils/                          # Pure scaffolding estimator & analytics
+├── tests/                              # Unit test suite (scaffoldingEstimate)
 ├── next.config.ts
 ├── tailwind.config.ts
 └── tsconfig.json
@@ -141,6 +146,9 @@ mscscaffolding/
 ```bash
 # Menjalankan dev server lokal
 npm run dev
+
+# Menjalankan pengujian kalkulator
+npm test
 
 # Memvalidasi type safety & build statis
 npm run build
